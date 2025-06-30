@@ -92,7 +92,7 @@ I_f2 = A * np.log(1+(B/f_l)) # 1/f noise
 # Combine
 I_n = I_t2 + I_s2 + I_f2 # Mean square noise
 
-print("Below are the specs for the ASI1600 Camera:")
+print("Below are the specs for the ASI432 Camera:")
 print(f"RMS thermal noise: {np.sqrt(I_t2)*1e6} muA")
 print(f"RMS shot noise: {np.sqrt(I_s2)*1e6} muA")
 print(f"RMS 1/f noise: {np.sqrt(I_f2)*1e6} muA")
