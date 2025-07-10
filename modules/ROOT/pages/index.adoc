@@ -1,0 +1,3 @@
+= Welcome to the Project Docs
+
+This is the main documentation site. Navigate using the sidebar.
