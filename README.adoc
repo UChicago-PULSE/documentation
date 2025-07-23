@@ -1,0 +1,34 @@
+= Documentation
+
+This repo contains documentation files in asciidoc format for the PULSE-A mission which are hosted at [LINK TO BE INSERTED], as well as other important documentation for the mission such as mass, power, volume, and link budgets.
+
+Quarterly reports, design reviews, and publications are also included in this repository.
+
+The documentation in this repo is focused on overall systems engineering and mission design. The relevant repositories (pulse-hardware and pulse-software) include the asciidoc documentaiton for those systems.
+
+== Documentation Usage Instructions (Internal)
+
+PULSE-A members can contribute to the documentation by following the instructions below.
+
+=== Basic Setup
+
+[arabic]
+. Install Visual Studio Code.
+. Set up a GitHub SSH key and connect your VSCode source control to your GitHub account (link:https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent[instructions here]). The source control tab looks like three circles with some connecting lines on the lefthand menu.
+. Clone the relevant repository (i.e., pulse-hardware, pulse-software, or documentation) into VSCode source control.
+
+=== Making Changes
+The asciidoc files are located within the docs folder. Pending further file organization, the files will be simply located within this folder. 
+
+[arabic]
+. Before making changes, pull. This can be accomplished either through VSCode source control or by running `git pull` in the VSCode terminal. 
+
+. To modify a file, right click to open a preview. You can drag the preview tab to the right half of the screen to view both the .adoc file and the preview simultaneously. 
+
+. When your changes are complete, run `git add .`, or add changes in the source control window.
+
+. Type into the source control commit message window or run `git commit -m '[message]'`, and enter a title for your commit. It is preffered that you follow the Conventional Commits message spec, found link:https://www.conventionalcommits.org/en/v1.0.0/[here].
+
+. Push in the source control window or run `git push`.
+
+Your changes are now live.
