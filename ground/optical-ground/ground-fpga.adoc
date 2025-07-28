@@ -1,0 +1,10 @@
+= Ground FPGA Receiver
+:stem: latexmath
+
+The signal receiver on the OGS is developed using an FPGA to receive data at high speeds.
+
+A test of stem:[$554\sin(15)$].
+
+\[
+    \sin(\cos(x))
+\]

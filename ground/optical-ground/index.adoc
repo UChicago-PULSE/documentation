@@ -1,0 +1,12 @@
+= Optical Ground Station
+
+The optical ground station (OGS) is the receiving portion of PULSE-A’s optical experiment. Since optical communications are directional, the OGS must track the transmission laser with a pointing accuracy of 1.4mrad.
+The optical ground station tracks, collects, and decodes the transmitted signal using four assembles: tracking,  polarization state preparation, signal decoding, and beacon.
+
+---
+
+The OGS design diagram is below.
+
+image::images/ogs-diagram.png[]
+
+The tracking assembly is marked in blue, polarization state preparation in red, signal decoding in yellow, and beacon in green.
