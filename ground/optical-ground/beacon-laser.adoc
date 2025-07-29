@@ -1,1 +1,320 @@
 = Uplink Beacon Laser
+
+MATLAB code for Uplink Beacon Laser. 
+Uses a Spherical Wave model to mimic atmosphere turbelence from ground to space. 
+Uses Gamma-Gamma distribution for intensity fluctiations on small and large scales. 
+All formulas are from "Laser Beam Scintillation with Applications" by Andrews and Phillips. Page numbers in comments are by their PDF page rather then their actual page number, but equations and chapters are also added in case.
+
+[source,matlab]
+----
+clear; close all; clc;
+
+% Main function to encapsulate the entire application logic
+function createScintillationApp()
+
+    %% System and Atmospheric Parameters
+    wavelength = 1.064e-6;      % Wavelength [m] (lambda)
+    H = 38000e3;                % Satellite altitude (Rounded GEO - Geostaionary Earth Orbit) [m]
+    h0 = 2;                     % Ground station altitude [m]
+    zenithAngle = 50;           % Zenith angle [degrees]
+    % D = 0.5;                  % Receiver aperture diameter [m] (Used in downlink version, but not for uplink
+    A_ground = 1.7e-14;         % Ground level turbulence strength [m^(-2/3)]
+    v_wind = 21;                % RMS wind speed for H-V model [m/s]
+
+    % Simulation Parameters
+    numPoints = 2048;           % Number of samples for the simulation
+    duration = 1;               % Simulation duration [s]
+    Fs = numPoints/duration;    % Sampling frequency [Hz]
+    t = (0:numPoints-1)/Fs;     % Time vector for plotting [s]
+
+    %% Fade and Surge Analysis Parameters (Initial Values)
+    enableFadeAnalysis = true;    % Set to true to show thresholds and calculate events
+    fadeThreshold = 0.5;          % Irradiance level below which a fade is counted
+    surgeThreshold = 2.0;         % Irradiance level above which a surge is counted
+
+    %% Scintillation Calculation for Uplink Path (Constant parameters)
+    % Optical wave number (Pg 23, Ch 1, second page (literally first eq but no tag))
+    k = 2 * pi / wavelength;
+    % L = (H - h0) / cosd(zenithAngle); % Total path length (General pathlength eq in Ch 2/ not used for now)
+
+    % Rytov Variance for an Uplink Spherical Wave
+    % The Rytov variance for an uplink spherical wave (sigma_2_sq) is approximately
+    % equal to that of a downlink plane wave (sigma_1_sq). (Stated in Pg.291, (Textbook 268))
+    % H-V Model: (Pg 281, Ch 8, Equation (43))
+    Cn2_h = @(h) 0.00594*(v_wind/27)^2 * (1e-5*h).^10 .* exp(-h/1000) + ...
+                 2.7e-16 * exp(-h/1500) + A_ground * exp(-h/100);
+
+    % Integral for mu_3, used in the Rytov variance calculation (Spherical Version).
+    % (Pg 283, Ch 8, Equation (49))
+    integrand_mu3 = @(h) Cn2_h(h) .* ((h - h0)/(H - h0)).^(5/6) .* (1 - (h-h0)/(H-h0)).^(5/6);
+    mu3 = integral(integrand_mu3, h0, H);
+
+    % Final Rytov Variance calculation for the uplink spherical wave.
+    % (Pg 291, Ch 8, Equation (72))
+    sigma_2_sq = 2.25 * mu3 * k^(7/6) * (H - h0)^(5/6) * secd(zenithAngle)^(11/6);
+
+    % Scintillation Index Model for an Uplink Spherical Wave
+    % This model is valid for weak to strong irradiance fluctuations.
+    % (Pg 293, Ch 8, Equation (85))
+    sigma_I_sq_point = exp( ...
+        (0.49 * sigma_2_sq) / (1 + 0.56 * sigma_2_sq^(12/5))^(7/6) + ...
+        (0.51 * sigma_2_sq) / (1 + 0.69 * sigma_2_sq^(12/5))^(5/6) ...
+    ) - 1;
+
+    % Check Variables
+    % Zenith Angle: 45-60 degrees, Check if fprintf works
+    % Rytov Variance: Anything 0 to 2 [anymore is off]
+    % Point Scintillation Index: 0 to 1 [0 is good, 1 is bad]
+    fprintf('--- Uplink Model Setup ---\n');
+    fprintf('Zenith Angle: %.1f deg\n', zenithAngle);
+    fprintf('Rytov Variance (σ₂²): %.4f\n', sigma_2_sq);
+    fprintf('Point Scintillation Index (σ_I²): %.4f\n\n', sigma_I_sq_point);
+
+    %% Calculate Aperture Averaging for the Receiver Aperture
+    % A_factor = 1.0; % Aperture averaging isn't used for uplink spherical wave (Used for plane waves/downlink)
+
+    %% Initialize Plot Handles and Data Storage
+    transmitterCounts = [1, 2, 4, 8];
+    colors = lines(length(transmitterCounts));
+    lineHandles = gobjects(length(transmitterCounts), 1); % Handles for intensity lines
+    fadeThresholdLine = []; % Handle for fade threshold line
+    surgeThresholdLine = []; % Handle for surge threshold line
+
+    % Variables to store simulation results, updated by updatePlotAndAnalysis
+    allIntensities = zeros(numPoints, length(transmitterCounts));
+    calculatedScintIndices = zeros(length(transmitterCounts), 1);
+    fadeCounts = zeros(length(transmitterCounts), 1);
+    surgeCounts = zeros(length(transmitterCounts), 1);
+    fadeProbabilities = zeros(length(transmitterCounts), 1);
+    expectedFades = zeros(length(transmitterCounts), 1);
+
+    %% Interactive Figure and UI Setup
+    fig = figure('Name', 'Uplink Scintillation Model (Andrews, Phillips, & Hopen)', 'Position', [100 100 1100 600]);
+    ax = axes('Parent', fig, 'Units', 'normalized', 'Position', [0.3 0.15 0.65 0.75]);
+    hold(ax, 'on');
+
+    % Initial plot of threshold lines
+    fadeThresholdLine = plot(ax, t, ones(size(t))*fadeThreshold, 'r--', 'LineWidth', 1, 'DisplayName', 'Fade Threshold');
+    surgeThresholdLine = plot(ax, t, ones(size(t))*surgeThreshold, 'k:', 'LineWidth', 1, 'DisplayName', 'Surge Threshold');
+
+    % Main UI panel for controls, using normalized units
+    uiPanelMain = uipanel('Title','Controls', 'FontSize', 12, ...
+            'Units', 'normalized', 'Position',[0.02 0.1 0.25 0.8]);
+
+    % Sub-panel for # of Transmitters
+    uiPanelTransmitters = uipanel(uiPanelMain, 'Title','# of Transmitters', 'FontSize', 10, ...
+            'Units', 'normalized', 'Position',[0.05 0.45 0.9 0.5]); 
+
+    % Checkboxes for Transmitters
+    for i = 1:length(transmitterCounts)
+        uicontrol(uiPanelTransmitters, 'Style', 'checkbox', ...
+                  'String', sprintf('%d Transmitter(s)', transmitterCounts(i)), ...
+                  'Value', 1, ...
+                  'Units', 'normalized', ...
+                  'Position', [0.1 (1 - (i * 0.2)) 0.8 0.15], ... % Normalized position within sub-panel
+                  'Callback', {@toggleLineVisibility, i}, ...
+                  'UserData', i); % Store index 'i' for later retrieval of lineHandles(i)
+    end
+
+    % Sub-panel for Threshold Toggles and Inputs
+    uiPanelThresholds = uipanel(uiPanelMain, 'Title','Threshold Settings', 'FontSize', 10, ...
+            'Units', 'normalized', 'Position',[0.05 0.1 0.9 0.3]); % Position relative to uiPanelMain
+
+    % Fade Threshold Input
+    uicontrol(uiPanelThresholds, 'Style', 'text', 'String', 'Fade Threshold:', ...
+              'Units', 'normalized', 'Position', [0.05 0.75 0.4 0.15], 'HorizontalAlignment', 'left');
+
+    editfadeThreshold = uicontrol(uiPanelThresholds, 'Style', 'edit', ... % Warning shown, but this is needed to when values change in txtbox
+              'String', num2str(fadeThreshold), ...
+              'Units', 'normalized', 'Position', [0.5 0.75 0.45 0.15], ...
+              'Callback', @(src, event) updateThresholds(src, event, 'fade'));
+
+    % Surge Threshold Input
+    uicontrol(uiPanelThresholds, 'Style', 'text', 'String', 'Surge Threshold:', ...
+              'Units', 'normalized', 'Position', [0.05 0.5 0.4 0.15], 'HorizontalAlignment', 'left');
+
+    editSurgeThreshold = uicontrol(uiPanelThresholds, 'Style', 'edit', ... % Warning shown, but this is needed to when values change in txtbox
+              'String', num2str(surgeThreshold), ...
+              'Units', 'normalized', 'Position', [0.5 0.5 0.45 0.15], ...
+              'Callback', @(src, event) updateThresholds(src, event, 'surge'));
+
+    % Checkboxes for Threshold Visibility 
+    uicontrol(uiPanelThresholds, 'Style', 'checkbox', ...
+              'String', 'Show Fade Line', ...
+              'Value', 1, ...
+              'Units', 'normalized', ...
+              'Position', [0.1 0.25 0.8 0.15], ...
+              'Callback', {@toggleThresholdVisibility, fadeThresholdLine});
+
+    uicontrol(uiPanelThresholds, 'Style', 'checkbox', ...
+              'String', 'Show Surge Line', ...
+              'Value', 1, ...
+              'Units', 'normalized', ...
+              'Position', [0.1 0.05 0.8 0.15], ...
+              'Callback', {@toggleThresholdVisibility, surgeThresholdLine});
+
+    % call to run the simulation and update the plot and info
+    updatePlotAndAnalysis();
+
+    % Function to re-run simulation and update plot/analysis
+    function updatePlotAndAnalysis()
+        % Generate Data for Different Transmitter Counts
+        % Gamma-Gamma distribution used to model irradiance fluctuations.
+        % (Pg 110, Ch 2)
+        for j = 1:length(transmitterCounts)
+            numTransmitters = transmitterCounts(j);
+
+            % Scintillation reduction due to transmitter diversity:
+            % Assuming uncorrelated (or sufficiently separated) transmitter paths,
+            % the scintillation index is reduced by the number of transmitters (M).
+            % Aperture averaging is negligible (A_factor = 1).
+            sigma_I_sq_M = sigma_I_sq_point / numTransmitters; % Overall scintillation
+            calculatedScintIndices(j) = sigma_I_sq_M;
+
+            % Gamma-Gamma PDF parameters alpha and beta for the uplink spherical wave model.
+            % From the large-scale (x) and small-scale (y) log-irradiance variances.
+            % Large-scale log-irradiance variance for uplink spherical wave.
+            % (Pg 293, Ch 8, Equation (84))
+            sigma_lnx_sq = (0.49 * sigma_2_sq) / (1 + 0.56 * sigma_2_sq^(12/5))^(7/6);
+
+            % Small-scale log-irradiance variance for uplink spherical wave.
+            % (Pg 293, Ch 8, Equation (78))
+            sigma_lny_sq = (0.51 * sigma_2_sq) / (1 + 0.69 * sigma_2_sq^(12/5))^(5/6);
+            
+            % Convert log-irradiance variances to irradiance variances.
+            % (Pg 267, Ch 8, Equation (4))
+            sigma_x_sq = exp(sigma_lnx_sq) - 1;
+            sigma_y_sq = exp(sigma_lny_sq) - 1;
+
+            % Inverse relationship for alpha and beta.
+            alpha_effective = 1 / (sigma_x_sq / numTransmitters); % Scaling factor based on # of Transmitters
+            beta_effective = 1 / (sigma_y_sq / numTransmitters);
+
+            % Generate random variables from two gamma distributions. Their product
+            % follows a Gamma-Gamma distribution, modeling the irradiance.
+            % (Page 111, Chapter 2, Based off of eq 40 and 41 but used prefined gamma distribution function)
+            large_scale_irradiance = gamrnd(alpha_effective, 1/alpha_effective, numPoints, 1);
+            small_scale_irradiance = gamrnd(beta_effective, 1/beta_effective, numPoints, 1);
+
+            % Final intensity is the product of the two modulated processes
+            % Pg 110, ch2, I = xy where x is large and y is small scale atmospheric effects
+            intensity = large_scale_irradiance .* small_scale_irradiance;
+            allIntensities(:,j) = intensity;
+
+            % Calculate fade and surge events
+            if enableFadeAnalysis
+                isFaded = intensity < fadeThreshold;
+                fadeCrossings = diff(isFaded) == 1;
+                fadeCounts(j) = sum(fadeCrossings);
+                fadeProbabilities(j) = sum(isFaded) / numPoints; % Probability of fade (Pg 247, Eq 17 is theoretical basis, ts is good for now)
+
+                isSurged = intensity > surgeThreshold;
+                surgeCrossings = diff(isSurged) == 1;
+                surgeCounts(j) = sum(surgeCrossings);
+
+                % Calculate Expected Number of Fades (Simplified Rice's formula approximation)
+                % (Pg 273, Chapter 8, sentence with LEO and GEO)
+                L_corr_eff = 100; % meters, a rough estimate for uplink correlation width I should probably find a concrete value for this though
+                f_char = v_wind / L_corr_eff; 
+                expectedFades(j) = f_char * fadeProbabilities(j) * duration; % Number of fades in 'duration' seconds
+            end
+        end
+
+        % Update plot lines
+        set(fadeThresholdLine, 'YData', ones(size(t))*fadeThreshold);
+        set(surgeThresholdLine, 'YData', ones(size(t))*surgeThreshold);
+
+        % Update intensity lines: Create if not exists, otherwise update YData
+        hold(ax, 'on'); % Ensure hold is on before plotting/updating
+        for j = 1:length(transmitterCounts)
+            % Check if the line handle is valid (i.e., it's a graphics object and not deleted)
+            if isgraphics(lineHandles(j))
+                set(lineHandles(j), 'YData', allIntensities(:,j));
+            else
+                % Line doesn't exist or was deleted, create it
+                lineHandles(j) = plot(ax, t, allIntensities(:,j), ...
+                    'Color', colors(j,:), ...
+                    'LineWidth', 1.5, ...
+                    'DisplayName', sprintf('%d Transmitter(s)', transmitterCounts(j)), ...
+                    'Visible', 'on');
+            end
+        end
+        hold(ax, 'off'); % Ensure hold is off after updating all lines
+
+        title(ax, 'Simulated Uplink Scintillation with Transmitter Diversity');
+        xlabel(ax, 'Time (s)');
+        ylabel(ax, 'Normalized Irradiance');
+        grid(ax, 'on');
+        ylim(ax, [0 max(3.5, ceil(max(allIntensities(:))))]); % Re-adjust y-limit
+        legend(ax, 'show', 'Location', 'northeast');
+
+        % Display results in command window
+        fprintf('- Scintillation Index Comparison -\n');
+        fprintf('Based on satellite uplink (spherical wave).\n');
+        fprintf('-------------------------------------------------------\n');
+        for j = 1:length(transmitterCounts)
+            % Scintillation index is the normalized variance of irradiance
+            % (Pg 88, Ch 2, Equation (1))
+            simulated_scintIndex = var(allIntensities(:,j)) / mean(allIntensities(:,j))^2;
+            fprintf('%d Transmitter(s): Theoretical σ_I² = %.4f | Simulated σ_I² = %.4f\n', ...
+                    transmitterCounts(j), calculatedScintIndices(j), simulated_scintIndex);
+        end
+        if enableFadeAnalysis
+            fprintf('\n--- Fade and Surge Event Analysis ---\n');
+            fprintf('Fade Threshold: %.2f | Surge (Oversaturation) Threshold: %.2f\n', fadeThreshold, surgeThreshold);
+            fprintf('--------------------------------------------------------------------------\n');
+            fprintf('%-16s | %-15s | %-15s | %-15s | %-15s\n', 'Transmitter(s)', 'Fade Prob.', 'Fade Events', 'Surge Events', 'Expected Fades');
+            fprintf('-------------------------------------------------------------------------\n');
+            for j = 1:length(transmitterCounts)
+                fprintf('%-16d | %-15.4f | %-15d | %-15d | %-15.2f\n', ...
+                    transmitterCounts(j), fadeProbabilities(j), fadeCounts(j), surgeCounts(j), expectedFades(j));
+            end
+        end
+    end
+
+    % Callback function for transmitter checkboxes
+    function toggleLineVisibility(src, ~, lineIndex)
+        % Retrieve the actual line handle from the lineHandles array using the stored index
+        lineHandle = lineHandles(lineIndex);
+        if get(src, 'Value')
+            set(lineHandle, 'Visible', 'on');
+        else
+            set(lineHandle, 'Visible', 'off');
+        end
+    end
+
+    % Callback function for threshold visibility checkboxes
+    function toggleThresholdVisibility(src, ~, lineHandle)
+        if get(src, 'Value')
+            set(lineHandle, 'Visible', 'on');
+        else
+            set(lineHandle, 'Visible', 'off');
+        end
+    end
+
+    % Callback function for threshold input fields
+    function updateThresholds(src, ~, type)
+        newValue = str2double(get(src, 'String'));
+        if isnan(newValue) || newValue < 0
+            % Invalid input, revert to previous value and warn
+            if strcmp(type, 'fade')
+                set(src, 'String', num2str(fadeThreshold));
+            else
+                set(src, 'String', num2str(surgeThreshold));
+            end
+            warning('Invalid input. Please enter a non-negative numeric value or else.');
+            return;
+        end
+
+        if strcmp(type, 'fade')
+            fadeThreshold = newValue;
+        else
+            surgeThreshold = newValue;
+        end
+        updatePlotAndAnalysis(); % Re-run simulation and update plot/analysis
+    end
+
+end % End of createScintillationApp function
+
+% Call the main function to run the application
+createScintillationApp();
