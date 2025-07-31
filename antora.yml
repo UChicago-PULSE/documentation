@@ -1,5 +1,0 @@
-name: documentation
-title: Main Documentation
-version: latest
-nav:
-  - docs/modules/ROOT/nav.adoc
