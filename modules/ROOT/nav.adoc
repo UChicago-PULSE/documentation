@@ -1,5 +1,5 @@
 * xref:index.adoc[Home]
-* xref:index.adoc[Mission Overview]
+* xref:general/index.adoc[Mission Overview]
 * xref:avionics/hw/index.adoc[Avionics Hardware]
 * xref:avionics/fsw/index.adoc[Flight Software]
 * xref:payload/index.adoc[Optical Payload]
