@@ -1,0 +1,60 @@
+= AsciiDoc Example (this is the page header)
+
+== This is a subheader
+=== This is a sub-sub header
+==== This is a sub-sub-sub header. You can keep adding equals signs to get lower and lower down the header tree.
+
+How do you do a bullet list?
+
+* this is a bullet list. 
+** this is a sub-bullet
+*** this is a sub-sub bullet
+
+You can also do a numbered list.
+
+. hello
+.. sublist
+... subsublist
+. back up to the top
+
+You can add a link like this: link:https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ&start_radio=1[and this is how you create stand-in text].
+
+You can reference another adoc file with xref:README.adoc[and do standin text the same way].
+
+Images can be referenced by simply doing image:image_file[]. The image should be in the /modules/ROOT/images directory, which is why this example doesn't work. You can put videos in the same way, just change the command to video.
+
+You can do an in-line code snippet with `this`, but to do a code block you can do the following, specifying the language:
+
+[source,python]
+----
+print("i love python")
+----
+
+Make a note with 
+
+[NOTE]
+====
+URGENT NOTE
+====
+
+or if it's really important, 
+
+[IMPORTANT]
+====
+wow, this is mission-critical
+====
+
+Do a table like this: 
+
+.Table Title
+|===
+|Column 1, Header Row |Column 2, Header Row 
+
+|Cell in column 1, row 1
+|Cell in column 2, row 1
+
+|Cell in column 1, row 2
+|Cell in column 2, row 2
+|===
+
+View the full asciidoc reference link:https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/[here] if you have more questions.
