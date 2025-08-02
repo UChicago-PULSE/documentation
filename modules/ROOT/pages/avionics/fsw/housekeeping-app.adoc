@@ -1,1 +1,17 @@
-= Housekeeping App 
+= Housekeeping Application
+
+== Overview
+
+The Housekeeping (HK) Application is used for building and sending combined telemetry messages (from individual system applications) to the software bus for routing. Combining messages is performed in order to minimize downlink telemetry bandwidth. Combining certain data from multiple messages into one message eliminates the message headers that would be required if each message was sent individually. Combined messages are also useful for organizing certain types of data. This application may be used for data types other than housekeeping telemetry. HK provides the capability to generate multiple combined packets (a.k.a. output packets) so that data can be sent at different rates (e.g. a fast, medium and slow packet).
+
+== Integration Points with PULSE-A Applications
+
+* **All PULSE-A Applications**: Combines telemetry from all applications (see xref:index.adoc#obc-applications[OBC Applications] and xref:index.adoc#payload-controller-applications[Payload Controller Applications] sections)
+
+== Integration Points with NASA Provided Applications
+
+* **All NASA cFS Applications**: Combines telemetry from all applications (see xref:index.adoc#nasa-provided-cfs-applications[NASA Provided cFS Applications] section)
+
+== Integration with Other Software
+
+* **Software Bus**: Receives individual application messages

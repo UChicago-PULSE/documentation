@@ -1,1 +1,22 @@
-= Health and Safety App 
+= Health and Safety Application
+
+== Overview
+
+The Health and Safety (HS) Application provides functionality for Application Monitoring, Event Monitoring, Hardware Watchdog Servicing, Execution Counter Reporting (optional), and CPU Aliveness Indication.
+
+== Integration Points with PULSE-A Applications
+
+* **All PULSE-A Applications**: Monitors application health and execution (see xref:index.adoc#obc-applications[OBC Applications] and xref:index.adoc#payload-controller-applications[Payload Controller Applications] sections)
+
+== Integration Points with NASA Provided Applications
+
+* **All NASA cFS Applications**: Monitors application health and execution (see xref:index.adoc#nasa-provided-cfs-applications[NASA Provided cFS Applications] section)
+
+== Integration Points with Hardware
+
+* **Hardware Interface**: Provides CPU aliveness indication
+* **System Hardware**: Monitors hardware health and safety parameters
+
+== Integration with Other Software
+
+* **Event Monitoring System**: Tracks system events and health indicators 

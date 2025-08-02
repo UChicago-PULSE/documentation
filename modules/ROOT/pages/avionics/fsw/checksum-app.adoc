@@ -1,1 +1,24 @@
-= Checksum App 
+= Checksum Application
+
+== Overview
+
+The Checksum (CS) Application is used for ensuring the integrity of onboard memory. CS calculates Cyclic Redundancy Checks (CRCs) on the different memory regions and compares the CRC values with a baseline value calculated at system startup. CS has the ability to ensure the integrity of cFE applications, cFE tables, the cFE core, the onboard operating system (OS), onboard EEPROM, as well as, any memory regions ("Memory") specified by the users.
+
+This application is critical for detecting memory corruption that could lead to system failures or data integrity issues. By continuously monitoring memory regions and comparing them against known good baseline values, the Checksum application helps maintain system reliability and can trigger appropriate responses when corruption is detected.
+
+== Integration Points with PULSE-A Applications
+
+* **All PULSE-A Applications**: Monitors memory integrity for all applications (see xref:index.adoc#obc-applications[OBC Applications] and xref:index.adoc#payload-controller-applications[Payload Controller Applications] sections)
+
+== Integration Points with NASA Provided Applications
+
+* **All NASA cFS Applications**: Monitors memory integrity for all applications (see xref:index.adoc#nasa-provided-cfs-applications[NASA Provided cFS Applications] section)
+
+== Integration Points with Hardware
+
+* **Memory Regions**: Monitors user-specified memory areas
+
+== Integration with Other Software
+
+* **cFE Core**: Ensures core system integrity
+* **cFE Applications and Tables**: Monitors integrity of all cFE components

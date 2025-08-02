@@ -1,1 +1,13 @@
-= Stored Commands App 
+= Stored Commands Application
+
+== Overview
+
+The Stored Commands (SC) Application allows a system to be autonomously commanded using sequences of commands that are loaded into SC. Each command has a time tag or wakeup count associated with it, permitting the command to be released for distribution at predetermined times or wakeup counts. SC supports both Absolute Time tagged command Sequences (ATSs) and multiple Relative Time tagged command Sequences (RTSs). The purpose of ATS commands is to be able to specify commands to be executed at a specific time. The purpose of Relative Time Sequence commands is to be able to specify commands to be executed at a relative wakeup count.
+
+== Integration Points with NASA Provided Applications
+
+* **Limit Checker Application**: Receives RTS commands when thresholds are violated (see xref:limit-checker-app.adoc[Limit Checker Application])
+
+== Integration Points with Hardware
+
+* **Scheduler**: Clocked by 1 Hz input from scheduler application

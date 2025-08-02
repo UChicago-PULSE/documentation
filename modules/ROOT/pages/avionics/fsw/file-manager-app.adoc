@@ -1,1 +1,20 @@
-= File Manager App 
+= File Manager Application
+
+== Overview
+
+The File Manager (FM) Application provides onboard file system management services by processing ground commands for copying, moving, and renaming files, decompressing files, creating directories, deleting files and directories, providing file and directory informational telemetry messages, and providing open file and directory listings.
+
+== Integration Points with PULSE-A Applications
+
+* **All PULSE-A Applications**: Provides file management services for all applications (see xref:index.adoc#obc-applications[OBC Applications] and xref:index.adoc#payload-controller-applications[Payload Controller Applications] sections)
+
+== Integration Points with NASA Provided Applications
+
+* **Data Store Application**: Manages files created by DS (see xref:data-store-app.adoc[Data Store Application])
+* **CFDP Application**: Works with CF for file transfer operations (see xref:CFDP-app.adoc[CFDP Application])
+
+* **All NASA cFS Applications**: Provides file management services for all applications (see xref:index.adoc#nasa-provided-cfs-applications[NASA Provided cFS Applications] section)
+
+== Integration Points with Hardware
+
+* **File System**: Provides mapping for onboard storage

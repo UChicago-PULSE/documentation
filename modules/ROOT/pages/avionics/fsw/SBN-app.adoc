@@ -1,1 +1,23 @@
-= SBN App 
+= SBN Application
+
+== Overview
+
+The Software Bus Network (SBN) Application connects the cFE Software Bus (SB) to other buses, bridging the publish/subscribe messaging service to separate cFS instances in separate partitions, processes, processors, and/or networks. This application is essential for enabling communication between the OBC and Payload Controller, allowing them to seamlessly exchange messages between applications and coordinate operations.
+
+The SBN application works by bridging the publish/subscribe messaging service, which means it can route messages from one cFS instance to another across different hardware platforms through a network connections. This is particularly important for PULSE-A's dual-computer architecture where the OBC and Payload Controller need to communicate closely.
+
+== Integration Points with PULSE-A Applications
+
+* **All PULSE-A Applications**: Provides messaging bridge services between OBC and Payload Controller applications (see xref:index.adoc#obc-applications[OBC Applications] and xref:index.adoc#payload-controller-applications[Payload Controller Applications] sections)
+
+== Integration Points with NASA Provided Applications
+
+* **All NASA cFS Applications**: Provides messaging bridge services between different cFS instances (see xref:index.adoc#nasa-provided-cfs-applications[NASA Provided cFS Applications] section)
+
+== Integration Points with Hardware
+
+* **Network Interface**: Connects to other cFS instances (Ethernet or other connection medium)
+
+== Integration with Other Software
+
+* **cFE Software Bus**: Primary interface for message routing within each computer

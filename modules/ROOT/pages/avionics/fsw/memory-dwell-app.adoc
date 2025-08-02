@@ -1,1 +1,13 @@
-= Memory Dwell App 
+= Memory Dwell Application
+
+== Overview
+
+The Memory Dwell (MD) Application monitors memory addresses accessed by the CPU. This task is used for both debugging and monitoring unanticipated telemetry that had not been previously defined in the system prior to deployment.
+
+== Integration Points with Hardware
+
+* **CPU**: Tracks memory addresses accessed by the processor
+
+== Integration with Other Software
+
+* **Debugging and Analysis Tools**: Provides memory access data for development and troubleshooting

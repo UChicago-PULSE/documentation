@@ -1,1 +1,18 @@
-= Memory Manager App 
+= Memory Manager Application
+
+== Overview
+
+The Memory Manager (MM) Application is used for the loading and dumping system memory. MM provides an operator interface to the memory manipulation functions contained in the PSP (Platform Support Package) and OSAL (Operating System Abstraction Layer) components of the cFS. MM provides the ability to load and dump memory via command parameters, as well as, from files. If the operating system supports symbolic addressing, MM allows specifying the memory address using a symbolic address.
+
+== Integration Points with PULSE-A Applications
+
+* **All PULSE-A Applications**: Provides memory management services for all applications (see xref:index.adoc#obc-applications[OBC Applications] and xref:index.adoc#payload-controller-applications[Payload Controller Applications] sections)
+
+== Integration Points with NASA Provided Applications
+
+* **All NASA cFS Applications**: Provides memory management services for all applications (see xref:index.adoc#nasa-provided-cfs-applications[NASA Provided cFS Applications] section)
+
+== Integration Points with Other Software
+
+* **PSP and OSAL**: Interfaces with Platform Support Package and Operating System Abstraction Layer
+* **File System**: Loads and dumps memory from files
