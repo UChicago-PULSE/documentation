@@ -1,1 +1,27 @@
-= Communication Manager App
+= Communication Manager Application
+
+== Overview
+
+The Communication Manager Application serves as the primary interface to the CAN bus, preventing message collisions and handling queuing and prioritization. It operates on both OBC and Payload Controller.
+
+== Data Input
+
+* CAN buses
+* SBN
+
+== Data Output
+
+* CAN buses
+* SBN
+
+== Data Processing
+
+* Receive event messages
+* Prevents message collisions
+* Handles queuing and prioritization
+
+== Integration Points
+
+* **CAN Bus**: Primary interface for hardware communication
+* **SBN**: Software Bus Network integration
+* **All Applications**: Provides communication services to other applications

@@ -1,1 +1,37 @@
-= Deployment App
+= Deployment Application
+
+== Overview
+
+The Deployment Application is an OBC default application that sequences deployable actions after release and instructs the ADCS to begin detumbling.
+
+== Data Input
+
+* Receives data from Power Manager Application
+* Receives data from ADCS Application
+* Event message from Power Manager Application specifying sufficient power level reached
+* ADCS topic data for detumbling status
+
+== Data Output
+
+* Sends burn fet/burn wire pins high to deploy magnetometer (initial bootup)
+* Sends event message on SBN to ADCS application specifying detumbling procedure
+* Sends burn fet/burn wire pins high to deploy solar panels and antenna (initial only)
+* Sends event message over topic specifying deployment completed (initial only)
+* Sends commands to Communication App
+
+== Data Processing
+
+* Upon initial bootup sends burn fet/burn wire pins high to deploy magnetometer
+* Waits for event message from Power Manager Application specifying sufficient power level reached
+* Sends event message on SBN to ADCS application specifying detumbling procedure
+* Determines when detumbling is done by monitoring angular velocity and checking if it has maintained being under threshold for appropriate amount of time
+* Sends burn fet/burn wire pins high to deploy solar panels and antenna (initial only)
+* Sends event message over topic specifying deployment completed (initial only)
+
+== Integration Points
+
+* xref:power-manager-app.adoc[Power Manager Application]: Receives power level status
+* xref:ADCS-manager-app.adoc[ADCS Manager Application]: Sends detumbling commands and receives status
+* xref:communication-manager-app.adoc[Communication Manager Application]: Sends deployment commands
+* **SBN**: Sends event messages
+* **Hardware Interface**: Controls burn fet/burn wire pins

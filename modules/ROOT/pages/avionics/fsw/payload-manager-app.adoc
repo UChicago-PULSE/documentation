@@ -1,1 +1,31 @@
-= Payload Manager App
+= Payload Manager Application
+
+== Overview
+
+The Payload Manager Application is an OBC application that uses NASA's SBN to track the Payload Controller's state and relay key events during the PAT sequence.
+
+== Data Input
+
+* Reads application configuration table
+* Accepts input from the limit checker application in case of a detected fault
+* Reads incoming data from payload topics
+* Accepts requests to modify payload behavior
+
+== Data Output
+
+* Current payload health and state on a Payload topic
+* Request to the ADCS application for change of targeting offset
+
+== Data Processing
+
+* Monitors current state of the payload
+* Determines if bounds of FSM tracking are reached
+* If bounds are reached determines an offset for the ADCS
+* Handles and prioritizes requests for changes in payload behavior
+
+== Integration Points
+
+* xref:limit-checker-app.adoc[Limit Checker Application]: Receives fault notifications
+* xref:ADCS-manager-app.adoc[ADCS Manager Application]: Sends targeting offset requests
+* **SBN**: Tracks Payload Controller state
+* **Software Bus**: Publishes Payload topic data and reads payload topics

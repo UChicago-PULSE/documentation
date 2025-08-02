@@ -1,1 +1,23 @@
-= Laser Manager
+= Laser Manager Application
+
+== Overview
+
+The Laser Manager Application is a Payload Controller application that tracks state and drives both beacon and transmission lasers.
+
+== Data Input
+
+* Receive messages to turn on/off the laser (not sure if discrete units are required)
+
+== Data Output
+
+* Output event message on the SBN to Power Manager application (OBC) specifying that the laser should be turned on
+
+== Data Processing
+
+* Package signal to control laser (not much logic required)
+
+== Integration Points
+
+* **SBN**: Sends laser control requests to Power Manager Application
+* xref:power-manager-app.adoc[Power Manager Application]: Requests laser power activation
+* **Laser Hardware**: Direct control interface

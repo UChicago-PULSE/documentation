@@ -1,1 +1,37 @@
-= PAT App 
+= PAT Application
+
+== Overview
+
+The PAT Application is a Payload Controller application that intakes data from other applications and orchestrates the PAT sequence.
+
+== Data Input
+
+* Receive data from the Quadrant-Photodiode Manager on positioning
+* Receive relevant commands from Radio Manager
+* Receive position data from GPS Application
+* Accept telemetry from ground station
+
+== Data Output
+
+* Command the Laser Manager, FPGA Manager, and FSM Manager
+* Send positioning commands to the ADCS Manager
+* Log to Data-Collection Application
+
+== Data Processing
+
+* Maintain the PAT state throughout a sequence
+* Ingest all positioning data and output a desired position and orientation
+* Based on PAT state, send different data to the Laser and FPGA manager
+* Communicate with the payload manager
+
+== Integration Points
+
+* xref:quadcell-manager-app.adoc[Quadrant-Photodiode Manager Application]: Receives positioning data
+* xref:radio-manager-app.adoc[Radio Manager Application]: Receives commands
+* xref:gps-manager-app.adoc[GPS Manager Application]: Receives position data
+* xref:laser-manager.adoc[Laser Manager Application]: Sends laser commands
+* xref:fpga-manager-app.adoc[FPGA Manager Application]: Sends FPGA commands
+* xref:fsm-manager-app.adoc[FSM Manager Application]: Sends positioning commands
+* xref:ADCS-manager-app.adoc[ADCS Manager Application]: Sends positioning commands
+* xref:data-collection-app.adoc[Data-Collection Application]: Logs data
+* **Ground Station**: Receives telemetry 

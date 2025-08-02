@@ -1,1 +1,26 @@
-= Radio Manager App
+= Radio Manager Application
+
+== Overview
+
+The Radio Manager Application is an OBC default application that manages radio state and queues and transmits downlink packets.
+
+== Data Input
+
+* Read command output from radio and radio health data using UART
+* Accepts input from the limit checker application in case of a detected fault
+
+== Data Output
+
+* Send satellite telemetry packets to the radio module
+* Transmit heartbeat signals to the watchdog application
+
+== Data Processing
+
+* Parse data stream into a formatted command, and publish this command on the software bus
+
+== Integration Points
+
+* **UART Interface**: Communication with radio hardware
+* xref:limit-checker-app.adoc[Limit Checker Application]: Receives fault notifications
+* xref:watchdog-monitor-app.adoc[Watchdog Monitor Application]: Sends heartbeat signals
+* **Software Bus**: Publishes formatted commands

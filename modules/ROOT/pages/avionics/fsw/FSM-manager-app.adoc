@@ -1,1 +1,25 @@
-= FSM Manager App 
+= FSM Manager Application
+
+== Overview
+
+The Fast-Steering Mirror (FSM) Manager Application is a Payload Controller application that performs calibration of, keeps track of current state of, and commands the FSM.
+
+== Data Input
+
+* PAT Application messages over SBN
+
+== Data Output
+
+* Output digital message to FSM driver through SPI
+
+== Data Processing
+
+* Given a desired angle, determine the correct motor activations
+* Calibrate the FSM
+* Keeps track of FSM angle
+
+== Integration Points
+
+* xref:pat-app.adoc[PAT Application]: Receives positioning commands
+* **SPI Interface**: Controls FSM driver
+* **FSM Hardware**: Direct control and calibration interface

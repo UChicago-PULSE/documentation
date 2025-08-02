@@ -1,1 +1,24 @@
-= FPGA Manager App 
+= FPGA Manager Application
+
+== Overview
+
+The FPGA Manager Application is a Payload Controller application that handles laser-modulation FPGA I/O and telemetry.
+
+== Data Input
+
+* Ethernet?
+
+== Data Output
+
+* Use SPI interface to output data to flash memory. Specifically, the data is going to be used to control the polarization of the FPGA, since it will pulse on/off two different lasers that are polarized differently
+
+== Data Processing
+
+* Relinquish control of flash memory input to FPGA
+* FPGA re-engineering
+
+== Integration Points
+
+* **SPI Interface**: Controls flash memory
+* **FPGA Hardware**: Direct control interface
+* **Flash Memory**: Data storage and control 

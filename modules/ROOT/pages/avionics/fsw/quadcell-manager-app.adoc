@@ -1,1 +1,23 @@
-= Quadcell Manager App 
+= Quadrant-Photodiode Manager Application
+
+== Overview
+
+The Quadrant-Photodiode Manager Application is a Payload Controller application that processes signals from the Quadrant-Photodiode (QPD) and provides necessary transformations of the data for other applications.
+
+== Data Input
+
+* Read signals from QPD (what is hardware interface?)
+* Convert these signals to a measurement of misalignment
+
+== Data Output
+
+* Output to PAT Application
+
+== Data Processing
+
+* Conversion of signals to a measurement
+
+== Integration Points
+
+* xref:pat-app.adoc[PAT Application]: Provides positioning data
+* **QPD Hardware**: Reads photodiode signals

@@ -1,1 +1,30 @@
-= ADCS Manager App
+= ADCS Manager Application
+
+== Overview
+
+The ADCS Manager Application is an OBC default application that manages the Attitude Determination and Control System (ADCS) module. It packages messages to match ADCS standards and monitors satellite orientation, velocity, and position data, performing common transformations on the data.
+
+== Data Input
+
+* Reads application configuration table
+* Receives data from Communication Application designated as originating from ADCS module
+* Reads GPS topic for current position
+* Accepts input from the limit checker application in case of a detected fault
+
+== Data Output
+
+* Sends packaged ADCS commands to Communication Application for transmission on CAN bus
+* Publishes ADCS data on an ADCS topic
+
+== Data Processing
+
+* Packages messages to match ADCS standards
+* Monitors the current satellite orientation, velocity, and position data output by the ADCS
+* Performs common transformations on the data
+
+== Integration Points
+
+* xref:communication-manager-app.adoc[Communication Manager App]: Receives ADCS module data and sends ADCS commands
+* xref:gps-manager-app.adoc[GPS Manager App]: Reads current position data
+* xref:limit-checker-app.adoc[Limit Checker App]: Receives fault notifications
+* **Software Bus**: Publishes ADCS topic data

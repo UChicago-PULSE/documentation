@@ -1,1 +1,26 @@
-= Watchdog Monitor App
+= Watchdog Monitor Application
+
+== Overview
+
+The Watchdog Monitor Application sends heartbeats to the external watchdog timer and exchanges heartbeats with the Payload Controller to ensure both computers remain operational, enabling fail-over if the OBC becomes unresponsive.
+
+== Data Input
+
+* Incoming heartbeat signal from Payload Controller Application
+* Do we need a signal from the watchdog itself?
+
+== Data Output
+
+* Heartbeat signal to the watchdog timer on I2C and payload controller on CAN
+* Alter watchdog timeout length
+
+== Data Processing
+
+* Reboot payload controller if unresponsive through a reset line
+
+== Integration Points
+
+* **I2C Interface**: Sends heartbeat to watchdog timer
+* **CAN Interface**: Exchanges heartbeats with Payload Controller
+* **Reset Line**: Controls payload controller reboot
+* **Payload Controller**: Monitors heartbeat status
