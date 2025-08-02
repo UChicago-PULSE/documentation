@@ -18,7 +18,7 @@ The Data-Collection Application logs Payload data for post-pass down-link and an
 
 == Integration Points
 
-* xref:pat-app.adoc[PAT Application]: Receives event logs
+* xref:PAT-app.adoc[PAT Application]: Receives event logs
 * xref:watchdog-monitor-app.adoc[Watchdog Monitor Application]: Receives event logs
 * xref:radio-manager-app.adoc[Radio Manager Application]: Sends logs for transmission
 * **Payload Controller**: Receives event logs from all critical components

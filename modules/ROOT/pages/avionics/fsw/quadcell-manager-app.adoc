@@ -19,5 +19,5 @@ The Quadrant-Photodiode Manager Application is a Payload Controller application 
 
 == Integration Points
 
-* xref:pat-app.adoc[PAT Application]: Provides positioning data
+* xref:PAT-app.adoc[PAT Application]: Provides positioning data
 * **QPD Hardware**: Reads photodiode signals

@@ -20,6 +20,6 @@ The Fast-Steering Mirror (FSM) Manager Application is a Payload Controller appli
 
 == Integration Points
 
-* xref:pat-app.adoc[PAT Application]: Receives positioning commands
+* xref:PAT-app.adoc[PAT Application]: Receives positioning commands
 * **SPI Interface**: Controls FSM driver
 * **FSM Hardware**: Direct control and calibration interface

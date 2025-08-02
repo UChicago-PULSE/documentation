@@ -28,10 +28,10 @@ The PAT Application is a Payload Controller application that intakes data from o
 
 * xref:quadcell-manager-app.adoc[Quadrant-Photodiode Manager Application]: Receives positioning data
 * xref:radio-manager-app.adoc[Radio Manager Application]: Receives commands
-* xref:gps-manager-app.adoc[GPS Manager Application]: Receives position data
+* xref:GPS-manager-app.adoc[GPS Manager Application]: Receives position data
 * xref:laser-manager.adoc[Laser Manager Application]: Sends laser commands
-* xref:fpga-manager-app.adoc[FPGA Manager Application]: Sends FPGA commands
-* xref:fsm-manager-app.adoc[FSM Manager Application]: Sends positioning commands
+* xref:FPGA-manager-app.adoc[FPGA Manager Application]: Sends FPGA commands
+* xref:FSM-manager-app.adoc[FSM Manager Application]: Sends positioning commands
 * xref:ADCS-manager-app.adoc[ADCS Manager Application]: Sends positioning commands
 * xref:data-collection-app.adoc[Data-Collection Application]: Logs data
 * **Ground Station**: Receives telemetry 

@@ -24,7 +24,7 @@ The ADCS Manager Application is an OBC default application that manages the Atti
 
 == Integration Points
 
-* xref:communication-manager-app.adoc[Communication Manager App]: Receives ADCS module data and sends ADCS commands
-* xref:gps-manager-app.adoc[GPS Manager App]: Reads current position data
-* xref:limit-checker-app.adoc[Limit Checker App]: Receives fault notifications
+* xref:communication-manager-app.adoc[Communication Manager Application]: Receives ADCS module data and sends ADCS commands
+* xref:GPS-manager-app.adoc[GPS Manager Application]: Reads current position data
+* xref:limit-checker-app.adoc[Limit Checker Application]: Receives fault notifications
 * **Software Bus**: Publishes ADCS topic data
