@@ -37,4 +37,4 @@ The GPS Position Manager Application is an OBC default application that interfac
 
 == Integration Points with Other Software
 
-* **Software Bus**: Publishes GPS topic data
+* xref:cFS-sfotware-bus.adoc[Software Bus]: Publishes GPS topic data

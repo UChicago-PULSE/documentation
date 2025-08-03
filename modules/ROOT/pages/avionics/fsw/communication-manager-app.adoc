@@ -38,4 +38,4 @@ The Communication Manager Application serves as the primary interface to the CAN
 
 == Integration Points with Other Software
 
-* **Software Bus**: Receives commands from applications and routes to appropriate hardware interfaces
+* xref:cFS-sfotware-bus.adoc[Software Bus]: Receives commands from applications and routes to appropriate hardware interfaces

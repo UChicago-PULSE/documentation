@@ -12,4 +12,4 @@ The CFDP (CCSDS File Delivery Protocol) Application is a cFS application for pro
 
 == Integration Points with Other Software
 
-* **Software Bus**: Maps CFDP PDUs on and off the cFS software bus
+* xref:cFS-sfotware-bus.adoc[Software Bus]: Maps CFDP PDUs on and off the cFS software bus

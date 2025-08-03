@@ -38,4 +38,4 @@ The ADCS Manager Application is an OBC default application that manages the Atti
 
 == Integration Points with Other Software
 
-* **Software Bus**: Publishes ADCS topic data
+* xref:cFS-sfotware-bus.adoc[Software Bus]: Publishes ADCS topic data

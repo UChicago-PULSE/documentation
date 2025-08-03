@@ -37,4 +37,4 @@ The Payload Manager Application is an OBC application that uses NASA's SBN to tr
 
 == Integration Points with Other Software
 
-* **Software Bus**: Publishes Payload topic data and reads payload topics
+* xref:cFS-sfotware-bus.adoc[Software Bus]: Publishes Payload topic data and reads payload topics

@@ -42,4 +42,4 @@ The Power Manager Application is an OBC default application that monitors the PD
 
 == Integration Points with Other Software
 
-* **Software Bus**: Publishes Power topic data
+* xref:cFS-sfotware-bus.adoc[Software Bus]: Publishes Power topic data

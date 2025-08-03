@@ -34,4 +34,4 @@ The Radio Manager Application is an OBC default application that manages radio s
 
 == Integration Points with Other Software
 
-* **Software Bus**: Publishes formatted commands
+* xref:cFS-sfotware-bus.adoc[Software Bus]: Publishes formatted commands

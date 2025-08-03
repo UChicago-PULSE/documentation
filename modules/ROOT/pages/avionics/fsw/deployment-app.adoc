@@ -44,4 +44,4 @@ The Deployment Application is an OBC default application that sequences deployab
 
 == Integration Points with Other Software
 
-* **Software Bus**: Sends event messages
+* xref:cFS-sfotware-bus.adoc[Software Bus]: Sends event messages

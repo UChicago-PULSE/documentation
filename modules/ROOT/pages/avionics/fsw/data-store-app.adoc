@@ -21,4 +21,4 @@ The Data Store (DS) Application is used for storing software bus messages in fil
 
 == Integration Points with Other Software
 
-* **Software Bus**: Receives messages from all applications for storage
+* xref:cFS-sfotware-bus.adoc[Software Bus]: Receives messages from all applications for storage
