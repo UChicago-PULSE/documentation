@@ -23,9 +23,23 @@ The Power Manager Application is an OBC default application that monitors the PD
 * Checks if current parameters allow for a power bus to be enabled when requested
 * Determines when an acceptable power level is reached that allows for detumbling
 
-== Integration Points
+== Integration Points with PULSE-A Applications
 
-* **I2C Interface**: Direct communication with power hardware
-* xref:limit-checker-app.adoc[Limit Checker Application]: Receives fault notifications
+* xref:deployment-app.adoc[Deployment Application]: Provides power level status
+* xref:ADCS-manager-app.adoc[ADCS Manager Application]: Receives power activation requests
+* xref:GPS-manager-app.adoc[GPS Manager Application]: Receives power activation requests
+* xref:radio-manager-app.adoc[Radio Manager Application]: Receives power activation requests
+* xref:payload-manager-app.adoc[Payload Manager Application]: Receives power activation requests
+
+== Integration Points with NASA Provided Applications
+
+* **SBN Application**: Connects to Software Bus Network (see xref:SBN-app.adoc[SBN Application])
+
+== Integration Points with Hardware
+
+* **Dedicated I2C Interface**: Direct communication with PDU hardware
+* **PDU**: Monitors and controls power distribution unit
+
+== Integration Points with Other Software
+
 * **Software Bus**: Publishes Power topic data
-* **Other Applications**: Receives power activation requests

@@ -16,9 +16,14 @@ The Data-Collection Application logs Payload data for post-pass down-link and an
 
 * Filter the events to keep all logs from select applications for the last X minutes
 
-== Integration Points
+== Integration Points with PULSE-A Applications
 
 * xref:PAT-app.adoc[PAT Application]: Receives event logs
-* xref:watchdog-monitor-app.adoc[Watchdog Monitor Application]: Receives event logs
-* xref:radio-manager-app.adoc[Radio Manager Application]: Sends logs for transmission
-* **Payload Controller**: Receives event logs from all critical components
+
+== Integration Points with NASA Provided Applications
+
+* xref:SBN-app.adoc[SBN Application]: Connects to Software Bus Network
+
+== Integration Points with Other Software
+
+* xref:cFS-sfotware-bus.adoc[Software Bus]: Publishes data collection status

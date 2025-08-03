@@ -18,6 +18,6 @@ The SBN application works by bridging the publish/subscribe messaging service, w
 
 * **Network Interface**: Connects to other cFS instances (Ethernet or other connection medium)
 
-== Integration with Other Software
+== Integration Points with Other Software
 
 * **cFE Software Bus**: Primary interface for message routing within each computer

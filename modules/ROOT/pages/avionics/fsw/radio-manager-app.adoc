@@ -18,9 +18,20 @@ The Radio Manager Application is an OBC default application that manages radio s
 
 * Parse data stream into a formatted command, and publish this command on the software bus
 
-== Integration Points
+== Integration Points with PULSE-A Applications
 
-* **UART Interface**: Communication with radio hardware
-* xref:limit-checker-app.adoc[Limit Checker Application]: Receives fault notifications
-* xref:watchdog-monitor-app.adoc[Watchdog Monitor Application]: Sends heartbeat signals
+* xref:communication-manager-app.adoc[Communication Manager Application]: Passes radio commands and receives radio data
+* xref:power-manager-app.adoc[Power Manager Application]: Requests power activation
+
+== Integration Points with NASA Provided Applications
+
+* **SBN Application**: Connects to Software Bus Network (see xref:SBN-app.adoc[SBN Application])
+* xref:limit-checker-app.adoc[Limit Checker Application]: Checks for faults in data
+
+== Integration Points with Hardware
+
+* **Radio Module**: Receives commands and provides telemetry data
+
+== Integration Points with Other Software
+
 * **Software Bus**: Publishes formatted commands

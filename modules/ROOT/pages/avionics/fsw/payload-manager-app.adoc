@@ -23,9 +23,18 @@ The Payload Manager Application is an OBC application that uses NASA's SBN to tr
 * If bounds are reached determines an offset for the ADCS
 * Handles and prioritizes requests for changes in payload behavior
 
-== Integration Points
+== Integration Points with PULSE-A Applications
 
-* xref:limit-checker-app.adoc[Limit Checker Application]: Receives fault notifications
-* xref:ADCS-manager-app.adoc[ADCS Manager Application]: Sends targeting offset requests
-* **SBN**: Tracks Payload Controller state
+* xref:power-manager-app.adoc[Power Manager Application]: Requests power activation
+
+== Integration Points with NASA Provided Applications
+
+* **SBN Application**: Tracks Payload Controller state (see xref:SBN-app.adoc[SBN Application])
+
+== Integration Points with Hardware
+
+* **Payload Controller**: Monitors payload hardware state
+
+== Integration Points with Other Software
+
 * **Software Bus**: Publishes Payload topic data and reads payload topics

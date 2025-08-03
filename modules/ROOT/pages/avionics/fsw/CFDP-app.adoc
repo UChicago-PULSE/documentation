@@ -8,7 +8,8 @@ The CFDP (CCSDS File Delivery Protocol) Application is a cFS application for pro
 
 * **Data Store Application**: Transfers files created by DS from onboard storage to ground stations (see xref:data-store-app.adoc[Data Store Application])
 * **File Manager Application**: Works with FM for file system operations (see xref:file-manager-app.adoc[File Manager Application])
+* xref:SBN-app.adoc[SBN Application]: Connects to Software Bus Network
 
-== Integration with Other Software
+== Integration Points with Other Software
 
 * **Software Bus**: Maps CFDP PDUs on and off the cFS software bus

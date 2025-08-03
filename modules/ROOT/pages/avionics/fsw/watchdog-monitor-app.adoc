@@ -18,9 +18,19 @@ The Watchdog Monitor Application sends heartbeats to the external watchdog timer
 
 * Reboot payload controller if unresponsive through a reset line
 
-== Integration Points
+== Integration Points with PULSE-A Applications
 
-* **I2C Interface**: Sends heartbeat to watchdog timer
-* **CAN Interface**: Exchanges heartbeats with Payload Controller
-* **Reset Line**: Controls payload controller reboot
-* **Payload Controller**: Monitors heartbeat status
+* xref:communication-manager-app.adoc[Communication Manager Application]: Exchanges heartbeat data for radio
+
+== Integration Points with NASA Provided Applications
+
+* xref:SBN-app.adoc[SBN Application]: Connects to Software Bus Network
+
+== Integration Points with Hardware
+
+* Watchdog GPIO pins: Sends heartbeat signals
+* Reset line: Controls payload controller reboot
+
+== Integration Points with Other Software
+
+* xref:cFS-sfotware-bus.adoc[Software Bus]: Publishes watchdog status

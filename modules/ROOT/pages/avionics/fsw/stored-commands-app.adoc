@@ -11,3 +11,7 @@ The Stored Commands (SC) Application allows a system to be autonomously commande
 == Integration Points with Hardware
 
 * **Scheduler**: Clocked by 1 Hz input from scheduler application
+
+== Integration Points with Other Software
+
+* xref:cFS-sfotware-bus.adoc[Software Bus]: Publishes command execution status and results

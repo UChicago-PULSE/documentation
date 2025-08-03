@@ -17,6 +17,6 @@ The Health and Safety (HS) Application provides functionality for Application Mo
 * **Hardware Interface**: Provides CPU aliveness indication
 * **System Hardware**: Monitors hardware health and safety parameters
 
-== Integration with Other Software
+== Integration Points with Other Software
 
 * **Event Monitoring System**: Tracks system events and health indicators 

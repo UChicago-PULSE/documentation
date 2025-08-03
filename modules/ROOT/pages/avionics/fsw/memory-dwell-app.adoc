@@ -8,6 +8,7 @@ The Memory Dwell (MD) Application monitors memory addresses accessed by the CPU.
 
 * **CPU**: Tracks memory addresses accessed by the processor
 
-== Integration with Other Software
+== Integration Points with Other Software
 
 * **Debugging and Analysis Tools**: Provides memory access data for development and troubleshooting
+* xref:cFS-sfotware-bus.adoc[Software Bus]: Publishes memory dwell data and status

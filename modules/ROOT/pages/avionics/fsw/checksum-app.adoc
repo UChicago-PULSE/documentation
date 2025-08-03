@@ -18,7 +18,8 @@ This application is critical for detecting memory corruption that could lead to 
 
 * **Memory Regions**: Monitors user-specified memory areas
 
-== Integration with Other Software
+== Integration Points with Other Software
 
 * **cFE Core**: Ensures core system integrity
 * **cFE Applications and Tables**: Monitors integrity of all cFE components
+* xref:cFS-sfotware-bus.adoc[Software Bus]: Publishes checksum status and results

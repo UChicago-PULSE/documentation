@@ -11,6 +11,12 @@
 
 === OBC Applications
 
+[.text-center]
+image::OBC_Lollipop.png[OBC Lollipop Diagram, width=800]
+
+[.text-center]
+*Figure 1: OBC Application Diagram*
+
 * xref:ADCS-manager-app.adoc[ADCS Manager Application] - Manages the Attitude Determination and Control System module
 * xref:communication-manager-app.adoc[Communication Manager Application] - Primary interface to the CAN bus, handles message queuing and prioritization
 * xref:deployment-app.adoc[Deployment Application] - Sequences deployable actions and manages detumbling procedures
@@ -21,6 +27,12 @@
 * xref:watchdog-monitor-app.adoc[Watchdog Monitor Application] - Manages watchdog timers and ensures system operational status
 
 === Payload Controller Applications
+
+[.text-center]
+image::Payload_Lollipop.png[Payload Lollipop Diagram, width=800]
+
+[.text-center]
+*Figure 2: Payload Controller Application Diagram*
 
 * xref:data-collection-app.adoc[Data-Collection Application] - Logs payload data for post-pass analysis and downlink
 * xref:FPGA-manager-app.adoc[FPGA Manager Application] - Handles laser-modulation FPGA I/O and telemetry

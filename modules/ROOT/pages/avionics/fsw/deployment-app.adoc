@@ -28,10 +28,20 @@ The Deployment Application is an OBC default application that sequences deployab
 * Sends burn fet/burn wire pins high to deploy solar panels and antenna (initial only)
 * Sends event message over topic specifying deployment completed (initial only)
 
-== Integration Points
+== Integration Points with PULSE-A Applications
 
 * xref:power-manager-app.adoc[Power Manager Application]: Receives power level status
 * xref:ADCS-manager-app.adoc[ADCS Manager Application]: Sends detumbling commands and receives status
 * xref:communication-manager-app.adoc[Communication Manager Application]: Sends deployment commands
-* **SBN**: Sends event messages
-* **Hardware Interface**: Controls burn fet/burn wire pins
+
+== Integration Points with NASA Provided Applications
+
+* **SBN Application**: Sends event messages (see xref:SBN-app.adoc[SBN Application])
+
+== Integration Points with Hardware
+
+* **Burn FET/Burn Wire Pins**: Controls deployment mechanisms
+
+== Integration Points with Other Software
+
+* **Software Bus**: Sends event messages

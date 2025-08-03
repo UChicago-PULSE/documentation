@@ -24,7 +24,7 @@ The PAT Application is a Payload Controller application that intakes data from o
 * Based on PAT state, send different data to the Laser and FPGA manager
 * Communicate with the payload manager
 
-== Integration Points
+== Integration Points with PULSE-A Applications
 
 * xref:quadcell-manager-app.adoc[Quadrant-Photodiode Manager Application]: Receives positioning data
 * xref:radio-manager-app.adoc[Radio Manager Application]: Receives commands
@@ -34,4 +34,15 @@ The PAT Application is a Payload Controller application that intakes data from o
 * xref:FSM-manager-app.adoc[FSM Manager Application]: Sends positioning commands
 * xref:ADCS-manager-app.adoc[ADCS Manager Application]: Sends positioning commands
 * xref:data-collection-app.adoc[Data-Collection Application]: Logs data
-* **Ground Station**: Receives telemetry 
+
+== Integration Points with NASA Provided Applications
+
+* xref:SBN-app.adoc[SBN Application]: Connects to Software Bus Network
+
+== Integration Points with Hardware
+
+* Ground Station: Receives telemetry
+
+== Integration Points with Other Software
+
+* xref:cFS-sfotware-bus.adoc[Software Bus]: Publishes PAT status 

@@ -12,6 +12,6 @@ The Housekeeping (HK) Application is used for building and sending combined tele
 
 * **All NASA cFS Applications**: Combines telemetry from all applications (see xref:index.adoc#nasa-provided-cfs-applications[NASA Provided cFS Applications] section)
 
-== Integration with Other Software
+== Integration Points with Other Software
 
 * **Software Bus**: Receives individual application messages

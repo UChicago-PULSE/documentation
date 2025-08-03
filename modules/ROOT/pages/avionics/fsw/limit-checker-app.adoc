@@ -13,3 +13,7 @@ The Limit Checker (LC) Application monitors telemetry data points in a cFS syste
 * **Stored Commands Application**: Initiates RTS command scripts when thresholds are violated (see xref:stored-commands-app.adoc[Stored Commands Application])
 
 * **All NASA cFS Applications**: Monitors telemetry data from all applications (see xref:index.adoc#nasa-provided-cfs-applications[NASA Provided cFS Applications] section)
+
+== Integration Points with Other Software
+
+* xref:cFS-sfotware-bus.adoc[Software Bus]: Publishes limit violation events and status

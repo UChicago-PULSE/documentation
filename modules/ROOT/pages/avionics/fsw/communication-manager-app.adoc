@@ -20,8 +20,22 @@ The Communication Manager Application serves as the primary interface to the CAN
 * Prevents message collisions
 * Handles queuing and prioritization
 
-== Integration Points
+== Integration Points with PULSE-A Applications
+
+* xref:ADCS-manager-app.adoc[ADCS Manager Application]: Handles ADCS module communication
+* xref:GPS-manager-app.adoc[GPS Manager Application]: Handles GPS module communication
+* xref:radio-manager-app.adoc[Radio Manager Application]: Handles radio module communication
+* xref:deployment-app.adoc[Deployment Application]: Handles deployment commands
+
+== Integration Points with NASA Provided Applications
+
+* **SBN Application**: Connects to Software Bus Network (see xref:SBN-app.adoc[SBN Application])
+
+== Integration Points with Hardware
 
 * **CAN Bus**: Primary interface for hardware communication
-* **SBN**: Software Bus Network integration
-* **All Applications**: Provides communication services to other applications
+* **I2C Bus**: Handles I2C communication protocols
+
+== Integration Points with Other Software
+
+* **Software Bus**: Receives commands from applications and routes to appropriate hardware interfaces

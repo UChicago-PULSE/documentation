@@ -17,8 +17,19 @@ The FPGA Manager Application is a Payload Controller application that handles la
 * Relinquish control of flash memory input to FPGA
 * FPGA re-engineering
 
-== Integration Points
+== Integration Points with PULSE-A Applications
 
-* **SPI Interface**: Controls flash memory
-* **FPGA Hardware**: Direct control interface
-* **Flash Memory**: Data storage and control 
+* xref:PAT-app.adoc[PAT Application]: Receives commands for FPGA control
+
+== Integration Points with NASA Provided Applications
+
+* xref:SBN-app.adoc[SBN Application]: Connects to Software Bus Network
+
+== Integration Points with Hardware
+
+* SPI Interface: Controls flash memory for FPGA
+* FPGA Hardware Interface: Controls FPGA operations
+
+== Integration Points with Other Software
+
+* xref:cFS-sfotware-bus.adoc[Software Bus]: Publishes FPGA status 

@@ -16,3 +16,4 @@ The Memory Manager (MM) Application is used for the loading and dumping system m
 
 * **PSP and OSAL**: Interfaces with Platform Support Package and Operating System Abstraction Layer
 * **File System**: Loads and dumps memory from files
+* xref:cFS-sfotware-bus.adoc[Software Bus]: Publishes memory management status and results

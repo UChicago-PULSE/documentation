@@ -19,6 +19,6 @@ The Data Store (DS) Application is used for storing software bus messages in fil
 
 * **Storage Device**: Writes files to solid state recorder or other storage media
 
-== Integration with Other Software
+== Integration Points with Other Software
 
 * **Software Bus**: Receives messages from all applications for storage
