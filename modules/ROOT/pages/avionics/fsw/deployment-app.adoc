@@ -36,7 +36,7 @@ The Deployment Application is an OBC default application that sequences deployab
 
 == Integration Points with NASA Provided Applications
 
-* **SBN Application**: Sends event messages (see xref:SBN-app.adoc[SBN Application])
+* xref:SBN-app.adoc[SBN Application]: Connects to Software Bus Network
 
 == Integration Points with Hardware
 

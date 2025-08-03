@@ -33,7 +33,7 @@ The Power Manager Application is an OBC default application that monitors the PD
 
 == Integration Points with NASA Provided Applications
 
-* **SBN Application**: Connects to Software Bus Network (see xref:SBN-app.adoc[SBN Application])
+* xref:SBN-app.adoc[SBN Application]: Connects to Software Bus Network
 
 == Integration Points with Hardware
 

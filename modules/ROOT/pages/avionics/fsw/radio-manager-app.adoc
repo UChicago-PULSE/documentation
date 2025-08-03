@@ -25,7 +25,7 @@ The Radio Manager Application is an OBC default application that manages radio s
 
 == Integration Points with NASA Provided Applications
 
-* **SBN Application**: Connects to Software Bus Network (see xref:SBN-app.adoc[SBN Application])
+* xref:SBN-app.adoc[SBN Application]: Connects to Software Bus Network
 * xref:limit-checker-app.adoc[Limit Checker Application]: Checks for faults in data
 
 == Integration Points with Hardware

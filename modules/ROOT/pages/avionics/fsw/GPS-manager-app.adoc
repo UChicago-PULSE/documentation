@@ -28,7 +28,7 @@ The GPS Position Manager Application is an OBC default application that interfac
 
 == Integration Points with NASA Provided Applications
 
-* **SBN Application**: Connects to Software Bus Network (see xref:SBN-app.adoc[SBN Application])
+* xref:SBN-app.adoc[SBN Application]: Connects to Software Bus Network
 * xref:limit-checker-app.adoc[Limit Checker Application]: Receives fault notifications
 
 == Integration Points with Hardware
