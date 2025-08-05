@@ -1,1 +1,43 @@
 = D2S2 Simulator
+
+== Overview
+
+D2S2 (Dawn to Dusk Simulator) is a piece of software provided by CubeSpace, the manufacturer of the ADCS used in the PULSE-A Bus. D2S2 allows for hardware-in-the-loop testing to be performed with the ADCS Development Core Unit, a Windows computer, and the OBC.
+
+== Hardware-in-the-Loop Testing
+
+=== Test Setup
+D2S2 enables testing with actual hardware components:
+* **ADCS Development Core Unit** - Hardware that closely matches flight ADCS
+* **Windows Computer** - Ground control and simulation interface
+* **OBC** - On-Board Computer for flight software testing
+
+=== Configuration Testing
+The simulator allows for testing of different configurations and estimation modes on hardware that is closer to the actual hardware of the CubeSat, providing more realistic validation than pure software simulation.
+
+== Power Analysis
+
+=== Solar Power Generation
+D2S2 can estimate solar power generation based on orbital position, satellite orientation, and solar panel configuration.
+
+=== ADCS Power Usage
+The software can estimate power usage from the ADCS components, including:
+* Sensor power consumption
+* Actuator power requirements
+* Control system processing power
+
+== Benefits for PULSE-A
+
+* **Realistic Hardware Testing** - Test with actual ADCS hardware components
+* **Configuration Validation** - Verify ADCS settings and modes before flight
+* **Power Budget Verification** - Ensure power requirements are within mission constraints
+* **System Integration** - Test OBC and ADCS communication
+* **Risk Reduction** - Identify hardware compatibility issues early
+
+== Integration with PULSE-A Development
+
+D2S2 provides a critical bridge between software simulation and actual flight hardware, allowing the PULSE-A team to:
+* Validate ADCS performance with realistic hardware
+* Test power management strategies
+* Verify communication protocols between OBC and ADCS
+* Optimize control algorithms for actual hardware characteristics

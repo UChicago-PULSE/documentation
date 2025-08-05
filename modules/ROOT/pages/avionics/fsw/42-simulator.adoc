@@ -1,1 +1,39 @@
 = 42 Simulator
+
+== Overview
+
+42 is a comprehensive satellite ADCS and orbital dynamics simulation software developed by Eric Stoneking and others at Goddard Space Flight Center. 42 provides a high-fidelity orbital simulation of multi-body satellite dynamics and has built-in systems for simulating CubeSats.
+
+== Capabilities
+
+=== Orbital Dynamics Simulation
+42 provides high-fidelity simulation of multi-body satellite dynamics, allowing for detailed analysis of orbital behavior and satellite motion in various orbital conditions.
+
+=== ADCS Component Simulation
+The simulator includes built-in systems for simulating vital control components:
+* **Magnetorquers** - Magnetic control systems
+* **Reaction Wheels** - Momentum control devices
+* **Star Trackers** - Attitude determination sensors
+* **Sun Sensors** - Solar reference sensors
+
+=== Noise and Realism
+42 allows for various levels of noise to be added to sensor data and controls torquing components with that data, providing realistic simulation conditions that closely match actual flight environments.
+
+=== Optical Integration
+42 is open source wich allows the team to integrate the simulation with the optical simulation software Zemax in order to test and validate the satellite's PAT sequence. This coupled simulation of body dynamics and optics is essential for our laser communication experiment.
+
+== PULSE-A Integration
+
+=== cFS Communication
+A telemetry communication system between 42 and the cFS flight software bus has been developed, allowing for deeper testing of orbital simulation with the cFS framework.
+
+=== PAT Sequence Validation
+NASA's open source 42 simulator integrated with Zemax allows for the coupled simulation of body dynamics and optics for our experiment, providing critical validation of the Pointing, Acquisition, and Tracking sequence.
+
+== Benefits for PULSE-A
+
+* **High-Fidelity Testing** - Realistic simulation of orbital dynamics and ADCS behavior
+* **Hardware Validation** - Test control algorithms before flight
+* **PAT Sequence Development** - Validate pointing and tracking algorithms
+* **System Integration** - Test cFS communication and SBN connectivity
+* **Risk Reduction** - Identify and resolve issues before launch
