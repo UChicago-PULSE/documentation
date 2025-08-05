@@ -1,1 +1,5 @@
 = PULSE-A Mission Overview
+
+image::projectmap.svg[]
+
+image::orgchart.svg[]
