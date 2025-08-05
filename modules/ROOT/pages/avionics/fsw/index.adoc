@@ -4,6 +4,7 @@
 
 * link:cFS-general.html[cFS] - Core Flight System general documentation
 * link:cFS-sfotware-bus.html[cFS Software Bus] - Software bus documentation
+* link:CSP.html[CSP] - Cubesat Space Protocol documentation
 * link:I2C.html[I2C] - I2C interface documentation
 * link:parsec.html[Parsec] - Parsec framework documentation
 * link:tailscale.html[Tailscale] - Tailscale networking documentation

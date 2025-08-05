@@ -1,0 +1,96 @@
+= Cubesat Space Protocol (CSP)
+
+== What is CSP?
+
+Cubesat Space Protocol (CSP) is a small protocol stack written in C, designed to ease communication between distributed embedded systems in smaller networks, such as Cubesats. The design follows the TCP/IP model and includes a transport protocol, a routing protocol and several MAC-layer interfaces. The core of libcsp includes a router, a connection oriented socket API and message/connection pools.
+
+== Core Architecture
+
+=== Protocol Design
+The protocol is based on a very lightweight header containing both transport and network-layer information. Its implementation is designed for, but not limited to, embedded systems with very limited CPU and memory resources. The implementation is written in GNU C and for our mission will be used with Linux which is supported out of the box.
+
+=== Network Model
+The protocol gives developers of cubesats the same features of a TCP/IP stack, but without extra features that cause the huge overhead of the IP header. The small footprint and simple implementation allows even a small 8-bit system to be fully connected on the network. This allows all subsystems to provide their services on the same network level, without any master node required.
+
+== Service-Oriented Architecture
+
+Using a service oriented architecture has several advantages compared to the traditional master/slave topology used on many cubesats:
+
+=== Standardized Network Protocol
+All subsystems can communicate with each other (multi-master), enabling flexible communication patterns.
+
+=== Service Loose Coupling
+Services maintain a relationship that minimizes dependencies between subsystems, making the system more modular and maintainable.
+
+=== Service Abstraction
+Beyond descriptions in the service contract, services hide logic from the outside world, providing clean interfaces.
+
+=== Service Reusability
+Logic is divided into services with the intention of promoting reuse across different subsystems.
+
+=== Service Autonomy
+Services have control over the logic they encapsulate, allowing for independent development and testing.
+
+=== Service Redundancy
+Easily add redundant services to the bus, improving system reliability.
+
+=== Reduces Single Point of Failure
+The complexity is moved from a single master node to several well defined services on the network, improving fault tolerance.
+
+== Key Features
+
+The implementation of libcsp is written with simplicity in mind, but its compile time configuration allows it to have some rather advanced features as well:
+
+* **Thread Safe Socket API** - Safe concurrent access to network resources
+* **Router Task with Quality of Services** - Prioritized message routing
+* **Connection-oriented Operation** - Reliable communication following RFC 908 and 1151
+* **Connection-less Operation** - Fast, lightweight communication similar to UDP
+* **ICMP-like Requests** - Ping and buffer status monitoring
+* **Loopback Interface** - Local testing and debugging capabilities
+* **Very Small Footprint** - Minimal code and memory requirements
+* **Zero-copy Buffer and Queue System** - Efficient memory usage
+* **Modular Network Interface System** - Easy to add new communication interfaces
+* **OS Abstraction** - Currently ported to FreeRTOS, Zephyr, and Linux
+* **Broadcast Traffic** - Efficient group communication
+* **Promiscuous Mode** - Network monitoring and debugging
+
+== PULSE-A Implementation
+
+For PULSE-A, CSP provides the communication foundation for our distributed system architecture:
+
+=== Multi-Interface Communication
+Our mission uses CSP to communicate with the radio, GPS, and ADCS all over CAN with an I2C backup, leveraging CSP's built-in routing over CAN functionality.
+
+=== Integration with cFS
+CSP is implemented as a C library that will be imported and integrated into our cFS framework. This allows our flight software applications to leverage CSP's networking capabilities while maintaining the modular architecture and development benefits of cFS.
+
+=== CAN Fragmentation Protocol
+CSP includes a built-in CAN fragmentation protocol that automatically handles the segmentation and reassembly of large messages that exceed the CAN frame size limit. This ensures reliable transmission of complex commands and data packets between subsystems without requiring manual message splitting at the application level.
+
+=== Network Topology
+* **Primary Interface** - CAN bus for high-speed, reliable communication
+* **Backup Interface** - I2C bus for redundancy and fault tolerance
+* **Routing** - CSP's built-in routing capabilities handle message forwarding between interfaces
+* **Fragmentation** - Automatic handling of large messages over CAN bus
+
+=== Subsystem Integration
+* **Radio Manager** - Communicates with radio hardware via CSP
+* **GPS Manager** - Interfaces with GNSS receiver through CSP
+* **ADCS Manager** - Controls attitude determination and control systems via CSP
+* **Communication Manager** - Orchestrates CSP communication and handles interface switching
+
+== Benefits for PULSE-A
+
+* **Reliability** - Redundant communication paths (CAN + I2C)
+* **Flexibility** - Easy to add new subsystems or modify communication patterns
+* **Efficiency** - Lightweight protocol minimizes overhead on embedded systems
+* **Standards Compliance** - Well-defined protocol with proven space heritage
+* **Debugging** - Built-in monitoring and diagnostic capabilities
+* **Scalability** - Can easily expand to additional subsystems as needed
+
+== Related Documentation
+
+* xref:communication-manager-app.adoc[Communication Manager Application] - Manages CSP communication
+* xref:radio-manager-app.adoc[Radio Manager Application] - Uses CSP for radio communication
+* xref:GPS-manager-app.adoc[GPS Manager Application] - Uses CSP for GPS communication
+* xref:ADCS-manager-app.adoc[ADCS Manager Application] - Uses CSP for ADCS communication
