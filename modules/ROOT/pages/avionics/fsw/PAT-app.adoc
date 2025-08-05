@@ -24,6 +24,16 @@ The PAT Application is a Payload Controller application that intakes data from o
 * Based on PAT state, send different data to the Laser and FPGA manager
 * Communicate with the payload manager
 
+[.text-center]
+++++
+<div style="overflow-x:auto; border:1px solid #ccc; padding:0.5em;">
+  <img src="../../images/PAT_Diagram.png" alt="PAT Sequence Diagram" style="width:20000px;">
+</div>
+++++
+
+[.text-center]
+*Figure 1: PAT Sequence Diagram (scroll within box to view full diagram)*
+
 == Integration Points with PULSE-A Applications
 
 * link:quadcell-manager-app.html[Quadrant-Photodiode Manager Application]: Receives positioning data
