@@ -8,6 +8,7 @@ D2S2 (Dawn to Dusk Simulator) is a piece of software provided by CubeSpace, the 
 
 === Test Setup
 D2S2 enables testing with actual hardware components:
+
 * **ADCS Development Core Unit** - Hardware that closely matches flight ADCS
 * **Windows Computer** - Ground control and simulation interface
 * **OBC** - On-Board Computer for flight software testing
