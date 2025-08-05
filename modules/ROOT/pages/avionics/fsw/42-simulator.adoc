@@ -37,3 +37,9 @@ NASA's open source 42 simulator integrated with Zemax allows for the coupled sim
 * **PAT Sequence Development** - Validate pointing and tracking algorithms
 * **System Integration** - Test cFS communication and SBN connectivity
 * **Risk Reduction** - Identify and resolve issues before launch
+
+[.text-center]
+image::42_Screenshot.png[42 Simulator Screenshot, width=800]
+
+[.text-center]
+*Figure 1: 42 Simulator*
