@@ -26,8 +26,8 @@ The PAT Application is a Payload Controller application that intakes data from o
 
 [.text-center]
 ++++
-<div style="overflow-x:auto; border:1px solid #ccc; padding:0.5em; height:1000px;">
-  <img src="../../_images/PAT_Diagram.png" alt="PAT Sequence Diagram" style="width:2000px;">
+<div style="overflow-x:auto; border:1px solid #ccc; padding:0.5em; height:500px;">
+  <img src="../../_images/PAT_Diagram.svg" alt="PAT Sequence Diagram" style="width:2000px;">
 </div>
 ++++
 
