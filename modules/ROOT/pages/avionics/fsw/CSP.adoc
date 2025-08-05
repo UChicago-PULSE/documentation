@@ -59,7 +59,7 @@ The implementation of libcsp is written with simplicity in mind, but its compile
 For PULSE-A, CSP provides the communication foundation for our distributed system architecture:
 
 === Multi-Interface Communication
-Our mission uses CSP to communicate with the radio, GPS, and ADCS all over CAN with an I2C backup, leveraging CSP's built-in routing over CAN functionality.
+Our mission uses CSP to communicate with the radio, GPS, and ADCS all over CAN with an I^2^C backup, leveraging CSP's built-in routing over CAN functionality.
 
 === Integration with cFS
 CSP is implemented as a C library that will be imported and integrated into our cFS framework. This allows our flight software applications to leverage CSP's networking capabilities while maintaining the modular architecture and development benefits of cFS.
@@ -69,7 +69,7 @@ CSP includes a built-in CAN fragmentation protocol that automatically handles th
 
 === Network Topology
 * **Primary Interface** - CAN bus for high-speed, reliable communication
-* **Backup Interface** - I2C bus for redundancy and fault tolerance
+* **Backup Interface** - I^2^C bus for redundancy and fault tolerance
 * **Routing** - CSP's built-in routing capabilities handle message forwarding between interfaces
 * **Fragmentation** - Automatic handling of large messages over CAN bus
 
@@ -81,7 +81,7 @@ CSP includes a built-in CAN fragmentation protocol that automatically handles th
 
 == Benefits for PULSE-A
 
-* **Reliability** - Redundant communication paths (CAN + I2C)
+* **Reliability** - Redundant communication paths (CAN + I^2^C)
 * **Flexibility** - Easy to add new subsystems or modify communication patterns
 * **Efficiency** - Lightweight protocol minimizes overhead on embedded systems
 * **Standards Compliance** - Well-defined protocol with proven space heritage

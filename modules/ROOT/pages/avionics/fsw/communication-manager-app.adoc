@@ -33,8 +33,8 @@ The Communication Manager Application serves as the primary interface to the CAN
 
 == Integration Points with Hardware
 
-* **CAN Bus**: Primary interface for hardware communication
-* **I2C Bus**: Handles I2C communication protocols
+* **link:CAN.html[CAN Bus]**: Primary interface for hardware communication
+* **link:I2C.html[I^2^C Bus]**: Handles I^2^C communication protocols
 
 == Integration Points with Other Software
 

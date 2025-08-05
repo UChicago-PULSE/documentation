@@ -11,7 +11,7 @@ The Watchdog Monitor Application sends heartbeats to the external watchdog timer
 
 == Data Output
 
-* Heartbeat signal to the watchdog timer on I2C and payload controller on CAN
+* Heartbeat signal to the watchdog timer on I^2^C and payload controller on CAN
 * Alter watchdog timeout length
 
 == Data Processing

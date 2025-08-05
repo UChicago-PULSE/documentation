@@ -7,13 +7,13 @@ The Power Manager Application is an OBC default application that monitors the PD
 == Data Input
 
 * Reads application configuration table
-* Direct data input from dedicated power I2C line
+* Direct data input from dedicated power I^2^C line
 * Takes in input from other applications for activating power for devices
 * Accepts input from the limit checker application in case of a detected fault
 
 == Data Output
 
-* Direct data output over dedicated power I2C line
+* Direct data output over dedicated power I^2^C line
 * Current power state and telemetry output over Power topic
 
 == Data Processing
@@ -37,7 +37,7 @@ The Power Manager Application is an OBC default application that monitors the PD
 
 == Integration Points with Hardware
 
-* **Dedicated I2C Interface**: Direct communication with PDU hardware
+* **Dedicated link:I2C.html[I^2^C] Interface**: Direct communication with PDU hardware
 * **PDU**: Monitors and controls power distribution unit
 
 == Integration Points with Other Software

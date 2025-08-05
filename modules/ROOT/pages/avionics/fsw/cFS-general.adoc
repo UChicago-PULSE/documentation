@@ -94,7 +94,7 @@ The OBC runs the following custom applications:
 * link:payload-manager-app.html[Payload Manager Application] - Uses NASA's SBN to track the Payload Controller's state and relay key events during the PAT sequence
 * link:radio-manager-app.html[Radio Manager Application] - Manages radio state and queues and transmits downlink packets
 * link:deployment-app.html[Deployment Application] - Sequences deployable actions after release and instructs the ADCS to begin detumbling
-* link:communication-manager-app.html[Communication Manager Application] - Serves as the primary interface to the CAN bus and backup I2C bus, preventing message collisions and handling queuing and prioritization
+* link:communication-manager-app.html[Communication Manager Application] - Serves as the primary interface to the CAN bus and backup I^2^C bus, preventing message collisions and handling queuing and prioritization
 * link:watchdog-monitor-app.html[Watchdog Monitor Application] - Sends heartbeats to the external watchdog timer and exchanges heartbeats with the Payload Controller to ensure both computers remain operational, enabling fail-over if the OBC becomes unresponsive
 
 [.text-center]

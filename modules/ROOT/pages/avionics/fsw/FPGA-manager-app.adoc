@@ -27,7 +27,7 @@ The FPGA Manager Application is a Payload Controller application that handles la
 
 == Integration Points with Hardware
 
-* SPI Interface: Controls flash memory for FPGA
+* link:SPI.html[SPI] Interface: Controls flash memory for FPGA
 * FPGA Hardware Interface: Controls FPGA operations
 
 == Integration Points with Other Software

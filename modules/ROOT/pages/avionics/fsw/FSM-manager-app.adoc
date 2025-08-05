@@ -28,7 +28,7 @@ The Fast-Steering Mirror (FSM) Manager Application is a Payload Controller appli
 
 == Integration Points with Hardware
 
-* SPI Interface: Controls FSM driver
+* link:SPI.html[SPI] Interface: Controls FSM driver
 
 == Integration Points with Other Software
 
