@@ -24,9 +24,9 @@ The ADCS Manager Application is an OBC default application that manages the Atti
 
 == Integration Points with PULSE-A Applications
 
-* xref:communication-manager-app.adoc[Communication Manager Application]: Receives ADCS module data and sends ADCS commands
-* xref:GPS-manager-app.adoc[GPS Manager Application]: Reads current position data
-* xref:power-manager-app.adoc[Power Manager Application]: Requests power activation
+* link:communication-manager-app.html[Communication Manager Application]: Receives ADCS module data and sends ADCS commands
+* link:GPS-manager-app.html[GPS Manager Application]: Reads current position data
+* link:power-manager-app.html[Power Manager Application]: Requests power activation
 == Integration Points with NASA Provided Applications
 
 * xref:SBN-app.adoc[SBN Application]: Connects to Software Bus Network
