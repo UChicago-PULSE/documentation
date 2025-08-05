@@ -29,8 +29,8 @@ The ADCS Manager Application is an OBC default application that manages the Atti
 * link:power-manager-app.html[Power Manager Application]: Requests power activation
 == Integration Points with NASA Provided Applications
 
-* xref:SBN-app.adoc[SBN Application]: Connects to Software Bus Network
-* xref:limit-checker-app.adoc[Limit Checker Application]: Receives fault notifications
+* link:SBN-app.html[SBN Application]: Connects to Software Bus Network
+* link:limit-checker-app.html[Limit Checker Application]: Receives fault notifications
 
 == Integration Points with Hardware
 
@@ -38,4 +38,4 @@ The ADCS Manager Application is an OBC default application that manages the Atti
 
 == Integration Points with Other Software
 
-* xref:cFS-sfotware-bus.adoc[Software Bus]: Publishes ADCS topic data
+* link:cFS-sfotware-bus.html[Software Bus]: Publishes ADCS topic data

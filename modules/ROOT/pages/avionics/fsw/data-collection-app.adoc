@@ -18,12 +18,12 @@ The Data-Collection Application logs Payload data for post-pass down-link and an
 
 == Integration Points with PULSE-A Applications
 
-* xref:PAT-app.adoc[PAT Application]: Receives event logs
+* link:PAT-app.html[PAT Application]: Receives event logs
 
 == Integration Points with NASA Provided Applications
 
-* xref:SBN-app.adoc[SBN Application]: Connects to Software Bus Network
+* link:SBN-app.html[SBN Application]: Connects to Software Bus Network
 
 == Integration Points with Other Software
 
-* xref:cFS-sfotware-bus.adoc[Software Bus]: Publishes data collection status
+* link:cFS-sfotware-bus.html[Software Bus]: Publishes data collection status

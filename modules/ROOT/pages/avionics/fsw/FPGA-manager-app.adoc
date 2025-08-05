@@ -19,11 +19,11 @@ The FPGA Manager Application is a Payload Controller application that handles la
 
 == Integration Points with PULSE-A Applications
 
-* xref:PAT-app.adoc[PAT Application]: Receives commands for FPGA control
+* link:PAT-app.html[PAT Application]: Receives commands for FPGA control
 
 == Integration Points with NASA Provided Applications
 
-* xref:SBN-app.adoc[SBN Application]: Connects to Software Bus Network
+* link:SBN-app.html[SBN Application]: Connects to Software Bus Network
 
 == Integration Points with Hardware
 
@@ -32,4 +32,4 @@ The FPGA Manager Application is a Payload Controller application that handles la
 
 == Integration Points with Other Software
 
-* xref:cFS-sfotware-bus.adoc[Software Bus]: Publishes FPGA status 
+* link:cFS-sfotware-bus.html[Software Bus]: Publishes FPGA status 

@@ -30,13 +30,13 @@ The Deployment Application is an OBC default application that sequences deployab
 
 == Integration Points with PULSE-A Applications
 
-* xref:power-manager-app.adoc[Power Manager Application]: Receives power level status
-* xref:ADCS-manager-app.adoc[ADCS Manager Application]: Sends detumbling commands and receives status
-* xref:communication-manager-app.adoc[Communication Manager Application]: Sends deployment commands
+* link:power-manager-app.html[Power Manager Application]: Receives power level status
+* link:ADCS-manager-app.html[ADCS Manager Application]: Sends detumbling commands and receives status
+* link:communication-manager-app.html[Communication Manager Application]: Sends deployment commands
 
 == Integration Points with NASA Provided Applications
 
-* xref:SBN-app.adoc[SBN Application]: Connects to Software Bus Network
+* link:SBN-app.html[SBN Application]: Connects to Software Bus Network
 
 == Integration Points with Hardware
 
@@ -44,4 +44,4 @@ The Deployment Application is an OBC default application that sequences deployab
 
 == Integration Points with Other Software
 
-* xref:cFS-sfotware-bus.adoc[Software Bus]: Sends event messages
+* link:cFS-sfotware-bus.html[Software Bus]: Sends event messages

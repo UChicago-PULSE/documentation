@@ -26,18 +26,18 @@ The PAT Application is a Payload Controller application that intakes data from o
 
 == Integration Points with PULSE-A Applications
 
-* xref:quadcell-manager-app.adoc[Quadrant-Photodiode Manager Application]: Receives positioning data
-* xref:radio-manager-app.adoc[Radio Manager Application]: Receives commands
-* xref:GPS-manager-app.adoc[GPS Manager Application]: Receives position data
-* xref:laser-manager.adoc[Laser Manager Application]: Sends laser commands
-* xref:FPGA-manager-app.adoc[FPGA Manager Application]: Sends FPGA commands
-* xref:FSM-manager-app.adoc[FSM Manager Application]: Sends positioning commands
-* xref:ADCS-manager-app.adoc[ADCS Manager Application]: Sends positioning commands
-* xref:data-collection-app.adoc[Data-Collection Application]: Logs data
+* link:quadcell-manager-app.html[Quadrant-Photodiode Manager Application]: Receives positioning data
+* link:radio-manager-app.html[Radio Manager Application]: Receives commands
+* link:GPS-manager-app.html[GPS Manager Application]: Receives position data
+* link:laser-manager.html[Laser Manager Application]: Sends laser commands
+* link:FPGA-manager-app.html[FPGA Manager Application]: Sends FPGA commands
+* link:FSM-manager-app.html[FSM Manager Application]: Sends positioning commands
+* link:ADCS-manager-app.html[ADCS Manager Application]: Sends positioning commands
+* link:data-collection-app.html[Data-Collection Application]: Logs data
 
 == Integration Points with NASA Provided Applications
 
-* xref:SBN-app.adoc[SBN Application]: Connects to Software Bus Network
+* link:SBN-app.html[SBN Application]: Connects to Software Bus Network
 
 == Integration Points with Hardware
 
@@ -45,4 +45,4 @@ The PAT Application is a Payload Controller application that intakes data from o
 
 == Integration Points with Other Software
 
-* xref:cFS-sfotware-bus.adoc[Software Bus]: Publishes PAT status 
+* link:cFS-sfotware-bus.html[Software Bus]: Publishes PAT status 

@@ -22,14 +22,14 @@ The Communication Manager Application serves as the primary interface to the CAN
 
 == Integration Points with PULSE-A Applications
 
-* xref:ADCS-manager-app.adoc[ADCS Manager Application]: Handles ADCS module communication
-* xref:GPS-manager-app.adoc[GPS Manager Application]: Handles GPS module communication
-* xref:radio-manager-app.adoc[Radio Manager Application]: Handles radio module communication
-* xref:deployment-app.adoc[Deployment Application]: Handles deployment commands
+* link:ADCS-manager-app.html[ADCS Manager Application]: Handles ADCS module communication
+* link:GPS-manager-app.html[GPS Manager Application]: Handles GPS module communication
+* link:radio-manager-app.html[Radio Manager Application]: Handles radio module communication
+* link:deployment-app.html[Deployment Application]: Handles deployment commands
 
 == Integration Points with NASA Provided Applications
 
-* xref:SBN-app.adoc[SBN Application]: Connects to Software Bus Network
+* link:SBN-app.html[SBN Application]: Connects to Software Bus Network
 
 == Integration Points with Hardware
 
@@ -38,4 +38,4 @@ The Communication Manager Application serves as the primary interface to the CAN
 
 == Integration Points with Other Software
 
-* xref:cFS-sfotware-bus.adoc[Software Bus]: Receives commands from applications and routes to appropriate hardware interfaces
+* link:cFS-sfotware-bus.html[Software Bus]: Receives commands from applications and routes to appropriate hardware interfaces

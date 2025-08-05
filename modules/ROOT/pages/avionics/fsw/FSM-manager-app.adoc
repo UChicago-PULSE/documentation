@@ -20,11 +20,11 @@ The Fast-Steering Mirror (FSM) Manager Application is a Payload Controller appli
 
 == Integration Points with PULSE-A Applications
 
-* xref:PAT-app.adoc[PAT Application]: Receives positioning commands
+* link:PAT-app.html[PAT Application]: Receives positioning commands
 
 == Integration Points with NASA Provided Applications
 
-* xref:SBN-app.adoc[SBN Application]: Connects to Software Bus Network
+* link:SBN-app.html[SBN Application]: Connects to Software Bus Network
 
 == Integration Points with Hardware
 
@@ -32,4 +32,4 @@ The Fast-Steering Mirror (FSM) Manager Application is a Payload Controller appli
 
 == Integration Points with Other Software
 
-* xref:cFS-sfotware-bus.adoc[Software Bus]: Publishes FSM status
+* link:cFS-sfotware-bus.html[Software Bus]: Publishes FSM status

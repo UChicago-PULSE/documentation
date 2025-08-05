@@ -20,13 +20,13 @@ The Radio Manager Application is an OBC default application that manages radio s
 
 == Integration Points with PULSE-A Applications
 
-* xref:communication-manager-app.adoc[Communication Manager Application]: Passes radio commands and receives radio data
-* xref:power-manager-app.adoc[Power Manager Application]: Requests power activation
+* link:communication-manager-app.html[Communication Manager Application]: Passes radio commands and receives radio data
+* link:power-manager-app.html[Power Manager Application]: Requests power activation
 
 == Integration Points with NASA Provided Applications
 
-* xref:SBN-app.adoc[SBN Application]: Connects to Software Bus Network
-* xref:limit-checker-app.adoc[Limit Checker Application]: Checks for faults in data
+* link:SBN-app.html[SBN Application]: Connects to Software Bus Network
+* link:limit-checker-app.html[Limit Checker Application]: Checks for faults in data
 
 == Integration Points with Hardware
 
@@ -34,4 +34,4 @@ The Radio Manager Application is an OBC default application that manages radio s
 
 == Integration Points with Other Software
 
-* xref:cFS-sfotware-bus.adoc[Software Bus]: Publishes formatted commands
+* link:cFS-sfotware-bus.html[Software Bus]: Publishes formatted commands

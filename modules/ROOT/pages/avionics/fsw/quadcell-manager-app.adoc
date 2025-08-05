@@ -19,11 +19,11 @@ The Quadrant-Photodiode Manager Application is a Payload Controller application 
 
 == Integration Points with PULSE-A Applications
 
-* xref:PAT-app.adoc[PAT Application]: Provides positioning data
+* link:PAT-app.html[PAT Application]: Provides positioning data
 
 == Integration Points with NASA Provided Applications
 
-* xref:SBN-app.adoc[SBN Application]: Connects to Software Bus Network
+* link:SBN-app.html[SBN Application]: Connects to Software Bus Network
 
 == Integration Points with Hardware
 
@@ -31,4 +31,4 @@ The Quadrant-Photodiode Manager Application is a Payload Controller application 
 
 == Integration Points with Other Software
 
-* xref:cFS-sfotware-bus.adoc[Software Bus]: Publishes QPD status
+* link:cFS-sfotware-bus.html[Software Bus]: Publishes QPD status

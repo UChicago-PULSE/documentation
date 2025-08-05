@@ -25,15 +25,15 @@ The Power Manager Application is an OBC default application that monitors the PD
 
 == Integration Points with PULSE-A Applications
 
-* xref:deployment-app.adoc[Deployment Application]: Provides power level status
-* xref:ADCS-manager-app.adoc[ADCS Manager Application]: Receives power activation requests
-* xref:GPS-manager-app.adoc[GPS Manager Application]: Receives power activation requests
-* xref:radio-manager-app.adoc[Radio Manager Application]: Receives power activation requests
-* xref:payload-manager-app.adoc[Payload Manager Application]: Receives power activation requests
+* link:deployment-app.html[Deployment Application]: Provides power level status
+* link:ADCS-manager-app.html[ADCS Manager Application]: Receives power activation requests
+* link:GPS-manager-app.html[GPS Manager Application]: Receives power activation requests
+* link:radio-manager-app.html[Radio Manager Application]: Receives power activation requests
+* link:payload-manager-app.html[Payload Manager Application]: Receives power activation requests
 
 == Integration Points with NASA Provided Applications
 
-* xref:SBN-app.adoc[SBN Application]: Connects to Software Bus Network
+* link:SBN-app.html[SBN Application]: Connects to Software Bus Network
 
 == Integration Points with Hardware
 
@@ -42,4 +42,4 @@ The Power Manager Application is an OBC default application that monitors the PD
 
 == Integration Points with Other Software
 
-* xref:cFS-sfotware-bus.adoc[Software Bus]: Publishes Power topic data
+* link:cFS-sfotware-bus.html[Software Bus]: Publishes Power topic data

@@ -2,12 +2,12 @@
 
 === General Software Information
 
-* xref:cFS-general.adoc[cFS] - Core Flight System general documentation
-* xref:cFS-sfotware-bus.adoc[cFS Software Bus] - Software bus documentation
-* xref:I2C.adoc[I2C] - I2C interface documentation
-* xref:parsec.adoc[Parsec] - Parsec framework documentation
-* xref:tailscale.adoc[Tailscale] - Tailscale networking documentation
-* xref:unused-software.adoc[Unused Software] - Documentation for unused software components
+* link:cFS-general.html[cFS] - Core Flight System general documentation
+* link:cFS-sfotware-bus.html[cFS Software Bus] - Software bus documentation
+* link:I2C.html[I2C] - I2C interface documentation
+* link:parsec.html[Parsec] - Parsec framework documentation
+* link:tailscale.html[Tailscale] - Tailscale networking documentation
+* link:unused-software.html[Unused Software] - Documentation for unused software components
 
 === OBC Applications
 
@@ -17,14 +17,14 @@ image::OBC_Lollipop.png[OBC Lollipop Diagram, width=800]
 [.text-center]
 *Figure 1: OBC Application Diagram*
 
-* xref:ADCS-manager-app.adoc[ADCS Manager Application] - Manages the Attitude Determination and Control System module
-* xref:communication-manager-app.adoc[Communication Manager Application] - Primary interface to the CAN bus, handles message queuing and prioritization
-* xref:deployment-app.adoc[Deployment Application] - Sequences deployable actions and manages detumbling procedures
-* xref:GPS-manager-app.adoc[GPS Position Manager Application] - Interfaces with GNSS receiver for position tracking
-* xref:payload-manager-app.adoc[Payload Manager Application] - Tracks Payload Controller state and relays PAT sequence events
-* xref:power-manager-app.adoc[Power Manager Application] - Monitors PDU and manages power distribution and thermal control
-* xref:radio-manager-app.adoc[Radio Manager Application] - Manages radio state and handles downlink packet transmission
-* xref:watchdog-monitor-app.adoc[Watchdog Monitor Application] - Manages watchdog timers and ensures system operational status
+* link:ADCS-manager-app.html[ADCS Manager Application] - Manages the Attitude Determination and Control System module
+* link:communication-manager-app.html[Communication Manager Application] - Primary interface to the CAN bus, handles message queuing and prioritization
+* link:deployment-app.html[Deployment Application] - Sequences deployable actions and manages detumbling procedures
+* link:GPS-manager-app.html[GPS Position Manager Application] - Interfaces with GNSS receiver for position tracking
+* link:payload-manager-app.html[Payload Manager Application] - Tracks Payload Controller state and relays PAT sequence events
+* link:power-manager-app.html[Power Manager Application] - Monitors PDU and manages power distribution and thermal control
+* link:radio-manager-app.html[Radio Manager Application] - Manages radio state and handles downlink packet transmission
+* link:watchdog-monitor-app.html[Watchdog Monitor Application] - Manages watchdog timers and ensures system operational status
 
 === Payload Controller Applications
 
@@ -34,28 +34,28 @@ image::Payload_Lollipop.png[Payload Lollipop Diagram, width=800]
 [.text-center]
 *Figure 2: Payload Controller Application Diagram*
 
-* xref:data-collection-app.adoc[Data-Collection Application] - Logs payload data for post-pass analysis and downlink
-* xref:FPGA-manager-app.adoc[FPGA Manager Application] - Handles laser-modulation FPGA I/O and telemetry
-* xref:FSM-manager-app.adoc[FSM Manager Application] - Manages Fast-Steering Mirror calibration and control
-* xref:laser-manager.adoc[Laser Manager Application] - Tracks state and drives beacon and transmission lasers
-* xref:PAT-app.adoc[PAT Application] - Orchestrates the Pointing, Acquisition, and Tracking sequence
-* xref:quadcell-manager-app.adoc[Quadrant-Photodiode Manager Application] - Processes QPD signals for positioning data
+* link:data-collection-app.html[Data-Collection Application] - Logs payload data for post-pass analysis and downlink
+* link:FPGA-manager-app.html[FPGA Manager Application] - Handles laser-modulation FPGA I/O and telemetry
+* link:FSM-manager-app.html[FSM Manager Application] - Manages Fast-Steering Mirror calibration and control
+* link:laser-manager.html[Laser Manager Application] - Tracks state and drives beacon and transmission lasers
+* link:PAT-app.html[PAT Application] - Orchestrates the Pointing, Acquisition, and Tracking sequence
+* link:quadcell-manager-app.html[Quadrant-Photodiode Manager Application] - Processes QPD signals for positioning data
 
 === NASA Provided cFS Applications
 
-* xref:checksum-app.adoc[Checksum Application] - Ensures onboard memory integrity through CRC calculations
-* xref:CFDP-app.adoc[CFDP Application] - Provides CCSDS File Delivery Protocol services
-* xref:data-store-app.adoc[Data Store Application] - Stores software bus messages in files
-* xref:file-manager-app.adoc[File Manager Application] - Provides onboard file system management services
-* xref:health-and-safety-app.adoc[Health and Safety Application] - Monitors application health and provides watchdog services
-* xref:housekeeping-app.adoc[Housekeeping Application] - Builds and sends combined telemetry messages
-* xref:limit-checker-app.adoc[Limit Checker Application] - Monitors telemetry data against threshold limits
-* xref:memory-dwell-app.adoc[Memory Dwell Application] - Monitors memory addresses accessed by CPU
-* xref:memory-manager-app.adoc[Memory Manager Application] - Provides memory loading and dumping capabilities
-* xref:SBN-app.adoc[SBN Application] - Connects cFE Software Bus to other buses
-* xref:stored-commands-app.adoc[Stored Commands Application] - Manages autonomous command sequences
+* link:checksum-app.html[Checksum Application] - Ensures onboard memory integrity through CRC calculations
+* link:CFDP-app.html[CFDP Application] - Provides CCSDS File Delivery Protocol services
+* link:data-store-app.html[Data Store Application] - Stores software bus messages in files
+* link:file-manager-app.html[File Manager Application] - Provides onboard file system management services
+* link:health-and-safety-app.html[Health and Safety Application] - Monitors application health and provides watchdog services
+* link:housekeeping-app.html[Housekeeping Application] - Builds and sends combined telemetry messages
+* link:limit-checker-app.html[Limit Checker Application] - Monitors telemetry data against threshold limits
+* link:memory-dwell-app.html[Memory Dwell Application] - Monitors memory addresses accessed by CPU
+* link:memory-manager-app.html[Memory Manager Application] - Provides memory loading and dumping capabilities
+* link:SBN-app.html[SBN Application] - Connects cFE Software Bus to other buses
+* link:stored-commands-app.html[Stored Commands Application] - Manages autonomous command sequences
 
 === Simulation Software
 
-* xref:42-simulator.adoc[42 Simulator] - Simulation environment
-* xref:D2S2-simulator.adoc[D2S2 Simulator] - D2S2 simulation environment
+* link:42-simulator.html[42 Simulator] - Simulation environment
+* link:D2S2-simulator.html[D2S2 Simulator] - D2S2 simulation environment

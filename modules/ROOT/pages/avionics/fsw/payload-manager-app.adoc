@@ -25,11 +25,11 @@ The Payload Manager Application is an OBC application that uses NASA's SBN to tr
 
 == Integration Points with PULSE-A Applications
 
-* xref:power-manager-app.adoc[Power Manager Application]: Requests power activation
+* link:power-manager-app.html[Power Manager Application]: Requests power activation
 
 == Integration Points with NASA Provided Applications
 
-* xref:SBN-app.adoc[SBN Application]: Connects to Software Bus Network
+* link:SBN-app.html[SBN Application]: Connects to Software Bus Network
 
 == Integration Points with Hardware
 
@@ -37,4 +37,4 @@ The Payload Manager Application is an OBC application that uses NASA's SBN to tr
 
 == Integration Points with Other Software
 
-* xref:cFS-sfotware-bus.adoc[Software Bus]: Publishes Payload topic data and reads payload topics
+* link:cFS-sfotware-bus.html[Software Bus]: Publishes Payload topic data and reads payload topics

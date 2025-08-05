@@ -18,12 +18,12 @@ The Laser Manager Application is a Payload Controller application that tracks st
 
 == Integration Points with PULSE-A Applications
 
-* xref:PAT-app.adoc[PAT Application]: Receives laser control commands
-* xref:power-manager-app.adoc[Power Manager Application]: Requests laser power activation
+* link:PAT-app.html[PAT Application]: Receives laser control commands
+* link:power-manager-app.html[Power Manager Application]: Requests laser power activation
 
 == Integration Points with NASA Provided Applications
 
-* xref:SBN-app.adoc[SBN Application]: Connects to Software Bus Network
+* link:SBN-app.html[SBN Application]: Connects to Software Bus Network
 
 == Integration Points with Hardware
 
@@ -31,4 +31,4 @@ The Laser Manager Application is a Payload Controller application that tracks st
 
 == Integration Points with Other Software
 
-* xref:cFS-sfotware-bus.adoc[Software Bus]: Publishes laser status
+* link:cFS-sfotware-bus.html[Software Bus]: Publishes laser status

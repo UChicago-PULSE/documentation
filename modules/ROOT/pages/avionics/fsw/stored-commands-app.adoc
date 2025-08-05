@@ -6,7 +6,7 @@ The Stored Commands (SC) Application allows a system to be autonomously commande
 
 == Integration Points with NASA Provided Applications
 
-* **Limit Checker Application**: Receives RTS commands when thresholds are violated (see xref:limit-checker-app.adoc[Limit Checker Application])
+* **Limit Checker Application**: Receives RTS commands when thresholds are violated (see link:limit-checker-app.html[Limit Checker Application])
 
 == Integration Points with Hardware
 
@@ -14,4 +14,4 @@ The Stored Commands (SC) Application allows a system to be autonomously commande
 
 == Integration Points with Other Software
 
-* xref:cFS-sfotware-bus.adoc[Software Bus]: Publishes command execution status and results
+* link:cFS-sfotware-bus.html[Software Bus]: Publishes command execution status and results

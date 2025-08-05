@@ -88,14 +88,14 @@ The cFS framework enables us to achieve high data throughput and reliability whi
 
 The OBC runs the following custom applications:
 
-* xref:ADCS-manager-app.adoc[ADCS Manager Application] - Monitors the current satellite orientation and packages messages to match ADCS standards
-* xref:GPS-manager-app.adoc[GPS Manager Application] - Interfaces with the GNSS receiver to track satellite position and notifies other applications as the vehicle reaches ground-station overpasses
-* xref:power-manager-app.adoc[Power Manager Application] - Monitors the PDU and manages power distribution and thermal control
-* xref:payload-manager-app.adoc[Payload Manager Application] - Uses NASA's SBN to track the Payload Controller's state and relay key events during the PAT sequence
-* xref:radio-manager-app.adoc[Radio Manager Application] - Manages radio state and queues and transmits downlink packets
-* xref:deployment-app.adoc[Deployment Application] - Sequences deployable actions after release and instructs the ADCS to begin detumbling
-* xref:communication-manager-app.adoc[Communication Manager Application] - Serves as the primary interface to the CAN bus and backup I2C bus, preventing message collisions and handling queuing and prioritization
-* xref:watchdog-monitor-app.adoc[Watchdog Monitor Application] - Sends heartbeats to the external watchdog timer and exchanges heartbeats with the Payload Controller to ensure both computers remain operational, enabling fail-over if the OBC becomes unresponsive
+* link:ADCS-manager-app.html[ADCS Manager Application] - Monitors the current satellite orientation and packages messages to match ADCS standards
+* link:GPS-manager-app.html[GPS Manager Application] - Interfaces with the GNSS receiver to track satellite position and notifies other applications as the vehicle reaches ground-station overpasses
+* link:power-manager-app.html[Power Manager Application] - Monitors the PDU and manages power distribution and thermal control
+* link:payload-manager-app.html[Payload Manager Application] - Uses NASA's SBN to track the Payload Controller's state and relay key events during the PAT sequence
+* link:radio-manager-app.html[Radio Manager Application] - Manages radio state and queues and transmits downlink packets
+* link:deployment-app.html[Deployment Application] - Sequences deployable actions after release and instructs the ADCS to begin detumbling
+* link:communication-manager-app.html[Communication Manager Application] - Serves as the primary interface to the CAN bus and backup I2C bus, preventing message collisions and handling queuing and prioritization
+* link:watchdog-monitor-app.html[Watchdog Monitor Application] - Sends heartbeats to the external watchdog timer and exchanges heartbeats with the Payload Controller to ensure both computers remain operational, enabling fail-over if the OBC becomes unresponsive
 
 [.text-center]
 image::OBC_Lollipop.png[OBC Lollipop Diagram, width=800]
@@ -107,12 +107,12 @@ image::OBC_Lollipop.png[OBC Lollipop Diagram, width=800]
 
 The Payload Controller runs a separate instance of cFS. It has both custom Payload-associated applications as well as essential applications from the OBC, allowing it to act as a backup system in the case of OBC failure:
 
-* xref:laser-manager.adoc[Laser Manager Application] - Tracks state and drives both beacon and transmission lasers
-* xref:FSM-manager-app.adoc[FSM Manager Application] - Performs calibration of, keeps track of current state of, and commands the FSM
-* xref:quadcell-manager-app.adoc[Quadrant-Photodiode Manager Application] - Processes signals from the Quadrant-Photodiode (QPD) and provides necessary transformations of the data for other applications
-* xref:PAT-app.adoc[PAT Application] - Intakes data from other applications and orchestrates the PAT sequence
-* xref:FPGA-manager-app.adoc[FPGA Manager Application] - Handles laser-modulation FPGA I/O and telemetry
-* xref:data-collection-app.adoc[Data-Collection Application] - Logs Payload data for post-pass down-link and analysis
+* link:laser-manager.html[Laser Manager Application] - Tracks state and drives both beacon and transmission lasers
+* link:FSM-manager-app.html[FSM Manager Application] - Performs calibration of, keeps track of current state of, and commands the FSM
+* link:quadcell-manager-app.html[Quadrant-Photodiode Manager Application] - Processes signals from the Quadrant-Photodiode (QPD) and provides necessary transformations of the data for other applications
+* link:PAT-app.html[PAT Application] - Intakes data from other applications and orchestrates the PAT sequence
+* link:FPGA-manager-app.html[FPGA Manager Application] - Handles laser-modulation FPGA I/O and telemetry
+* link:data-collection-app.html[Data-Collection Application] - Logs Payload data for post-pass down-link and analysis
 
 [.text-center]
 image::Payload_Lollipop.png[Payload Lollipop Diagram, width=800]
@@ -124,18 +124,18 @@ image::Payload_Lollipop.png[Payload Lollipop Diagram, width=800]
 
 PULSE-A utilizes several NASA-provided cFS applications that provide essential system services:
 
-* xref:checksum-app.adoc[Checksum Application] - Ensures onboard memory integrity through CRC calculations
-* xref:CFDP-app.adoc[CFDP Application] - Provides CCSDS File Delivery Protocol services
-* xref:data-store-app.adoc[Data Store Application] - Stores software bus messages in files
-* xref:file-manager-app.adoc[File Manager Application] - Provides onboard file system management services
-* xref:health-and-safety-app.adoc[Health and Safety Application] - Monitors application health and provides watchdog services
-* xref:housekeeping-app.adoc[Housekeeping Application] - Builds and sends combined telemetry messages
-* xref:limit-checker-app.adoc[Limit Checker Application] - Monitors telemetry data against threshold limits
-* xref:memory-dwell-app.adoc[Memory Dwell Application] - Monitors memory addresses accessed by CPU
-* xref:memory-manager-app.adoc[Memory Manager Application] - Provides memory loading and dumping capabilities
-* xref:SBN-app.adoc[SBN Application] - Connects cFE Software Bus to other buses
-* xref:stored-commands-app.adoc[Stored Commands Application] - Manages autonomous command sequences
+* link:checksum-app.html[Checksum Application] - Ensures onboard memory integrity through CRC calculations
+* link:CFDP-app.html[CFDP Application] - Provides CCSDS File Delivery Protocol services
+* link:data-store-app.html[Data Store Application] - Stores software bus messages in files
+* link:file-manager-app.html[File Manager Application] - Provides onboard file system management services
+* link:health-and-safety-app.html[Health and Safety Application] - Monitors application health and provides watchdog services
+* link:housekeeping-app.html[Housekeeping Application] - Builds and sends combined telemetry messages
+* link:limit-checker-app.html[Limit Checker Application] - Monitors telemetry data against threshold limits
+* link:memory-dwell-app.html[Memory Dwell Application] - Monitors memory addresses accessed by CPU
+* link:memory-manager-app.html[Memory Manager Application] - Provides memory loading and dumping capabilities
+* link:SBN-app.html[SBN Application] - Connects cFE Software Bus to other buses
+* link:stored-commands-app.html[Stored Commands Application] - Manages autonomous command sequences
 
 == Related Documentation
 
-* xref:cFS-sfotware-bus.adoc[cFS Software Bus] - Software bus documentation
+* link:cFS-sfotware-bus.html[cFS Software Bus] - Software bus documentation
