@@ -20,7 +20,7 @@ These lists contains definitions, acronyms, and formatting guidelines that are u
 * **AFT** – Allowable Flight Temperature
 * **AIT** – Assembly, Integration and Testing
 * **APD** – Avalanche Photodiode
-* **I2C** – Inter-Integrated Circuit
+* **I^2^C** – Inter-Integrated Circuit
 * **CAN** – Controller Area Network
 * **CDH** – Command and Data Handling
 * **CDR** – Critical Design Review
