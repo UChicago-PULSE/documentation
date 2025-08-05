@@ -42,3 +42,9 @@ D2S2 provides a critical bridge between software simulation and actual flight ha
 * Test power management strategies
 * Verify communication protocols between OBC and ADCS
 * Optimize control algorithms for actual hardware characteristics
+
+[.text-center]
+image::D2S2_Screenshot.png[D2S2 Simulator Screenshot, width=800]
+
+[.text-center]
+*Figure 1: D2S2 Simulator*
