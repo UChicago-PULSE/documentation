@@ -90,7 +90,7 @@ CSP includes a built-in CAN fragmentation protocol that automatically handles th
 
 == Related Documentation
 
-* xref:communication-manager-app.adoc[Communication Manager Application] - Manages CSP communication
-* xref:radio-manager-app.adoc[Radio Manager Application] - Uses CSP for radio communication
-* xref:GPS-manager-app.adoc[GPS Manager Application] - Uses CSP for GPS communication
-* xref:ADCS-manager-app.adoc[ADCS Manager Application] - Uses CSP for ADCS communication
+* link:communication-manager-app.html[Communication Manager Application] - Manages CSP communication
+* link:radio-manager-app.html[Radio Manager Application] - Uses Communication Application to send CSP for radio communication
+* link:GPS-manager-app.html[GPS Manager Application] - Uses Communication Application to send CSP for GPS communication
+* link:ADCS-manager-app.html[ADCS Manager Application] - Uses Communication Application to send CSP for ADCS communication
