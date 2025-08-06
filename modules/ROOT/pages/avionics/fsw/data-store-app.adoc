@@ -6,14 +6,14 @@ The Data Store (DS) Application is used for storing software bus messages in fil
 
 == Integration Points with PULSE-A Applications
 
-* **All PULSE-A Applications**: Stores software bus messages from all applications (see link:index.html#obc-applications[OBC Applications] and link:index.html#payload-controller-applications[Payload Controller Applications] sections)
+* **All PULSE-A Applications**: Stores software bus messages from all applications (see link:index.html#_obc_applications[OBC Applications] and link:index.html#_payload_controller_applications[Payload Controller Applications] sections)
 
 == Integration Points with NASA Provided Applications
 
 * **CFDP Application**: Transfers stored files to ground stations (see link:CFDP-app.html[CFDP Application])
 * **File Manager Application**: Works with FM for file system operations (see link:file-manager-app.html[File Manager Application])
 
-* **All NASA cFS Applications**: Stores software bus messages from all applications (see link:index.html#nasa-provided-cfs-applications[NASA Provided cFS Applications] section)
+* **All NASA cFS Applications**: Stores software bus messages from all applications (see link:index.htm#_nasa_provided_cfs_applications[NASA Provided cFS Applications] section)
 
 == Integration Points with Hardware
 
