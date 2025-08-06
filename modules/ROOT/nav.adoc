@@ -1,6 +1,8 @@
 * xref:index.adoc[Home]
 * xref:general/index.adoc[Mission]
 ** xref:general/overview.adoc[General Overview]
+** xref:general/reference_list.adoc[Reference List]
+** xref:general/PAT.adoc[PAT]
 * xref:avionics/hw/index.adoc[Avionics Hardware]
 * xref:avionics/fsw/index.adoc[Flight Software]
 ** xref:avionics/fsw/index.adoc#_general_software_information[General Software Information]
