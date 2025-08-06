@@ -7,7 +7,7 @@
     <a href="../../_images/PAT_Diagram.svg" download="PAT_Diagram.svg" style="text-decoration:none; background-color:white; color:black; padding:0.5em 1em; border:1px solid #ccc; border-radius:4px; font-size:0.9em;">Download SVG</a>
   </div>
   <div style="overflow-x:auto; padding:0.5em;">
-    <img src="../../_images/PAT_Diagram.svg" alt="PAT Sequence Diagram" style="width:10000px;">
+    <img src="../_images/PAT_Diagram.svg" alt="PAT Sequence Diagram" style="width:10000px;">
   </div>
 </div>
 ++++
