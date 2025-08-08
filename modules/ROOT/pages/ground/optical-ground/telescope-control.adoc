@@ -1,1 +1,15 @@
 = Telescope Control
+
+== Goals
+The objective of the telescope control software is to eventually track the satellite with the precision required for data transmission (insert angle here). According to the PAT sequence, this requires first coarse tracking, which has the purpose of tracking accurately enough so that the satellite can detect the uplink beacon, allowing it to more accurately track the OGS, which then allows the OGs to track the satellite more accurately (fine tracking) by detecting the downlink beacon from the satellite on the tracking camera, and using the FSM and its own guidance to track the satellite with enough accuracy for data transmission to be feasible (insert required angle). If possible, we want to be able to do all of this with no on-site human intervention (ie no one a the OGS pressing buttons and being exposed to powerful lasers).
+
+For this to be possible, we need to:
+
+* Be able to calibrate and control the telescope to the accuracy required for data transmission and be able to move it in whatever path we desire
+* Be able to take inputs from the tracking camera to correct our pointing
+* Be able to take inputs on the GPS coordinates and TLE (two line element set, link:https://en.wikipedia.org/wiki/Two-line_element_set[look it up!] ) of the satellite to adjust the pointing of the OGS
+
+
+== First Things First
+
+If we're going to be tracking something, we need to have am idea of where it even is! For that, we use TLEs and link:https://docs.astropy.org/en/latest/coordinates/satellites.html#[astropy's coordinate functions]. We do this by using the TLE's to generate 34 coordiantes for the satellite and its orbit (3 for space, 1 for time) in a coordinate frame where the earth is the ecenter, and then use the location of the OGS (Chicago in this case) to turn these coordinates into link:https://en.wikipedia.org/wiki/Horizontal_coordinate_system[ALT-AZM coordinates] from the point of view of the OGS with astropy's link:https://docs.astropy.org/en/stable/api/astropy.coordinates.SkyCoord.html[SkyCoord object]. This gives us the ALT and AZM coordinates of the satellite over time from the point of view of the satellite, which we can plot out in an initially hard to understand graph:
