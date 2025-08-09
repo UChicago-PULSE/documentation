@@ -3,4 +3,8 @@
 = Link Budget Guide
 
 
-Because we don't live in a vacuum, any time you send a radio or optical signal, you will not receive 100% of the transmitted power at the receiver. This is because the signal interacts with its enviroment as it travels from point A to point B. These interactions, known as noise, alter the strength of your signal. To deal with this, we create a link budget, which tracks how the strength of the signal changes during the transmission process, giving a measure of received power. This short document will provide a guide on elementary noise analysis and link budget construction.
+Because we don't live in a percect world, any time you send an optical signal, you will not receive 100% of the transmitted power at the receiver. This is because the signal doesn't travel in a vacuum; it is affected by its enviroment as it travels from point A to point B. Moreover, there are defects within the equipment itself which add interference. These interactions, known as "noise", alter the strength of your signal. To deal with this, we create a "link budget", which tracks how the strength of the signal changes during the transmission process, giving a measure of received power. This document will provide a guide on elementary noise analysis and link budget construction.
+
+== Understanding Noise
+
+In signal processing, noise simply refers to any unwanted alteration or disturbance of a signal. Noise distorts your signal and makes the encoded data harder to decipher. There are multiple ways of measuring noise, which will be discussed below, but the most useful is in terms of power (watts/dBm) since this is also how the strength of the signal is measured. In general, we want to 
