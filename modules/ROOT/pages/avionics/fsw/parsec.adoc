@@ -14,5 +14,5 @@ Parsec needs to be installed on both the computer that is sharing the remote des
 
 == Link to Parsec
 
-https://parsec.app/
+link:https://parsec.app/[Parsec Official Website]
 
