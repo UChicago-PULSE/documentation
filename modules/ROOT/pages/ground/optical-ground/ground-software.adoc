@@ -1,1 +1,5 @@
 = Ground Software
+
+A central ground control program unifies RFGS and OGS functions such as the telescope controls, a telemetry viewer, a live data plotter, and a command center.
+
+We use GNU Radio to control our radio communications chain, interfacing with the TNC, transceiver, orbital prediction, and antenna. Commands to the OGS and RFGS will be controlled by custom GUIs which will integrate our Python-based control programs. This GUI will be developed using PyQT.
