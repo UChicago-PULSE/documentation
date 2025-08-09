@@ -1,1 +1,21 @@
 = Unused Software
+
+There are a couple of software tools that we have tried out but ended up not using. Many of them may be useful for other teams though!
+
+== F'
+
+F' is a C++ flight software framework that was created by JPL. F' is a viable alternative to cFS and we would recommend exploring both options before settling on a framework.
+
+link:https://fprime.jpl.nasa.gov/overview/[F Prime]
+
+== NOS3
+
+NOS3 is a NASA simulation suite which combines many other simulators and softwares. NOS3 appears to be quite helpful but we determined the large scale of simulators was not something we needed for this project and that it could lead to further complications.
+
+link:https://github.com/nasa/nos3/[NOS3 Github]
+
+== OpenSatKit
+
+OpenSatKit is a now deprecated tool that had similar features to NOS3. Although it should no longer be built, the cFS code on there is a great model and the repo author Dave McComas has great cFS knowledge.
+
+link:https://github.com/OpenSatKit/OpenSatKit/[OpenSatKit]
