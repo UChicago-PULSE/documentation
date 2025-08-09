@@ -1,1 +1,21 @@
 = Tracking Camera
+
+The tracking camera’s purpose is to both initiate and guide the fine pointing stage for the OGS's tracking of the satellite as it completes an optical pass. The OGS will track the satellite’s Payload beacon using the Pointing, Acquisition, and Tracking (PAT) Sequence. The first stage, Pointing, refers to coarse, open-loop tracking done by the telescope and a predicted orbital path. The tracking camera, attached to the telescope, will continuously take images during the Pointing stage. These images will be taken at an experimentally-determined exposure time: balanced between being long enough to maintain an operable signal-to-noise ratio (SNR) while still being short enough to prevent blurring. The Acquisition stage occurs once the Payload beacon is detected in these frames, triggering Tracking, the fine pointing stage.
+
+Here, the tracking camera will continue to take continuous images, measuring the distance between image center and the detection of the Payload beacon. This distance, and corresponding corrections, will be relayed to the fast steering mirror (FSM) to make the necessary adjustments. Here it is important to note that the telescope’s pointing will always remain open-loop: unable to be altered by the tracking camera’s feedback. All pointing adjustments during an optical pass will be made by utilizing only the FSM. 
+
+Our tracking camera is a ZWO ASI585MM Pro, chosen for its fast processing speed, resolution, and low noise. All code communicating with the camera is written in Python, utilizing the ZWO Software Developer Kit (SDK) commands and corresponding Python wrappers written by Steve Marple. We previously used a ZWO ASI1600MC Pro camera in our testing, as a senior member of the team possessed one already. Our tracking camera has already been ordered and we are waiting on delivery.
+
+In the meantime, our open questions regarding the tracking camera and its role in the PAT sequence are as follows:
+
+* What exposure time will optimize our SNR ratio while not allowing for any blurring, at any possible telescope slew rate, throughout the optical pass?
+    ** Will the exposure time stay the same throughout the entire optical pass or will it change?
+* How do we ensure operable accuracy during the Acquisition phase? (ie, our code correctly identifies the Payload beacon)
+    **  What levels of (varying) atmospheric and camera noise can we expect per image, per optical pass? How does this value change? How can we model this/input these values to change our exposure time values? Is this necessary?
+    ** We do not expect stars to be as bright as the Payload beacon, given the 638 nm filter and fast telescope slew rate. Can we prove this experimentally? Is this always true? Are there cases or specific situations in which stars could appear as the same brightness or brighter than the Payload beacon?
+    ** Passes over the full Moon or Jupiter will be as bright/brighter than the Payload beacon. How do we build this redundancy into our code?
+    ** Estimates have been made of the Payload beacon’s apparent magnitude (V = ~7). How accurate is this?
+    ** Across how many frames does the Payload beacon need to be sensed in order for it to be considered a true signal?
+* How many frames should translate to each adjustment of the FSM? 
+* How does pixel distance correlate to FSM correction? 
+* How do we use the FSM to correct in real time without amplifying tracking errors?
