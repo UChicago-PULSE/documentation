@@ -1,1 +1,18 @@
 = Parsec
+
+== What is Parsec
+
+Parsec is a remote desktop software which is primarily used in the gaming field. 
+
+== Why We Use Parsec
+
+Parsec allows for low latency, reliable remote desktop services. It is straight forward to set up initially on the host computer and subsequently on any of our member's computers. Parsec has multiple pricing levels but for our purposes we only need the free tier!
+
+== How to Use Parsec
+
+Parsec needs to be installed on both the computer that is sharing the remote desktop and the one that is viewing it. Currently Linux computers can only be used as clients not as hosts. Create an account for the shared host computer on the parsec website. Then download Parsec and login. Follow the steps to set up to host and select your team's desired settings. Now when team members set up their Parsec account they can send a friend request to the host computer and be allowed to connect.
+
+== Link to Parsec
+
+https://parsec.app/
+
