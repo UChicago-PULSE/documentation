@@ -10,9 +10,11 @@ Because we don't live in a perfect world, any time you send an optical signal, y
 In signal processing, noise simply refers to any unwanted alteration or disturbance of a signal. Noise distorts your signal and makes the encoded data harder to decipher. There are multiple ways of measuring noise, which will be discussed below, but the most useful is in terms of power (watts/dBm) since this is also how the strength of the signal is measured. In general, we want to maximize the system's *signal-to-noise ratio (SNR)*, which is defined as 
 [stem]
 ++++
-sqrt(4)=2
+\mathrm{SNR}=\frac{P_s}{P_n},
 ++++
-where $P_s$ and $P_n$ are the signal and noise power in watts respectively.
+where stem:[P_s] and stem:[P_n] are the signal and noise power in watts respectively.
+
+
 
 
 
