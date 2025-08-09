@@ -50,6 +50,7 @@
 ** xref:ground/optical-ground/error-correction.adoc[Error Correction]
 ** xref:ground/optical-ground/ground-fpga.adoc[FPGA]
 ** xref:ground/optical-ground/ground-software.adoc[Ground Software]
+** xref:ground/optical-ground/link-guide.adoc[Link Budget]
 ** xref:ground/optical-ground/optical-simulation.adoc[Optical Simulation]
 ** xref:ground/optical-ground/structural-design.adoc[Structural Design]
 ** xref:ground/optical-ground/telescope-control.adoc[Telescope Control]
