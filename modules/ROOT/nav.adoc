@@ -6,7 +6,7 @@
 ** xref:general/PAT.adoc[PAT]
 
 * xref:optical-overview.adoc[Optical System]
-* xref:payload/laser-driving.adoc[Laser driving]
+** xref:payload/laser-driving.adoc[Laser driving]
 ** xref:payload/index.adoc[Optical Payload]
 ** xref:ground/optical-ground/index.adoc[Optical Ground Station]
 *** xref:ground/optical-ground/beacon-laser.adoc[Beacon Laser]
