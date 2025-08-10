@@ -1,6 +1,11 @@
 = RF Ground Station Documentation
 
-The RF system is designed to maintain a strong link to the satellite, and to allow for frequent health beacon and GPS data transmission in order to support the experimental laser communications operations. 
+The RF communications subsystem is designed to communicate between the PULSE-A CubeSat and our ground station. The RF ground station (RFGS) will communicate with a satellite radio module to transmit frequent health beacon and GPS data to and send commands to enable the laser communication demonstration. The RFGS is intended to be used primarily for PULSE-A, but is designed with the intention to be flexible and used for future CubeSat missions and collaborations.
+
+We plan to operate in the UHF amateur band (435-438 MHz), common for university CubeSat missions. We choose UHF because it's bandwidth (transmission rate) matches our requirements for how quickly data needs to be transmitted. VHF has similar capabilites. We will transmit at half-duplex, where all communications occur over one frequency and you can either transmit and receive at one time. However, many hardware choices will be compatible with full-duplex in case future University of Chicago CubeSat missions require it.
+
+At our transmission rate of 9600bps, we can send critical GPS data during our laser aquisition sequence every ~0.25 seconds.
+
 
 Our RF link-budget analysis indicates margins of 21.7 dB on the uplink and 20.3 dB on the downlink, ensuring a strong, reliable signal path for all mission phases.
 
