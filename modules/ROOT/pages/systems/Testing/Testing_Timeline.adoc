@@ -1,6 +1,6 @@
 = Environmental Testing Timeline
 
-image::docs/images/TestingSequence.png[Testing Sequence, width=400]
+image::mission-documentation/modules/ROOT/images/TestingSequence.png[Testing Sequence, width=400]
 
 
 Our environmental testing campaign will occur during our testing sequence phase within our broader Assembly, Integration, and Testing (AIT) program. The testing sequence follows the payload and CubeSat integration phase, and proceeds deployment and launch. Please navigate to the Systems Interfaces page for our AIT block diagram that demonstrates the program visually. 
