@@ -20,8 +20,8 @@
 *** xref:ground/optical-ground/tracking-camera.adoc[Tracking Camera]
 
 * xref:flight-overview.adoc[Non-Optical Systems]
-** [Command and Data Handling]
-*** [On-Board Computer]
+** xref:avionics/cdh.adoc[Command and Data Handling]
+*** xref:avionics/hw/obc.adoc[On-Board Computer]
 *** xref:avionics/fsw/index.adoc#_general_software_information[General Software Information]
 **** xref:avionics/fsw/cFS-general.adoc[cFS General]
 **** xref:avionics/fsw/cFS-sfotware-bus.adoc[cFS Software Bus]
