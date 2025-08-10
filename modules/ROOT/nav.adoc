@@ -8,6 +8,7 @@
 ** xref:avionics/fsw/index.adoc#_general_software_information[General Software Information]
 *** xref:avionics/fsw/cFS-general.adoc[cFS General]
 *** xref:avionics/fsw/cFS-sfotware-bus.adoc[cFS Software Bus]
+*** xref:avionics/fsw/CAN.adoc[CAN]
 *** xref:avionics/fsw/CSP.adoc[CSP]
 *** xref:avionics/fsw/I2C.adoc[I2C]
 *** xref:avionics/fsw/parsec.adoc[Parsec]
