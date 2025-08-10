@@ -1,18 +1,41 @@
 :stem: latexmath
 
-= Link Budget Guide
+= Noise Modeling Guide
 
 
 Because we don't live in a perfect world, any time you send an optical signal, you will not receive 100% of the transmitted power at the receiver. This is because the signal doesn't travel in a vacuum; it is affected by its enviroment as it travels from point A to point B. Moreover, there are defects within the equipment itself which add interference. These interactions, known as *noise*, alter the strength of your signal. To deal with this, we create a *link budget*, which tracks how the strength of the signal changes during the transmission process, giving a measure of received power. This document will provide a guide on elementary noise analysis and link budget construction.
 
 == Understanding Noise
 
+=== Signal-to-noise ratio
+
 In signal processing, noise simply refers to any unwanted alteration or disturbance of a signal. Noise distorts your signal and makes the encoded data harder to decipher. There are multiple ways of measuring noise, which will be discussed below, but the most useful is in terms of power (watts/dBm) since this is also how the strength of the signal is measured. In general, we want to maximize the system's *signal-to-noise ratio (SNR)*, which is defined as 
 [stem]
 ++++
 \mathrm{SNR}=\frac{P_s}{P_n},
 ++++
-where stem:[P_s] and stem:[P_n] are the signal and noise power in watts respectively.
+where stem:[P_s] and stem:[P_n] are the signal and noise power in watts respectively. Since this quantity can grow very large very quickly, it is often helpful to convert to *decibels* by the relation
+[stem]
+++++
+\mathrm{SNR}_{\mathrm{dB}}=10\log_{10}\left(\mathrm{SNR}\right)=10\log_{10}\left(\frac{P_s}{P_n}\right).
+++++
+As one can see, the SNR quantifies how strong of a connection or *link* can be achieved between the transmitter and receiver. A standard minimum value for SNR is 5 dB, but it is best to aim for a higher value to allow some leeway.
+
+=== Path Loss
+
+There are three main alterations to signal strength as the laser travels from the transmitter to the receiver: space loss, atmospheric attenuation, and scintillation loss. *Space loss* results from the diverging wavefront of the optical energy as it traverses the link distance and is calculated as
+[stem]
+++++
+L_s=\left(\frac{\lambda}{4\pi R}\right)^2,
+++++
+where stem:[\lambda] is the wavelength of the optical transmission and stem:[R] is the link distance.
+
+*Atmospheric attenuation* results from the absorption and scattering of radiation by gases, water vapor, and aerosols. A general estimate can be obtained by simulating the conditions in which the optical transmission will take place (i.e., latitude, zenith, sensor height, visibility) using MODTRAN online: http://modtran.spectral.com/modtran_home#plot.
+
+*Scintillation* is a fluctuation in the ampitude and phase of the signal due to variation in temperature, pressure, and refractive indices of Earth's atmosphere. A generous (over)estimate is around 2 dB.
+
+=== Path Gains
+
 
 
 
