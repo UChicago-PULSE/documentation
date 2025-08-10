@@ -2,6 +2,8 @@ name: Trigger webhook to rebuild
 on:
   push:
     branches: [main]
+permissions:
+  actions: write
 jobs:
   build:
     runs-on: ubuntu-latest
