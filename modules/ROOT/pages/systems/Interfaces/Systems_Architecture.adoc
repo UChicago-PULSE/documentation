@@ -4,6 +4,9 @@ This document serves to describe the major systems and subsystems of the satelli
 
 The architecture is divided into three main segments: the Launch Segment, Space Segment, and Ground Segment. The launch segment consists of the launch vehicle and launch vehicle adapter, which transports the spacecraft into orbit. The ground segment contains the ground control center, RF ground station, and optical ground station, which handle all command, control, and data reception.
 
+image::docs/images/SystemsArchitecture.png[Systems Architecture Diagram, width=400]
+
+
 = *I. Launch Segment*
 
 The launch segment consists of the launch vehicle and the launch vehicle adapter. The launch vehicle provides structural support, power, and data interfaces to the spacecraft during ground operations and ascent. The launch vehicle adapter mechanically connects the spacecraft to the vehicle and transfers these interfaces to the spacecraft’s structure.
@@ -17,3 +20,4 @@ The space segment contains all spacecraft subsystems required for autonomous ope
 The ground segment includes the RF Ground Station, Optical Ground Station, and Ground Control. The RF Ground Station handles two-way RF communication for commands, telemetry, and mission data. The Optical Ground Station receives high-speed optical downlinks from the payload and transmits a beacon laser to assist with alignment. Ground Control coordinates all mission activities, sending commands through both stations and processing incoming data for mission execution and analysis.
 
 By structuring the satellite into clearly defined segments and subsystems with well-defined interfaces, the design ensures that each component can operate reliably while integrating into a unified system. The flow of interfaces between systems have been deliberately organized to minimize complexity, reduce integration risk, and support efficient operations. This approach provides a solid foundation for meeting mission objectives, maintaining operational flexibility, and ensuring the spacecraft can perform effectively throughout its lifecycle.
+
