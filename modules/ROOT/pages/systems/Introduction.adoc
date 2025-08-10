@@ -1,3 +1,14 @@
 = Introduction to Systems Engineering
 
-Testing
+In the PULSE-A Systems Engineering department, our job is to ensure mission success by taking high-level mission objectives and translating them into clear, traceable, and verifiable requirements for each technical team. We start by defining, clarifying, and documenting mission, functional, and performance requirements, then develop verification and validation (V&V) methods to confirm that every requirement can be met in practice. Alongside this, we are actively running detailed risk assessments to identify potential points of failure, evaluate their likelihood and severity, and design mitigation strategies so that those risks are minimized to the greatest degree possible during Assembly, Integration, and Testing (AIT), launch, and on-orbit operations.
+
+All of this work is captured in four core documents we’ve developed — the *Systems Engineering Management Plan (SEMP)*, the *Systems Requirements Document (SRD)*, the *Verification and Validation Plans*, and the *Mission Risk Assessment and Mitigation*. These documents give every technical team a clear understanding of their specific deliverables as they relate to mission success.
+
+== Through these efforts:
+
+* Each department understands its specific deliverables, including design parameters, build tolerances, and performance expectations.
+* Interfaces between subsystems are identified early, with defined parameters and test plans to confirm compatibility.
+* Interdependent requirements — such as those linking the Attitude Determination and Control System (ADCS) to the optical payload or the Optical Ground Station (OGS) to the satellite’s beacon — are tracked and managed across departments.
+* Timeline dependencies are documented, enabling teams to anticipate when input, components, testing, or data from other departments will be required.
+
+In the sections below, we break down the creation, utility, and significance of each of the four key documents.
