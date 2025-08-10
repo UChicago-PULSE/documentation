@@ -1,7 +1,6 @@
 = Systems Engineering Management Plan
 
-link:../../../images/PULSE-A_SEMP.pdf[Systems Engineering Management Plan (PDF)]
-
+link:https://github.com/UChicago-PULSE/mission-documentation/blob/main/modules/ROOT/images/PULSE-A_SEMP.pdf/[Systems Engineering Management Plan (PDF)]
 
 
 
