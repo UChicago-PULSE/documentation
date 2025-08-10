@@ -1,1 +1,20 @@
-# Error Correction
+= Error Correction
+
+The use of error correction allows for an operable communication link under a lower SNR as intermittent errors caused by noise can be detected and corrected without interfering with the communication system. Several error correction schemes have been evaluated for integration into the communication pipeline with a specific focus on both the Hamming and Reed-Solomon code.
+
+The Hamming code is a lightweight code capable of correcting single-bit errors and detecting two-bit errors per block, with larger block sizes allowing for fewer redundancy bits. Due to its simplicity and low computational overhead, it is well-suited for low-error, low-latency environments. However, its correction capabilities are limited, and it does not perform well in the presence of burst errors—multiple error bits which appear in sequence.
+
+In contrast, the Reed-Solomon code is a more powerful block-based error correction scheme that is particularly effective at correcting multiple-symbol errors and is widely used in storage media, space communications, and digital broadcasting. Its robustness against burst errors and adaptability to variable block sizes makes it preferable for applications with higher noise tolerance requirements. Given the expected noise characteristics of this project, where intermittent atmospheric disturbances can cause burst errors, Reed-Solomon was selected as the primary error correction scheme.
+
+To facilitate rapid development, validation, and iteration, the error correction pipeline is first being implemented in Python. This software simulation environment enables flexible modular testing of various encoder/decoder configurations and noise models. The pipeline includes the following components:
+
+* Source Generation: Synthetic data is generated to simulate typical Payloads.
+* Encoder: The data is encoded using either Hamming, Reed-Solomon, or another chosen code, introducing redundancy necessary for correction.
+* Channel Model: A simulated noisy channel introduces controlled random or burst errors to the encoded data.
+* Decoder: The corrupted message is passed through the appropriate decoding algorithm in an attempt to recover the original Payload.
+* Verification: The output is compared with the original data to assess the effectiveness of error correction and characterize performance under different noise levels.
+
+
+This modular simulation framework allows for the controlled evaluation of error correction performance, the ability to change encoding frameworks, and the generation of diagnostic metrics.
+
+Following successful validation of the software-based pipeline, the finalized error correction algorithm will be adapted to an FPGA. FPGAs are well-suited for hardware implementations of error-correcting codes as they can process a stream of data at rates as high as the FPGA’s clock speed (e.g 33.3 MHz on the Zedboard).

@@ -1,12 +1,20 @@
 = Optical Ground Station
 
-The optical ground station (OGS) is the receiving portion of PULSE-A’s optical experiment. Since optical communications are directional, the OGS must track the transmission laser with a pointing accuracy of 1.4mrad.
-The optical ground station tracks, collects, and decodes the transmitted signal using four assembles: tracking,  polarization state preparation, signal decoding, and beacon.
+To perform satellite-to-ground optical communications, the OGS needs to track, receive, and decode the transmitted signal. Simultaneously, it must provide its own beacon at a wavelength of 1064 nm in order for the  satellite to be able to track the OGS. The satellite’s Payload transmits two beacons: a 1550 nm transmission laser and a 638 nm beacon laser. This three-laser system is at the core of PULSE-A’s design. 
+
+In order for the OGS to function as a receiving terminal for polarization-based optical communications, it must satisfy the following requirements on pointing, tracking, and decoding laser transmissions:
+
+. The OGS shall transmit the ground station laser beacon to the satellite.
+. The OGS shall point to the satellite.
+. The OGS shall track the Payload beacon laser.
+. The OGS shall detect the downlink transmission laser's wave packets as bits based on separated polarization states.
+. The OGS shall decode the downlink transmission laser into digital data.
+
+These system requirements are accomplished by four assemblies within the OGS: Tracking, Polarization State Preparation, Signal Decoding, and Beacon. 
+
 
 ---
 
 The OGS design diagram is below.
 
 image::ogs-diagram.png[]
-
-The tracking assembly is marked in blue, polarization state preparation in red, signal decoding in yellow, and beacon in green.
