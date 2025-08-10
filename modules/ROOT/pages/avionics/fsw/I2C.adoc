@@ -1,1 +1,7 @@
 = I^2^C
+
+== Resources
+
+link:https://www.ti.com/lit/an/sbaa565/sbaa565.pdf?ts=1754849883424&ref_url=https%253A%252F%252Fwww.google.com%252F/[TI I^2^C]
+
+link:https://www.youtube.com/watch?v=CAvawEcxoPU/[Video Explanation]
