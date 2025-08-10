@@ -7,7 +7,7 @@
 
 * xref:optical-overview.adoc[Optical System]
 ** xref:payload/index.adoc[Optical Payload]
-*** xref:payload/laser-driving.adoc[Quadcell]
+*** xref:payload/quadcell.adoc[Quadcell]
 ** xref:ground/optical-ground/index.adoc[Optical Ground Station]
 *** xref:ground/optical-ground/beacon-laser.adoc[Beacon Laser]
 *** xref:ground/optical-ground/error-correction.adoc[Error Correction]
