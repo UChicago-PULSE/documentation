@@ -1,6 +1,6 @@
 = Systems Engineering Management Plan
 
-link:assets/PULSE-A%20SEMP.pdf[Systems Engineering Management Plan (PDF)]
+link:images/PULSE-A%20SEMP.pdf[Systems Engineering Management Plan (PDF)]
 
 
 We maintain the Systems Engineering Management Plan (SEMP) as the central framework guiding PULSE-A from concept through launch. It is a live document, updated as requirements, schedules, and milestones evolve. 
