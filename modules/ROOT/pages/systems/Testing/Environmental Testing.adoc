@@ -1,5 +1,13 @@
+= Environmental Testing Plans
+
+
 Environmental testing is a crucial element of the PULSE-A systems team’s Verification & Validation (V&V) plan and overall satellite development life cycle as it ensures the satellite’s survival and operation under harsh loads, both during launch and in space. The tests aim to verify the structural integrity and robustness, functional performance, design margin, and similar constituents of the spacecraft’s health that may be compromised in light of mechanical and structural stress. 
+
 Our environmental testing plans reflect a balanced scheme and implementation of risk mitigation, resource availability, and compliance with a combination of heritage practices drawn from NASA’s General Verification Environmental Standard (GEVS) for GFSC Flight Programs and Projects, Space and Missiles Systems Center Standard (SMC-S-016), the Cal Poly CubeSat Design Specification (CP-CDS-R14.1), and NASA’s Launch Services Program (LSP) Program Level Dispenser and CubeSat Requirements Document (LSP-REQ-17).
+
 Due to time and budget constraints, we will primarily conduct acceptance-level testing to qualification levels, applying qualification-level testing to select components or assemblies whose performance under extreme conditions must be proven, and acceptance testing to everything at the full spacecraft or system level in order to screen for defects without over-stressing hardware. Acceptance testing consists of repeated, moderated verification for every single flight unit, whereas qualification testing involves a comprehensive, robust verification scheme, performed once per design, for the entire flight system; the latter thus involves submitting the spacecraft to the worst-case, extreme environmental loads. 
+
 By applying qualification-level stress and load margins during our acceptance testing program to select components and assemblies, we aim to maximize confidence in overall flight unit performance and durability without duplicating the cost and time of a full standalone qualification campaign. In sum, we adopted this hybrid approach in order to verify the spacecraft’s design under flight-like conditions while also satisfying acceptance criteria for each unit, allowing for a successful mission regardless of resource limitations. 
+
 The environmental tests will also feed directly into the PULSE-A systems requirements verification, inform risk retirement, and support the acceptance of the spacecraft as flight-ready by the launch provider. 
+
