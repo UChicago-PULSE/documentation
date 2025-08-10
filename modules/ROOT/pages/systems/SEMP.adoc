@@ -1,5 +1,7 @@
 = Systems Engineering Management Plan
 
+image::assets/PULSE-A SEMP.pdf[width=600,height=800]
+
 We maintain the Systems Engineering Management Plan (SEMP) as the central framework guiding PULSE-A from concept through launch. It is a live document, updated as requirements, schedules, and milestones evolve. 
 
 The initial version of the SEMP was produced on an accelerated timeline to support the Preliminary Design Review (PDR). While it met the immediate review requirements, it will undergo substantial refinement and expansion in preparation for the Critical Design Review (CDR) later this fall.
@@ -9,4 +11,4 @@ Generally, the SEMP outlines formal definitions, project phases, and the roles a
 
 Additionally, the SEMP connects systems engineering processes such as requirement allocation, interface definition, verification planning and risk tracking to supporting documents like the SRD, department dependent models, and analysis reports. This linkage ensures that every decision, from design changes to mitigation strategies, is grounded in a consistent, documented, and reviewable project-wide approach. The SEMP also designates the Systems Engineering department as responsible for this framework and ensuring process adherence across all mission phases.
 
-image::assets/PULSE-A SEMP.pdf[width=600,height=800]
+
