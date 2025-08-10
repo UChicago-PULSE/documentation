@@ -1,1 +1,4 @@
-= Optical Payload Documentation
+= Laser driving
+
+== Purpose
+Describe how the payload laser is driven safely.

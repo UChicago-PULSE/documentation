@@ -28,7 +28,7 @@ Our primary advisor noted that PULSE-A was starting licensing at an incredibly e
 
 == IARU Frequency Coordination Request
 
-The first step in our overall licensing program was compiling and filing the IARU Frequency Coordination Request. Approval from the amateur satellite service would allow us to follow through with our plan to operate on the UHF band, which spans from 420 to 450 Mhz.
+The first step in our overall licensing program was compiling and filing the IARU Frequency Coordination Request. Approval from the amateur satellite service would allow us to follow through with our plan to operate on the UHF band, which spans from 420 to 450 MHz.
 
 Before compiling the coordination request, it is critical that you read through the relevant IARU regulations (for example, RR 1.56 and RR 1.57), to ensure that your proposed operation aligns with all requirements. The coordination request form itself has several pages of information that discuss important considerations and denote important steps for filing and submitting the form.
 
