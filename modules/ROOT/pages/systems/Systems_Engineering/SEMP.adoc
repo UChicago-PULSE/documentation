@@ -1,6 +1,7 @@
 = Systems Engineering Management Plan
 
-link:ROOT:images@PULSE-A_SEMP.pdf[Systems Engineering Management Plan (PDF)]
+link:../../images/PULSE-A_SEMP.pdf[Systems Engineering Management Plan (PDF)]
+
 
 
 
