@@ -1,4 +1,4 @@
-= Test Objectives
+= Test Objectives and Reasoning
 
 
 The purpose of environmental testing is to simulate the physical, thermal, and electromagnetic stresses the satellite may undergo during its lifecycle, allowing for detection of latent defects in the spacecraft’s technology that may hinder a successful mission. 
