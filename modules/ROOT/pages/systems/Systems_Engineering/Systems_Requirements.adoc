@@ -15,8 +15,13 @@ Additionally, our SRD serves to create an organized framework for prioritizing t
 
 == Example Requirement: OGS-15 Optical Ground Station in SRD
 For requirement OGS-15 — The OGS shall be capable of detecting the downlink laser transmission at a link margin of 3 dB ≤ Margin ≤ 6 dB — we first ensured the statement was measurable — the numbers in dB give us a clear pass/fail criterion. 
+
 Then we determined the requirement Level as Performance because this isn’t about what the OGS does in a functional sense, but rather about how well it does it. The margin range comes directly from our Optical Tx Link Budget, which models the received power and losses under both nominal and degraded conditions. We chose 3–6 dB to ensure the link stays robust in the face of atmospheric attenuation, pointing errors, and optical losses, while also not over-specifying the system beyond practical limits.
+
 For the Parent Requirements, we linked to OGS-09 (functional) and OGS-12 (performance) because both have to be met for OGS-15 to even make sense. OGS-09 covers the actual ability to detect downlink wave packets by polarization state — without that, margin is meaningless. OGS-12 sets the bit error rate range, which directly depends on having enough link margin; if the margin is too low, BER will climb above our limit.
+
 We set the Verification Method to Analysis because we’ll be using link budget calculations to prove compliance, not an early physical demo. Running the numbers lets us confirm before hardware build that the optical chain can meet the 3–6 dB requirement.
+
 Finally, the Compliance Timeline is CDR because that’s when we need to be sure the design will meet the required margin before we commit to fabrication.
+
 By integrating these interdependent needs into the SRD early, we reduced the risk of downstream integration issues and clarified cross-team responsibilities. The SRD also plays a central role in design reviews, helping us to evaluate whether subsystem-level designs align with system-level goals. Now, other departments actively rely on the SRD as both a reference tool and a roadmap as they plan out their day to day assignments. 
