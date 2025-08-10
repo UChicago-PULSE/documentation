@@ -64,8 +64,9 @@
 **** xref:avionics/fsw/42-simulator.adoc[42 Simulator]
 **** xref:avionics/fsw/D2S2-simulator.adoc[D2S2 Simulator]
 ** RF Communications
-*** xref:ground/rf-ground/index.adoc[RF Ground Station]
-**** xref:ground/rf-ground/rfgs-software.adoc[Software]
+*** xref:rf/index.adoc[RF Ground Station]
+**** xref:rf/rfgs-software.adoc[Software]
+**** xref:rf/rfgs-hardware.adoc[Software]
 ** xref:structures/index.adoc[Structures]
 ** xref:thermal/index.adoc[Thermal]
 
