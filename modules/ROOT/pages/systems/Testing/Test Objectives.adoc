@@ -1,1 +1,20 @@
 = Test Objectives
+
+
+The purpose of environmental testing is to simulate the physical, thermal, and electromagnetic stresses the satellite may undergo during its lifecycle, allowing for detection of latent defects in the spacecraft’s technology that may hinder a successful mission. 
+
+Possible stressors include high G-forces and vibration upon launch, shock loads from stage separation or deployment, and thermal, structural, and pressure loads due to on-orbit factors such as thermal gradients, vacuum exposure, and torsion, respectively. 
+
+In order to ensure proper spacecraft survival and performance, we will perform several tests targeting these stressors, evaluating PULSE-A under the following corresponding verification criteria: 
+
+
+. *The spacecraft shall withstand launch loads.*
+. *The spacecraft shall withstand low-Earth orbit (LEO) conditions.*
+. *The spacecraft shall prove compliance with regulations.*
+. *The spacecraft shall have no defective components.*
+
+We adopt a test-as-you-fly, stepwise verification approach to the environmental tests; team members will consistently aim to replicate flight boundary conditions wherever possible throughout the product realization process, allowing for iterative design and performance refinement. 
+
+These tests will also feed directly into the PULSE-A systems requirements verification, inform risk retirement, and support the acceptance of the spacecraft as flight-ready by the launch provider. 
+
+In sum, our primary objective and guiding philosophy is to enact an integrated verification program that actively informs system confidence, mission readiness, and long-lasting satellite health. 
