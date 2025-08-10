@@ -9,7 +9,7 @@ At our transmission rate of 9600bps, we can send critical GPS data during our la
 
 The following is a block diagram for the RFGS.
 
-image::rfgs-diagram.png[]
+image::rfgs-diagram.svg[]
 
 == Licensing
 To transmit over radio frequencies, licensing from the FCC is required. We plan to coordinate with the IARU, then FCC, then ITU, to obtain experimental and amateur licenses. During design and development of the RF subsystem, members of the PULSE-A team will become familiar with amateur radio equipment and uses and obtain ham amateur licenses which will be needed to transmit to the CubeSat.
@@ -18,7 +18,7 @@ To see more about PULSE-A's licensing, refer to xref:licensing.adoc[our licensin
 
 == Hardware
 
-During viable radio passes the RFGS will communicate with the SpaceManic Murgas satellite radio module, receiving telemetry and sending commands for future passes.  
+During viable radio passes the RFGS will communicate with the SpaceManic Murgas satellite radio module, receiving telemetry and sending commands for future passes.
 
 The RFGS will use a Cross-Yagi antenna for its high gain and ease of use, which will be connected to a roof mount with a Yaesu G-5500 rotator controlled by the CSN Technologies Self-contained Antenna Tracker and GPredict. The uplink and downlink will be supported by the ICOM-9700 transceiver, with a SSB SP70 masthead preamplifier connected to a DCW 2004 B power coupler to boost weak signals from the satellite. The Cross-Yagi antenna will transmit right-handed circularly polarized RF signals at 30 Watts and receive linearly polarized RF signals from the satellite. While this polarization mismatch will decrease the strength of the received signal by approximately 3 dB, the combination of circular transmission and linear reception will ensure reliable signal reception from the satellite regardless of its orientation.
 
@@ -27,7 +27,7 @@ The RFGS will use a Cross-Yagi antenna for its high gain and ease of use, which 
 All commands to the CubeSat will be encrypted to ensure operational integrity, all telemetry will be unencrypted so that other amateur radio operators can receive and decode. We plan to send around-the-world telemetry and participate in the SatNOGS ground network. Other than during RFGS viables radio passes, the AX.25 digipeater will be available for amateur operators.
 
 
-The RFGS will receive telemetry and sending commands and files using the AX.25 standard amateur radio frames encapsulating CubeSpace Protocol packets over KISS protocol, which will wrap CubeSat Space Protocol (CSP) packets containing command and telemetry data. It will receive and transmit at 9600 baud using GFSK/GMSK(TBD) modulation. Packets will be decoded using a terminal node controller (TNC) and a ground station computer. 
+The RFGS will receive telemetry and sending commands and files using the AX.25 standard amateur radio frames encapsulating CubeSpace Protocol packets over KISS protocol, which will wrap CubeSat Space Protocol (CSP) packets containing command and telemetry data. It will receive and transmit at 9600 baud using GFSK/GMSK(TBD) modulation. Packets will be decoded using a terminal node controller (TNC) and a ground station computer.
 
 To see more about the RFGS software, refer to xref:rfgs-software.adoc[our software documentation].
 
