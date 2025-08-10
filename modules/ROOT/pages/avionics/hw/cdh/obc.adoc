@@ -1,0 +1,14 @@
+= On Board Computer & Payload Controller
+
+== Overview
+
+The C&DH subsystem consists of two nearly identical compute elements, dubbed the On-Board Computer (OBC) and Payload Controller, which are
+the spacecraft's primary control and Payload control units, respectively. Although the OBC controls all aspects of the spacecraft by default, the Payload Controller serves as a redundant backup in the case of a temporary or permanent OBC failure. The primary C&DH network is dual-redundant CAN buses connected to all other peripherals on the spacecraft. Additionally, the OBC and Payload Controller support a dedicated Ethernet network, which only the two devices can access.
+
+A BeagleBone Black (BBB) microcontroller will serve as the foundation for the On-Board Computer. The BBB is an open-source, communitydriven, small form-factor embedded system with a 1 GHz ARM Cortex-A8 as its primary processing unit. The BBB interfaces with the PC/104 bus via a Flight Computer motherboard, which conforms to the PC/104 spec, connects to the BBB's expansion header pins, and provides the BBB with all necessary power and data connections. The Flight Computer Motherboard also adds additional functionality, including a real-time clock with local battery backup, external MEMS oscillators, CAN transceiver, external memory IC, temperature sensor, and external watchdog processor (TI MSP430FR2433). When the BBB and the Flight Computer motherboard are coupled together, the
+complete unit is referred to as the OBC.
+
+The Payload Controller will be heavily based on the main On-Board Computer, with slight modifications to accommodate the unique requirements of the scientific Payload. A BBB will serve as the compute element, with an additional FPGA used for controlling the Payload's transmission lasers on the same board, an architecture based on the Massachusets Institute of Technology's CubeSat Laser Infrared CrosslinK (CLICK) mission. The Payload box is disconnected from the PC/104 connector stack; therefore, power and data connections will be
+made to form a custom wiring harness passed into the Payload box from the Payload Controller. For more information on this architecture, refer to the paper on PULSE-A's Payload design.
+
+== Design Motivation

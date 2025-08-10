@@ -19,9 +19,9 @@
 *** xref:ground/optical-ground/telescope-control.adoc[Telescope Control]
 *** xref:ground/optical-ground/tracking-camera.adoc[Tracking Camera]
 
-* xref:flight-overview.adoc[Flight System]
-** [Command and Data Handling]
-*** [On-Board Computer]
+* xref:flight-overview.adoc[Non-Optical Systems]
+** xref:avionics/cdh.adoc[Command and Data Handling]
+*** xref:avionics/hw/obc.adoc[On-Board Computer]
 *** xref:avionics/fsw/index.adoc#_general_software_information[General Software Information]
 **** xref:avionics/fsw/cFS-general.adoc[cFS General]
 **** xref:avionics/fsw/cFS-sfotware-bus.adoc[cFS Software Bus]
@@ -71,7 +71,7 @@
 ** xref:thermal/index.adoc[Thermal]
 ** xref:avionics/hw/power/index.adoc[Power]
 *** xref:avionics/hw/power/batt-board.adoc[Battery Board]
-*** xref:avionics/hw/power/pdu.adoc[Battery Board]
+*** xref:avionics/hw/power/pdu.adoc[Power Distribution Unit]
 
 * xref:systems/index.adoc[Systems Engineering & AIT]
 ** xref:systems/Systems_Engineering/Introduction.adoc[Systems Engineering]
