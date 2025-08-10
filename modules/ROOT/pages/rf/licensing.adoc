@@ -1,0 +1,113 @@
+= PULSE-A Licensing Materials and Documentation
+
+Adhering to standard licensing procedures and securing all required supporting materials is essential for ensuring compliant communications operations, proper Radio Frequency Ground Station (RFGS) procedures, satellite launch, and overall mission success.
+
+The PULSE-A Radio Frequency Ground Station (RFGS) and Communications team primarily utilized the link:https://phxcubesat.asu.edu/resources/documents[Phoenix CubeSat Documents & Resources] as a guide in commencing the licensing process. Alongside the support from a primary licensing advisor, we also established a unique licensing managerial role for one of our student team members. Developing this role was critical to ensuring that the licensing process would progress efficiently while other team members focused on the technical engineering aspects of the RFGS and communications subsystem. Below we provide the contact information for our primary advisor, licensing manager, and RF subsystem lead.
+
+*Primary Advisor:*
+
+Michael (Mike) Miller
+
+mailto:mlmiller@sterk.space[mlmiller@sterk.space]
+
+*Licensing Manager:*
+
+Sofia Cavallone
+
+mailto:scavallone@uchicago.edu[scavallone@uchicago.edu]
+
+*RF Lead:*
+
+Mason McCormack
+
+mailto:masonmccormack@uchicago.edu[masonmccormack@uchicago.edu]
+
+Though opinions on the licensing timeline vary across sources, we decided to commence the process as soon as possible because certain permissions, specifically those of the International Amateur Radio Union (IARU), would allow us to purchase necessary RFGS components and the satellite radio module. The choice and subsequent purchase of our antenna, for example, would be dependent on whether or not we have permission to operate on the UHF amateur band. Furthermore, the RFGS and Communications Team is one of the only PULSE-A engineering teams without an allocated engineering faculty member, thus we aim to implement heavy testing into our campaign to detect latent defects within our system as soon as possible and ensure maximum confidence in our radio and communications processes. Obtaining the correct components early on in our mission allows us to commence this rigorous testing, and verify the reliability of our system.
+
+Our primary advisor noted that PULSE-A was starting licensing at an incredibly early point, so it is crucial that other organizations interested in obtaining radio licensing consult varying documentation, and take into account their specific mission priorities. Note that the licensing process takes several months to complete, which you may factor into your decision.
+
+== IARU Frequency Coordination Request
+
+The first step in our overall licensing program was compiling and filing the IARU Frequency Coordination Request. Approval from the amateur satellite service would allow us to follow through with our plan to operate on the UHF band, which spans from 420 to 450 MHz.
+
+Before compiling the coordination request, it is critical that you read through the relevant IARU regulations (for example, RR 1.56 and RR 1.57), to ensure that your proposed operation aligns with all requirements. The coordination request form itself has several pages of information that discuss important considerations and denote important steps for filing and submitting the form.
+
+While compiling the form, we also ensured that all RFGS and Communications team members worked on obtaining a Ham Technician Class License, the entry-level license for amateur radio operators in the U.S., as it is required for ground station operation under standard amateur radio regulations. We utilized link:http://hamstudy.org[hamstudy.org] as our primary source.
+
+Before submitting our final coordination request, we consulted our primary advisor several times throughout our write-up process, who then submitted it to a contact at the IARU for an initial review. After the initial review, we submitted the final form to the IARU at mailto:satcoord@iaru.org[satcoord@iaru.org] on July 20, 2025. You can find our final coordination request draft link:https://uchicagoedu-my.sharepoint.com/:b:/g/personal/masonmccormack_uchicago_edu/EcRUrr6K9uRBk-QU_gyZf_4B9B4Z0VmqkyB0G1dZVAEaTA?e=RHH1aH[here].
+
+Below, we also provide some important information regarding specific sections of the IARU form that we obtained from our primary advisor:
+
+* Make sure that all of the links on the form (link budget, organization website, etc) have unrestricted viewing access
+
+* *Section 5.13:* When including the requested radiation pattern, attach an image (or link to an image) of the pattern. Do not include a written description only.
+
+* *Sections 7.8 and 7.9:* If you are unsure how to implement the appropriate mechanisms here, it is first critical to understand transmit time (the maximum continuous duration the spacecraft can transmit) and transmit inhibit time (the mandatory quiet period before transmissions can resume). To comply, there must be some form of logic implemented into the spacecraft's subsystems that automatically triggers a transmit inhibit if no valid ground command is received within a set period, requiring a subsequent ground command to restore transmissions. Transmission can be inhibited through software logic in the onboard computer (suspending transmit commands if an inhibit flag is set) or via hardware/firmware controls in the radio subsystem that block RF output directly.
+
+We submitted our IARU coordination request on on 7/21/2025 by email to mailto:satcoord@iaru.org[satcoord@iaru.org] and mailto:pb2t@me.com[pb2t@me.com]
+
+----
+Dear Hans and IARU Satellite Coordinating Committee,
+
+Please consider the attached coordination request for our PULSE-A spacecraft.
+
+Thank you for your support.
+
+73,
+
+Mason McCormack KC1YAZ
+----
+
+Due to crowding of the amateur band, amateur frequency licensing has become harder to obtain. Therefore it is important to emphasize aspects of the mission that support amateur activity, primarily our digipeater on the satellite radio module and the many ham operators that are involved in the PULSE-A project who will gain valuable experience operating amateur radios during development.
+
+== SpaceCap and SpaceVal Files
+
+The SpaceCap and SpaceVal files are required documentation for securing the spacecraft's frequency license from the Federal Communications Commission (FCC). These files provide the technical parameters of the satellite's radio system and its compliance with regulatory requirements. All related attachments must be uploaded through the FCC's Electronic Licensing Service (ELS) and shared with your assigned FCC contact to complete the submission process.
+
+*SpaceCap:* PC-based data capture software application for electronic capture of data elements to be furnished in notices relating to space stations
+
+*SpaceVal:* PC-based software used to validate the information included in your SpaceCap file. It evaluates whether errors have occurred based on the way you have added information on your spacecraft or ground station.
+
+For a more in-depth SpaceCap and SpaceVal guide/tutorial, please visit link:https://phxcubesat.asu.edu/sites/default/files/general/phoenix_spacecap_file_frequency_licensing_tips_1_0.pdf[this link].
+
+Note that both SpaceCap and SpaceVal are both PC-based applications, so a Windows computer is required to complete this process.
+
+We plan to compile our SpaceCap and SpaceVal files in early Fall of 2025.
+
+== FCC Experimental License Request (Form 442)
+
+FCC Form 442 --- formally titled Application for a New or Modified Radio Station Authorization under Part 5 -- Experimental Radio Service --- is the primary application used to request experimental frequency authorization from the Federal Communications Commission (FCC). For PULSE-A, this form provides the FCC with key technical and operational details about the spacecraft's radio system, including frequency, power, modulation type, antenna characteristics, and planned operational timeline. Approval of Form 442 will grant us legal permission to transmit in the requested frequency band for the specified experimental period.
+
+Before submitting Form 442, it is important to understand that the document must be signed by an individual authorized to act on behalf of your university or governing organization. While student leads may prepare the technical content of the application, they are not authorized to legally bind the university in regulatory matters. The submission process uses electronic signatures, and by signing, the university certifies the accuracy of all technical and operational information, confirms that the satellite will operate in compliance with FCC rules, and formally accepts institutional responsibility for all transmissions.
+
+Because of these legal and regulatory commitments, the form must be reviewed and signed by an authorized university representative (typically, this will be a research administrator, compliance officer, or faculty principal investigator with delegated signing authority.) Engaging this signatory early ensures that all required details are complete and accurate, preventing delays in FCC review and approval.
+
+Similarly to the SpaceCap and SpaceVal timeline, we will be commencing our Form 442 process in early Fall of 2025.
+
+[NOTE]
+====
+Please note that we will apply for an experimental license to cover the laser comm part of our mission, and apply for an amateur license to cover the digipeater part of the mission and any other amateur activity.
+
+Additionally, FCC will restrict RFGS power output (50W) and satellite power output (2W).
+====
+
+== NOAA Licensing
+
+All missions are required to contact NOAA to determine whether a NOAA license is required for the mission. FCC licensing and IARU permission will not be granted if this permission is not obtained. PULSE-A does not have any Earth-facing cameras, only a star and sun sensor, this does not warrant any NOAA licensing. We received confirmation of this from NOAA.
+
+Speaking to other CubeSat missions, NOAA licensing is typically quick if the resolution of the Earth-facing camera is typical of other satellite missions.
+
+== Additional Resources
+
+* link:https://wiki.satnogs.org/Satellite_Operator_Guide#1._Frequency_Coordination[SatNOGS Satellite Operator Guide]
+* link:http://mstl.atl.calpoly.edu/~workshop/archive/2019/Spring/Day%203/Session%204/GeraldBuxton.pdf[CalPoly CubeSat Licensing Presentation]
+* link:https://www.amsat.org/wordpress/wp-content/uploads/2018/04/AMSAST_CubeSat_Licensing.pdf[AMSAT CubeSat Licensing Guide]
+* link:https://www.fcc.gov/space/space-stations[FCC Space Stations]
+* link:https://www.arrl.org/files/file/Regulatory/Part%2097%20-%20%2016%20Jan%202024.pdf[ARRL Part 97 Regulations]
+* link:https://www.iaru.org/reference/satellites/[IARU Satellite Reference]
+* link:https://www.nesdis.noaa.gov/CRSRA/generalApplication.html[NOAA Application Process]
+* link:https://docs.google.com/forms/d/1STEt0B6EUweGMmk1QyXAoo1KZAnQ1G8JJcnsuifO1SA/viewform?edit_requested=true[NOAA Initial Contact Form]
+* link:https://www.fcc.gov/document/guidance-obtaining-licenses-small-satellites[FCC Guidance on Small Sats]
+* link:http://www.arrl.org/FandES/field/regulations/news/part97/[FCC Amateur Radio Regulations]
+* link:https://www.cubesat.org/cubesatinfo#:~:text=IARU%20Frequency%20Coordination[CubeSat.org IARU Frequency Coordination]
+* link:https://www.itu.int/en/ITU-R/space/Pages/supportSmallSat.aspx[ITU Amateur Satellite Service]

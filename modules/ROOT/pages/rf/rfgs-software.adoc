@@ -6,10 +6,10 @@ The RFGS portion of the ground control software is responsible for controlling t
 
 The following diagram shows the flow of packets through software and hardware signal-processing components.
 
-image::rfgs-software-diagram.png[]
+image::rf-comm-chain.svg[]
 
 == GNU Radio
 We utilize GNU Radio to control our radio communications chain, interfacing with the TNC, transceiver, and antenna. Uplink commands are initiated by the PyQt GUI: commands are wrapped in AX.25 (carrying CSP Payloads), sent over KISS to the TNC, GFSK-modulated at 9.6 kbps, and then forwarded as audio to the transceiver for transmission. Downlink telemetry data will be received by the transceiver and then will enter the TNC where it will be demodulated and deframed into AX.25 packets. Lastly, these packets will be forwarded via KISS to the RF control computer where they will be decoded by GNU Radio and displayed on the PyQT GUI. This architecture will let us iterate quickly on packet formats and automation logic.
 
 == GPredict
-In our setup, GPredict runs locally on the RF control computer. GPredict will frequently pull the satellite's two-line elements (TLEs) and compute our satellite’s real-time Doppler’s offset and altitude-azimuth coordinates. GPredict then streams pointing commands to the antenna and pushes frequency-correction values into GNU Radio for frequency adjustments. Using GPredict will allow us to have automated beam steering and Doppler compensation without additional hardware. 
+In our setup, GPredict runs locally on the RF control computer. GPredict will frequently pull the satellite's two-line elements (TLEs) and compute our satellite’s real-time Doppler’s offset and altitude-azimuth coordinates. GPredict then streams pointing commands to the antenna and pushes frequency-correction values into GNU Radio for frequency adjustments. Using GPredict will allow us to have automated beam steering and Doppler compensation without additional hardware.
