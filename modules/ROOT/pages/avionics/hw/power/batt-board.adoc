@@ -1,0 +1,35 @@
+= Battery Board
+Dylan Hu <dylanhu AT uchicago DOT edu>
+:stem: latexmath
+
+The battery board is a critical component of the power subsystem, from physically holding the cells to managing the battery's health and performance. We use a 2s3p configuration with link:https://www.orbtronic.com/content/samsung-35e-datasheet-inr18650-35e.pdf[Samsung 35E] 18650 cells, which have previous flight heritage and are known for their reliability. We use a independent battery management system (BMS) IC to monitor the battery's health and performance and a separate IC for battery balancing. The board also includes four discrete temperature sensors read by an I2C connected ADC, which can be read by the OBC. Furthermore, there is a discrete logic implementation for battery heater control with a separate temperature sensor. This heater control circuit can be overridden by the OBC.
+
+== Battery and Cell Protection
+
+We use the link:https://www.mouser.com/datasheet/2/792/r5460-e-1085730.pdf[R5460N210AD1] battery protection IC as the primary protector of the battery. This IC provides overcurrent, overvoltage, undervoltage, and overtemperature protection for the battery pack. This IC has previous flight heritage in the PyCubed project.
+
+However, the R5460 does not provide cell balancing, which is handled by the link:https://www.ti.com/lit/ds/symlink/bq29200.pdf?ts=1754704753927[BQ29200] IC. We chose the BQ29200 because it is a low-power IC with a low balancing current, which reduces the amount of resistive heat needed to be dissipated. Furthermore, it has a high accuracy across the expected temperature range.
+
+== Temperature Monitoring
+
+The battery board includes four link:https://www.ti.com/lit/ds/symlink/lm35.pdf[LM35-LP] precision temperature sensors, which are read by the link:https://www.ti.com/lit/ds/symlink/tla2024.pdf[TLA2024IRUGR] four channel 12-bit ADC, connected to the OBC via I2C.
+
+=== Temperature Sensor Selection
+
+We chose the LM35 temperature sensors because they are a linear, directly celsius-calibrated temperature sensor. Thus, they are much simpler to read than other temperature sensors, such as thermistors, which require a lookup table to convert the resistance to temperature or other dedicated ICs. Furthermore, the LM35 is a precision sensor which has a low temperature coefficient, high linearity, and low self-heating. It is also rated for a wide temperature range, which allows us to monitor the battery's temperature in extreme conditions, though they should never occur.
+
+=== ADC Selection
+
+We chose the TLA2024 ADC because we did not have a strict requirement for any ADC specifications except for the number of channels (4). The TLA2024 is a low-cost, low-power ADC with a 12-bit resolution and an I2C interface, which makes it easy to connect to the OBC.
+
+== Battery Heater Control
+
+The xref:pdu.adoc[PDU] contains the actual switching circuitry for the power heater, but the control signal is provided by the battery board. Post-deployment for a short while, the OBC is not active and unable to control the battery heater. Because the cells are not charged during deploymenet, this can cause the cells to drop below their minimum charging temperature (0°C). To prevent this, the battery board has a discrete logic implementation that can turn on the heater if the temperature drops below 0°C. This is done using a simple comparator circuit with a temperature sensor and a reference voltage. The OBC can select between this signal and its own control signal to turn on the heater. By default, the discrete control is used.
+
+We use the link:https://www.analog.com/media/en/technical-documentation/data-sheets/tmp35_36_37.pdf[TMP36] linear temperature sensor for the heater control. Compatible with the LM35, the TMP36 is also a linear, directly celsius-calibrated temperature sensor. It has a low temperature coefficient, high linearity, and low self-heating. We use a link:https://www.ti.com/lit/ds/symlink/lm4040.pdf[LM4040] 2.5V precision shunt voltage reference to set the threshold for the heater control. We obtain a reference voltage of 0.601V, which roughly corresponds to 10°C. This is a conservative threshold to ensure that the heater is turned on before the cells drop below their minimum charging temperature. We use the LM4040 because it is relatively low-cost and provides us with an ultra-stable reference voltage. For the comparator, we use the link:https://www.ti.com/lit/ds/symlink/lmv331.pdf[LMV331] comparator, which has a low supply current of 26 µA.
+
+We power the discrete control circuitry from a separate 5V low dropout regulator (LDO) to ensure that the heater control can operate when the main 5V rail is not powered. We use the link:https://www.ti.com/lit/ds/symlink/tps7a26.pdf[TPS7A26] LDO, which has an input voltage range that allows it to be powered from any battery voltage, with an ultra-low quiescent current of 2 µA. We do not expect to draw much current from the LDO, but the LDO has a thermal pad connection to the PCB to help dissipate any heat generated.
+
+To implement the discrete logic, we use standard 74-series logic ICs. The OBC has two outputs to the battery board: `KAPTON_SEL` to select between the OBC control and the discrete control, and `KAPTON_OBC_EN` for the OBC control. We implement the following logic:
+
+stem:[\left(\text{KAPTON_OBC_EN} \land \text{KAPTON_SEL}\right) \lor \left(\text{KAPTON_OBC_EN} \land \neg \text{KAPTON_SEL}\right)]

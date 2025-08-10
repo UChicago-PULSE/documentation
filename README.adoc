@@ -27,7 +27,7 @@ The asciidoc files are located within the docs folder. Pending further file orga
 
 . When your changes are complete, run `git add .`, or add changes in the source control window.
 
-. Type into the source control commit message window or run `git commit -m '[message]'`, and enter a title for your commit. It is preffered that you follow the Conventional Commits message spec, found link:https://www.conventionalcommits.org/en/v1.0.0/[here].
+. Type into the source control commit message window or run `git commit -m '[message]'`, and enter a title for your commit. It is preferred that you follow the Conventional Commits message spec, found link:https://www.conventionalcommits.org/en/v1.0.0/[here].
 
 . Push in the source control window or run `git push`.
 

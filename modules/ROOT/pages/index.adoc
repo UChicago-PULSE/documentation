@@ -2,10 +2,6 @@
 
 This is the primary documentation site for the project. Navigate using the sidebar on the left to see all pages.
 
-All mission-level systems engineering documentation and subsystem design motivation live in this repository.
-
-To view component-level hardware documentation and detailed firmware documentation (including how to run our code), navigate to the relevant documentation using the button in the bottom left of this window.
-
 == GitHub Navigation
 
 The UCSP GitHub project is the home for this documentation and for all of our repositories. The project can be accessed link:https://github.com/UChicago-PULSE[here].
