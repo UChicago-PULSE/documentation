@@ -1,0 +1,30 @@
+= Ground Software (OGS)
+
+A central ground control program unifies RFGS and OGS functions such as the telescope controls, a telemetry viewer, a live data plotter, and a command center.
+
+The control software must fulfill the following requirements: 
+
+* Operate the OGS tracking and signal decoding systems
+* Establish and maintain the RFGS communication link
+* Send and receive commands to and from the RFGS and OGS
+* Monitor and analyze mission operations in real time
+* Record and archive information from the RFGS and OGS
+* Integrate external software modules like GNU Radio and GPredict
+* Initiate, terminate, schedule, and automate the operations of the RFGS and OGS
+
+Rather than use existing mission control software such as OpenMCT or OpenC3/COSMOS, we will be developing our own GUI software using Python’s PyQT library. OpenMCT and OpenC3/COSMOS are both web-based tools developed in Javascript and Ruby, respectively, which makes integration with our Python-based control code challenging. For this reason, developing a proprietary GUI will save development and integration time. The OGS and RFGS will be running two independent PyQt windows which will be connected over the internet. 
+
+== OGS Control
+
+The OGS Control software will be integrated with the following modules:
+
+. Telescope Controls: Provides a focused interface for slewing, tracking, and fine-pointing the telescope in synchronization with RF passes.
+. Data Plotter: Allows for viewing of a graph of the telemetry channel’s value over time. Includes live and log modes and multiple panels (up to 4) for easy comparison. This tool can also plot local archived data.
+. Command Center: Allows for the sending of standard or custom commands to the OGS.
+. Record and On/Off Buttons: The On/Off buttons provide direct control over both stations’ power. Processes can be shut off in the case of an emergency. The record button allows for the recording of incoming data. All data is archived once the recording is stopped.
+
+
+
+== RFGS Control
+
+More information about RFGS control is available on the xref:ground/rf-ground/rfgs-software.adoc[RFGS Software] page.

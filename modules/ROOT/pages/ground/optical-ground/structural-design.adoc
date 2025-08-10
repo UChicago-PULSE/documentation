@@ -1,1 +1,31 @@
 = Structural Design
+
+The polarization state preparation assembly will be mounted onto the telescope using an optical breadboard with a matte black anodized finish to reduce unwanted reflections. The breadboard will attach to the telescope using custom brackets that attach to the telescope’s pre-existing mounting holes. A section of the breadboard will be waterjetted to remove unnecessary weight and ensure that the FSM can receive the incident source from the telescope. The FSM will be mounted at a 45° angle to take the signal into the plane of the optical breadboard. Most optic elements possess large diameters (1 inch) to accommodate the large beam waist of the incoming signal from the second plano-convex lens within the telescope. 
+
+[cols="a,a", frame=none, grid=none]
+|===
+| image::ogs-cad-top.png[]
+| image::ogs-cad-isom.png[]
+|===
+
+Above: Overhead view and isometric view of optics bench.
+
+== Collimator to APD Integration
+
+The polarizing beam splitter (PBS) will differentiate the transmitted signal into two channels based on polarization state, each channel representing a 0 or 1 bit. These signals will be received simultaneously within the two fiber collimators, which couple the light into a single-mode fiber optic cable and transmit  the light to its respective fiber-coupled APD. To reduce the strain on fibers when the telescope rotates, we are considering extremely long optical fibers. The APDs and signal decoding assembly will be mounted separately, adjacent to the telescope.
+
+== Enclosure
+
+The enclosure serves to block all unnecessary light and environmental hazards, such as wind and dust particles, which could introduce noise or damage optical components, thereby obstructing the process of preparing the polarization state. To minimize costs, the enclosure will be custom 3D-printed. The encasement will feature rubber grommets and seals for fiber optic connections to the collimators and APDs, and likewise for connection to the FSM to ensure proper functionality. The design will be attachable to the breadboard on the optics bench. 
+
+image::ogs-enclosure.png[]
+
+Above: Isometric view of the optical bench with opacity level 60%.
+
+== Telescope Collimating Lenses
+
+A Keplerian beam expander will be mounted within the telescope using plano-convex lenses to ensure proper collimation of incoming light. The objective lens will be securely attached to the bottom of the bore, while the eyepiece lens will be fixed to the telescope’s visual back. The beam expander will be positioned directly in the telescope’s center.
+
+image::ogs-lenses.png[]
+
+Above: Side view of the optical layout mounted on the telescope, displaying collimating lenses.
