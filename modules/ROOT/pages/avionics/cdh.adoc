@@ -1,0 +1,3 @@
+= Command and Data Handling Subsystem
+
+The C&DH subsystem consists of two nearly identical compute elements, dubbed the On-Board Computer (OBC) and Payload Controller, which are the spacecraft's primary control and Payload control units, respectively. Although the OBC controls all aspects of the spacecraft by default, the Payload Controller serves as a redundant backup in the case of a temporary or permanent OBC failure. The primary C&DH network is dual-redundant CAN buses connected to all other peripherals on the spacecraft. Additionally, the OBC and Payload Controller support a dedicated Ethernet network, which only the two devices can access.

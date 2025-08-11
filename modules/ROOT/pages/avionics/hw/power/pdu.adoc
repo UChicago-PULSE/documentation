@@ -1,3 +1,7 @@
 = Power Distribution Unit
 Graydon Schulze-Kalt <graydonsk AT uchicago DOT edu>
 
+== Overview
+The Power Distribution Unit (PDU) is being developed in-house by the PULSE-A team based on extensive heritage from open-source designs from both Stanford's PyCubed[6] and the University of Hawai'i at Manoa's Artemis CubeSat Kit.[7] In comparison
+to PDUs on other CubeSat missions, PULSE-A's PDU is a “dumb” PDU—in other words, it does
+not contain its own compute element. Systems on board the PDU are driven by the C&DH system (particularly, the OBC) via direct connections over the PC/104 stack. This design choice was made to reduce the number of independent computers on the spacecraft with different processors, necessitating different frameworks and languages, ultimately making development easier. The PDU contains three independent LT8610 highly-efficient switching voltage regulators, two at 5 V and one at 3.3 V, each capable of delivering 2.5 A of current. One 5 V regulator is dedicated to the highest-power draw component on the spacecraft, the Erbium-Doped Fiber Amplifier within the Payload.
