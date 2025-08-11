@@ -1,6 +1,6 @@
 = Validation and Verification Planning
 
-== Purpose
+== Purpose of Verification Planning
 
 Verification and Validation (V&V) is a core element of our systems engineering process, ensuring that all requirements defined in the SRD are testable and provable. While the SRD defines what the system must accomplish, the V&V plan outlines how each requirement will be verified through objective, testable verification paths, from component-level checks to full-system integration. We developed our V&V plans in parallel with the SRD. We collaborated with team leads to break down each requirement into concrete verification methods, such as by analysis, inspection, test, or demonstration, and by mapping those to specific milestones and responsible teams. 
 
