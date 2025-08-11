@@ -16,7 +16,7 @@ jobs:
           header='{"alg":"RS256","typ":"JWT"}'
           now=$(date +%s)
           exp=$((now + 540)) # 9 minutes from now
-          payload=$(printf '{"iat":%s,"exp":%s,"iss":%s}' "$now" "$exp" "${{ secrets.APP_ID }}")
+          payload=$(printf '{"iat":%s,"exp":%s,"iss":%s}' "$now" "$exp" "${{ secrets.APP_CLIENT_ID }}")
 
           # Base64 encode without padding/newlines
           b64enc() { openssl base64 -A | tr '+/' '-_' | tr -d '='; }
