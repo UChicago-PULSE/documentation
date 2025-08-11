@@ -38,7 +38,10 @@ jobs:
           JWT="${header_enc}.${payload_enc}.${signature}"
           echo "JWT=$JWT" >> $GITHUB_ENV
 
+          date +%s
           echo "$JWT"
+          echo "$header_enc"
+          echo "$payload_enc"
 
       - name: Debug installation list
         run: |
