@@ -7,7 +7,6 @@
 * link:CSP.html[CSP] - Cubesat Space Protocol documentation
 * link:I2C.html[I^2^C] - I^2^C interface documentation
 * link:parsec.html[Parsec] - Parsec framework documentation
-* link:tailscale.html[Tailscale] - Tailscale networking documentation
 * link:unused-software.html[Unused Software] - Documentation for unused software components
 
 === Communications Protocols
