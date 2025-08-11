@@ -30,7 +30,7 @@ jobs:
           payload_enc=$( echo -n "${payload}" | b64enc )
 
           # Sign with private key
-          header_payload="${header}"."${payload}"
+          header_payload="${header_enc}"."${payload_enc}"
           signature=$(
               openssl dgst -sha256 -sign key.pem \
               <(echo -n "${header_payload}") | b64enc
