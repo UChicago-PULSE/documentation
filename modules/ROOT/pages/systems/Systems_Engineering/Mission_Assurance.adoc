@@ -1,0 +1,42 @@
+= Mission Assurance & Risk Assessment: 
+
+We are currently defining mission risks by mapping them directly to the detailed requirements in the Systems Requirements Document (SRD). This process involves close coordination with all engineering departments and the study of similar CubeSat missions to anticipate risks that are both probable and critical to address in advance. Risks are identified at multiple levels — from individual subsystems, to the spacecraft bus, to the mission as a whole — and encompass a range of challenges, from logistical issues such as funding delays to technical concerns like design errors, integration failures, or component damage during assembly.
+
+In addition to identification and documentation for team-wide awareness, we follow the NASA Systems Engineering Handbook framework to prioritize risks through structured scoring. Each risk is rated for likelihood and severity on a scale of 1–5, in consultation with industry reviewers and NASA-affiliated engineers, ensuring that ratings are accurate and actionable. These values are plotted on a 5×5 risk matrix, with severity on one axis and likelihood on the other, visually categorizing risks from low (green) to high (red) priority.
+
+As an undergraduate-led mission, we recognize that building a comprehensive risk assessment is a substantial undertaking. Leading up to the Critical Design Review (CDR), we will continue refining our risk register in collaboration with external space systems professionals to expand coverage and ensure its accuracy.
+
+*Example Risks from the Current Risk Register: (These serve as general mission risks but note that risks are also being defined system and subsystem wise).* 
+
+*Schedule Compression* — Students are balancing academic schedules and some key contributors will graduate in Spring 2026, creating a risk of timeline delays that could cause grant expiration and jeopardize mission objectives. *Likelihood: 5 | Severity: 3 → Risk Rating: High.*
+
+
+*Regulatory Approvals* — Delays in FCC or other licensing processes could impact launch readiness. *Likelihood: 3 | Severity: 3 → Risk Rating: Medium.*
+
+
+*Damaged components* — Components may fail qualification testing or arrive with manufacturing defects. *Likelihood: 4 | Severity: 2 → Risk Rating: Medium.*
+
+
+Identifying risks is only the first step — equally important is ensuring that we have strategies in place to address them. These strategies aim to reduce either the likelihood of occurrence, the severity of impact, or both. While we are still early in this stage, our goal is to have concrete, actionable mitigation steps for each risk well before CDR. By integrating risk management with mitigation planning, we hope to maximize our ability to respond quickly to unexpected challenges and preserve mission success to the greatest extent possible.
+
+We have defined mission success here, accordingly: 
+
+|===
+| Status Success | Mission Result  
+
+| Complete Success
+| Circular polarization-modulated downlink is successfully transmitted and received. All qualifications of mission success are achieved (raw data rate of 1 - 10 Mbps, link sustained for 5 - 150 seconds, 1e-3 - 1e-9 bit error rate).
+
+| Partial Success
+| Circular polarization-modulated downlink is successfully transmitted and received. At least one but not all qualifications of mission success are achieved (raw data rate of 1 - 10 Mbps, link sustained for 5 - 150 seconds, 1e-3 - 1e-9 bit error rate).
+
+| Limited Success
+| Circular polarization-modulated downlink is successfully transmitted and received, but no qualifications of mission success are achieved OR optical downlink is transmitted by the Satellite and detected by the OGS but cannot be interpreted.
+
+| Failure
+| Satellite is operational, but optical downlink cannot be transmitted by the Satellite OR Satellite is operational, but optical downlink cannot be received by the OGS.
+
+| Complete Failure
+| Satellite is not operational.
+
+|===
