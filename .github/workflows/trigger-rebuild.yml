@@ -20,7 +20,8 @@ jobs:
           header_enc=$( echo -n "${header}" | b64enc )
 
           now=$(date +%s)
-          exp=$((now + 540)) # 9 minutes from now
+          iat=$((${now} - 60))  # 1 minute ago
+          exp=$((${now} + 540)) # 9 minutes from now
           payload="{
               \"iat\":${iat},
               \"exp\":${exp},
