@@ -27,7 +27,6 @@
 **** xref:avionics/fsw/cFS-general.adoc[cFS General]
 **** xref:avionics/fsw/cFS-sfotware-bus.adoc[cFS Software Bus]
 **** xref:avionics/fsw/parsec.adoc[Parsec]
-
 **** xref:avionics/fsw/unused-software.adoc[Unused Software]
 *** xref:avionics/fsw/index.adoc#_communications_protocols[Communications Protocols]
 **** xref:avionics/fsw/CAN.adoc[CAN]
