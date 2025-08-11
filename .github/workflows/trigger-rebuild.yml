@@ -21,7 +21,7 @@ jobs:
 
           now=$(date +%s)
           exp=$((now + 540)) # 9 minutes from now
-          payload = "{
+          payload="{
               \"iat\":${iat},
               \"exp\":${exp},
               \"iss\":\"${{ secrets.APP_CLIENT_ID }}\"
