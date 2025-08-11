@@ -39,26 +39,13 @@ jobs:
           JWT="${header_enc}.${payload_enc}.${signature}"
           echo "JWT=$JWT" >> $GITHUB_ENV
 
-          date +%s
-          echo "$JWT"
-          echo "$header_enc"
-          echo "$payload_enc"
-
-      - name: Debug installation list
-        run: |
-          curl -i -s \
-            -H "Authorization: Bearer $JWT" \
-            -H "Accept: application/vnd.github.v3+json" \
-            https://api.github.com/app/installations
-
-
       - name: Get installation access token
         run: |
           INSTALL_ID=$(curl -s \
             -H "Authorization: Bearer $JWT" \
-            -H "Accept: application/vnd.github.v3+json" \
-            https://api.github.com/app/installations \
-            | jq '.[0].id')
+            -H "Accept: application/vnd.github+json" \
+            https://api.github.com/repos/${{ github.repository_owner }}/docs-site/installation \
+            | jq -r .id)
 
           ACCESS_TOKEN=$(curl -s -X POST \
             -H "Authorization: Bearer $JWT" \
