@@ -12,24 +12,33 @@ jobs:
           # Write private key to file
           echo "${{ secrets.APP_PRIVATE_KEY }}" > key.pem
 
-          # Create JWT header & payload (valid 10 minutes)
-          header='{"alg":"RS256","typ":"JWT"}'
-          now=$(date +%s)
-          exp=$((now + 540)) # 9 minutes from now
-          payload=$(printf '{"iat":%s,"exp":%s,"iss":%s}' "$now" "$exp" "${{ secrets.APP_CLIENT_ID }}")
-
           # Base64 encode without padding/newlines
           b64enc() { openssl base64 -A | tr '+/' '-_' | tr -d '='; }
 
-          header_b64=$(echo -n "$header" | b64enc)
-          payload_b64=$(echo -n "$payload" | b64enc)
+          # Create JWT header & payload (valid 10 minutes)
+          header='{"alg":"RS256","typ":"JWT"}'
+          header_enc=$( echo -n "${header}" | b64enc )
+
+          now=$(date +%s)
+          exp=$((now + 540)) # 9 minutes from now
+          payload = "{
+              \"iat\":${iat},
+              \"exp\":${exp},
+              \"iss\":\"${{ secrets.APP_CLIENT_ID }}\"
+          }"
+          payload_enc=$( echo -n "${payload}" | b64enc )
 
           # Sign with private key
-          signature=$(printf '%s.%s' "$header_b64" "$payload_b64" | \
-            openssl dgst -binary -sha256 -sign key.pem | b64enc)
+          header_payload="${header}"."${payload}"
+          signature=$(
+              openssl dgst -sha256 -sign key.pem \
+              <(echo -n "${header_payload}") | b64enc
+          )
 
-          JWT="${header_b64}.${payload_b64}.${signature}"
+          JWT="${header_enc}.${payload_enc}.${signature}"
           echo "JWT=$JWT" >> $GITHUB_ENV
+
+          echo "$JWT"
 
       - name: Debug installation list
         run: |
