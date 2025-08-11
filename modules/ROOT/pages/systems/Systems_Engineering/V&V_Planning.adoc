@@ -23,7 +23,7 @@ Finally, the Compliance Timeline is tied to having this verified before assembly
 
 Please note that this document is a WORK IN PROGRESS included here as an example of how we approach verification planning and not as a final or complete draft. 
 
-link:modules/ROOT/images/VV_8-10.xlsx[Download Excel File]
+link:https://github.com/UChicago-PULSE/mission-documentation/raw/main/modules/ROOT/images/VV_8-10.xlsx[Verification Plans Document (Excel)]
 
 
 
