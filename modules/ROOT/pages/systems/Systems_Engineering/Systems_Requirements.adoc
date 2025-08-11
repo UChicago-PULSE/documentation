@@ -25,3 +25,9 @@ We set the Verification Method to Analysis because we’ll be using link budget 
 Finally, the Compliance Timeline is CDR because that’s when we need to be sure the design will meet the required margin before we commit to fabrication.
 
 By integrating these interdependent needs into the SRD early, we reduced the risk of downstream integration issues and clarified cross-team responsibilities. The SRD also plays a central role in design reviews, helping us to evaluate whether subsystem-level designs align with system-level goals. Now, other departments actively rely on the SRD as both a reference tool and a roadmap as they plan out their day to day assignments. 
+
+== Work in Progress System Requirements Document 
+
+Please note that this document is a WORK IN PROGRESS included here as an example of how we approach verification planning and not as a final or complete draft.
+
+link:modules/ROOT/images/SRD_8-10.xlsx[Download Excel File]
