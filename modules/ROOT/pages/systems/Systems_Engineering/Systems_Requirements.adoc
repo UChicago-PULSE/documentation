@@ -28,6 +28,6 @@ By integrating these interdependent needs into the SRD early, we reduced the ris
 
 == Work in Progress System Requirements Document 
 
-Please note that this document is a WORK IN PROGRESS included here as an example of how we approach verification planning and not as a final or complete draft.
+Please note that this document is a WORK IN PROGRESS included here as an example of how we approach building systems requirements and not as a final or complete draft.
 
 link:modules/ROOT/images/SRD_8-10.xlsx[Download Excel File]
