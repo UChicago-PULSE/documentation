@@ -33,6 +33,7 @@
 **** xref:avionics/fsw/CAN.adoc[CAN]
 **** xref:avionics/fsw/CSP.adoc[CSP]
 **** xref:avionics/fsw/I2C.adoc[I2C]
+**** xref:avionics/fsw/SPI.adoc[SPI]
 *** xref:avionics/fsw/index.adoc#_obc_applications[OBC Applications]
 **** xref:avionics/fsw/ADCS-manager-app.adoc[ADCS Manager]
 **** xref:avionics/fsw/communication-manager-app.adoc[Communication Manager]

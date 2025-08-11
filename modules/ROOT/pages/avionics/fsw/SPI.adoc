@@ -1,1 +1,7 @@
 = SPI
+
+== Resources
+
+link:https://www.analog.com/en/resources/analog-dialogue/articles/introduction-to-spi-interface.html/[Intro to SPI]
+
+link:https://www.youtube.com/watch?v=ba0SQwjTQfw/[What is SPI? Basics for beginners! Video]
