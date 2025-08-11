@@ -2,17 +2,55 @@ name: Trigger webhook to rebuild
 on:
   push:
     branches: [main]
-permissions:
-  contents: read
-  actions: write
+
 jobs:
   trigger:
     runs-on: ubuntu-latest
     steps:
-      - name: Send repository dispatch
+      - name: Generate JWT for GitHub App
+        run: |
+          # Write private key to file
+          echo "${{ secrets.APP_PRIVATE_KEY }}" > key.pem
+
+          # Create JWT header & payload (valid 10 minutes)
+          header='{"alg":"RS256","typ":"JWT"}'
+          now=$(date +%s)
+          exp=$((now + 540)) # 9 minutes from now
+          payload=$(printf '{"iat":%s,"exp":%s,"iss":%s}' "$now" "$exp" "${{ secrets.APP_ID }}")
+
+          # Base64 encode without padding/newlines
+          b64enc() { openssl base64 -A | tr '+/' '-_' | tr -d '='; }
+
+          header_b64=$(echo -n "$header" | b64enc)
+          payload_b64=$(echo -n "$payload" | b64enc)
+
+          # Sign with private key
+          signature=$(printf '%s.%s' "$header_b64" "$payload_b64" | \
+            openssl dgst -binary -sha256 -sign key.pem | b64enc)
+
+          JWT="${header_b64}.${payload_b64}.${signature}"
+          echo "JWT=$JWT" >> $GITHUB_ENV
+
+      - name: Get installation access token
+        run: |
+          INSTALL_ID=$(curl -s \
+            -H "Authorization: Bearer $JWT" \
+            -H "Accept: application/vnd.github.v3+json" \
+            https://api.github.com/app/installations \
+            | jq '.[0].id')
+
+          ACCESS_TOKEN=$(curl -s -X POST \
+            -H "Authorization: Bearer $JWT" \
+            -H "Accept: application/vnd.github.v3+json" \
+            https://api.github.com/app/installations/$INSTALL_ID/access_tokens \
+            | jq -r .token)
+
+          echo "ACCESS_TOKEN=$ACCESS_TOKEN" >> $GITHUB_ENV
+
+      - name: Send repository dispatch to Repo 2
         run: |
           curl -X POST \
-            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Authorization: token $ACCESS_TOKEN" \
             -H "Accept: application/vnd.github.v3+json" \
             https://api.github.com/repos/${{ github.repository_owner }}/docs-site/dispatches \
             -d '{"event_type":"trigger-rebuild"}'
