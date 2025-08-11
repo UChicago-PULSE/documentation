@@ -1,0 +1,37 @@
+= Ground Hardware (RFGS)
+
+The Radio Frequency Ground Station (RFGS) maintains the command/telemetry link that enables the Optical Ground Station (OGS) to perform pointing, acquisition, and tracking (PAT). We operate half-duplex in the UHF amateur band at 9600 bps (baud) using GFSK. The RFGS operates in the 435–438 MHz amateur UHF band, half-duplex at 9600 bps GFSK (Gaussian Frequency Shift Keying), with frames sent as AX.25 encapsulating CSP (Cubesat Space Protocol) packets.
+
+The following diagram shows the hardware setup and signal flow of the RFGS. For mast/shack component distribution, most components will be placed and operated in the shack (see Half-Duplex Communication).
+
+image::rfgs-diagram.svg[]
+RFGS telemetry and orbital data enable the OGS to perform pointing, acquisition, and tracking (PAT) for the optical downlink during each pass.
+
+== Half-Duplex Communication
+One of the main design choices behind the RFGS is a functionally low-risk, half-duplex communication system used for transmit and receive only (data wrapping, framing, and (de)modulation are handled via software). We never transmit and receive simultaneously. A masthead preamp (SSB SP-70) is sequenced and bypassed on TX by a DCW2004B bias-tee/sequencer. This protects the LNA and keeps NF low on RX.
+
+== Site & Install
+The ground station is installed on the roof of the Knapp Center for Biomedical Discovery (KCBD), providing an unobstructed horizon and access below 5° elevation.
+
+== UHF Circularly Polarized Antenna & Mount
+We use a UHF cross-Yagi (M² 436CP42UG)footnote:[436CP42UG datasheet link. - <https://www.m2inc.com/content/PDF%20MANUALS/70CMANTS/FGMAN436CP42UG.A.pdf>] to balance link budget and mechanical size while remaining in the standard amateur satellite allocation. Also, the Yagi’s main lobe is along the boom toward the director end; we point that end at the satellite for maximum gain. The Cross-Yagi antenna will transmit right-handed circularly polarized RF signals at 30 Watts and receive linearly polarized RF signals from the satellite. While this polarization mismatch will decrease the strength of the received signal by approximately 3 dB, the combination of circular transmission and linear reception will ensure reliable signal reception from the satellite regardless of its orientation. To properly mount the antenna, we utilize a Rohn JRM23810 roof mount.footnote:[JRM23810 manual link. - <https://static.dxengineering.com/global/images/technicalarticles/roh-jrm35010.pdf?_gl=1*k0yuiq*_gcl_au*MTU0MjkxMDYxMy4xNzU0NDM5NTA4*_ga*NTQ5NDk5OTI5LjE3NTQ0Mzk1MDg.*_ga_NZB590FMHY*czE3NTQ5Mjk5MjUkbzckZzAkdDE3NTQ5Mjk5MjkkajU2JGwwJGgw>]
+
+== Antenna Rotator System
+The Yaesu G-5500 rotatorfootnote:[G-5500 manual link. - <https://static.dxengineering.com/global/images/instructions/ysu-g-5500dc_xb.pdf?_gl=1*1datx18*_gcl_au*MTU0MjkxMDYxMy4xNzU0NDM5NTA4*_ga*NTQ5NDk5OTI5LjE3NTQ0Mzk1MDg.*_ga_NZB590FMHY*czE3NTQ5Mjk5MjUkbzckZzEkdDE3NTQ5Mjk5NTgkajI3JGwwJGgw>] controls the AZ/EL (azimuth and elevation) of the antenna and uses an LMR-240UF service loop to prioritize flexibility. Pointing profiles and Doppler corrections are driven from the ground computer during passes.
+
+== Antenna Control System
+The control system uses the Yaesu GS-232B,footnote:[GS-232B manual link. - <https://static.dxengineering.com/global/images/instructions/ysu-gs-232b_eh.pdf?_gl=1*16yqb1c*_gcl_au*MTU0MjkxMDYxMy4xNzU0NDM5NTA4*_ga*NTQ5NDk5OTI5LjE3NTQ0Mzk1MDg.*_ga_NZB590FMHY*czE3NTQ5Mjk5MjUkbzckZzEkdDE3NTQ5Mjk5ODYkajYwJGwwJGgw>] which interfaces with the G-5500 rotator to control the AZ/EL of the antenna. Its simple protocol allows integration with PyQt.
+
+== Preamplifer & Power Coupler
+In our setup, the first line in receiving and transmitting is our preamplifier and power coupler, the SP-70footnote:[SP-70 manual link. - <https://www.ssb.de/shop/download/Geraete/160913%201037%20SP%2070%20ENG.pdf>] and DCW2004Bfootnote:[DCW2004B manual link. - <https://www.ssb.de/shop/download/Geraete/EN-1025_DCW2004_NEU.pdf>] from SSB Electronic, respectively. The SP-70 is a selective receiving preamplifier with an internal T/R relay; the DCW2004B provides a bias-tee and sequencer to bypass the LNA on TX. The bias-tee lets us carry bidirectional RF (TX to antenna, RX to radio) **and** DC power on the same coax into the SP-70; the bias network (inductor/capacitor) separates DC and RF at each end.
+
+The preamplifier will be mounted on the mast and connected to the antenna with LMR-240UF (short, flexible) coax. The approximate route length is ~9 ft / 3 m, which results in ~0.7–0.8 dB loss at 435 MHz (LMR-240UF ≈0.24–0.25 dB/m).footnote:[Calculation Resource. - <https://www.mcgillmicrowave.com/product/lmr-240/?attachment_id=16782&download_file=tqdxmznps2x3d>] We target ≤0.5 dB **pre-LNA** loss; if possible, shorten this run or move the LNA closer to the feed. All longer runs use LMR-400 (lower loss, flexibility not required). The mast preamp is housed in a weather-resistant enclosure.
+
+== Transceiver
+The Icom IC-9700footnote:[IC-9700 manual link. - <https://static.dxengineering.com/global/images/instructions/ico-ic-9700_bg.pdf?_gl=1*1voeyve*_gcl_au*MTU0MjkxMDYxMy4xNzU0NDM5NTA4*_ga*NTQ5NDk5OTI5LjE3NTQ0Mzk1MDg.*_ga_NZB590FMHY*czE3NTQ5Mjk5MjUkbzckZzEkdDE3NTQ5MzAxMTgkajUxJGwwJGgw>] VHF/UHF transceiver was chosen for 9600-baud operation, ~30 W TX, UHF support, and compatibility with GFSK (de)modulation. 9600-bps GFSK and AX.25 are handled in software with Doppler correction applied from GPredict.
+
+== Computer
+A custom computer runs our PyQt application (see Ground Software) integrating GNU Radio, Direwolf, and GPredict. It also hosts the AZ/EL control interface.
+
+== Analysis
+Our RF link-budget indicates margins of 21.7 dB uplink and 20.3 dB downlink, ensuring a robust link across mission phases.
