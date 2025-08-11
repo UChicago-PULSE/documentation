@@ -22,7 +22,7 @@
 
 * xref:flight-overview.adoc[Non-Optical Systems]
 ** xref:avionics/cdh.adoc[Command and Data Handling]
-*** xref:avionics/hw/obc.adoc[On-Board Computer]
+*** xref:avionics/hw/cdh/obc.adoc[On-Board Computer]
 *** xref:avionics/fsw/index.adoc#_general_software_information[General Software Information]
 **** xref:avionics/fsw/cFS-general.adoc[cFS General]
 **** xref:avionics/fsw/cFS-sfotware-bus.adoc[cFS Software Bus]
