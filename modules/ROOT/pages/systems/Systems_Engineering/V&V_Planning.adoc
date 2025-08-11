@@ -6,7 +6,7 @@ Verification and Validation (V&V) is a core element of our systems engineering p
 
 The purpose of our V&V plans is twofold: to catch design or integration issues early, before they become mission-critical problems, and to give every team a clear, shared understanding of what “ready” looks like. Other departments use the V&V plans as a checklist for testing protocol, to coordinate verification efforts, and ensure clear communication on next-best steps for the team. In the Thermal department, V&V plans are used to clarify the necessity of critical component testing, such as compiling the Thermal requirements and constraints necessary to ensure the functionality of the Pulse-A Satellite. The V&V plans also served to organize team efforts within the Thermal department around sourcing component information, and clearly organize the department objectives. In subsystems like the Ground Control (GC) station, a V&V plan clearly outlines the joint requirements for developing and implementing mission-critical software between the RFGS and OGS, assuring alignment in their key objectives.
 
-== Example Verification/Validation Plan for Structures Department STR-12: 
+== Example Verification Plan for Structures Department STR-12: 
 
 For STR-12 — The Structure shall maintain the Payload’s optical path lens alignment within 0 mm ± TBD mm after launch — we marked the Level as Performance because we’re assessing how well the structure’s precise tolerance under launch conditions. The key here is that this requirement measures alignment stability after the extreme mechanical stresses of launch, so it’s inherently performance-driven.
 
@@ -18,6 +18,13 @@ For the Verification Method, we chose Testing. This is because analysis alone wo
 
 The Departments listed — Structures, Payload, and Systems — reflect the cross-disciplinary nature of the test. The payload team provides the tolerance spec, the structures team designs and builds the support, and systems ensures integration and test coordination.
 Finally, the Compliance Timeline is tied to having this verified before assembly is finalized — practically, this means by CDR or earlier in the build schedule. Waiting later risks expensive or impossible changes if the alignment fails.
+
+== Current Verification Plan Spreadsheet
+
+Please note that this document is a WORK IN PROGRESS included here as an example of how we approach verification planning and not as a final or complete draft. 
+
+link:modules/ROOT/images/VV_8-10.xlsx[Download Excel File]
+
 
 
 
