@@ -76,7 +76,8 @@
 
 * xref:systems/index.adoc[Systems Engineering & AIT]
 ** xref:systems/Systems_Engineering/Introduction.adoc[Systems Engineering]
-*** xref:systems/Systems_Engineering/SEMP.adoc[SEMP]
+*** xref:systems/Systems_Engineering/SEMP.adoc[Management Plan]
+*** xref:systems/Systems_Engineering/Systems_Requirements.adoc[Systems Requirements]
 ** xref:systems/Testing/Environmental_Testing.adoc[Testing]
 *** xref:systems/Testing/Test_Objectives.adoc[Test Objectives]
 *** xref:systems/Testing/Testing_Breakdown.adoc[Testing Breakdown]
