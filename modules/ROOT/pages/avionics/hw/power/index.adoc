@@ -1,3 +1,5 @@
 = Power Subsystem
 
+The Electrical Power System (EPS) comprises three main components: the Power Distribution Unit (PDU), the Battery Board, and the solar panel assembly. The PDU manages the distribution of all power to the spacecraft and the interface between solar panels and batteries, and is controlled by the OBC.
+
 image::power.svg[]
