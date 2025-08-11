@@ -30,5 +30,5 @@ By integrating these interdependent needs into the SRD early, we reduced the ris
 
 Please note that this document is a WORK IN PROGRESS included here as an example of how we approach building systems requirements and not as a final or complete draft.
 
-link:https://github.com/UChicago-PULSE/mission-documentation/blob/main/modules/ROOT/images/srd_8-10_xlsx/[Systems Engineering Management Plan (PDF)]
+link:https://github.com/UChicago-PULSE/mission-documentation/blob/main/modules/ROOT/images/srd_8-10_xlsx/[System Requirements Document (PDF)]
 
