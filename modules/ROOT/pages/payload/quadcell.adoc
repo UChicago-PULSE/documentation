@@ -1,1 +1,28 @@
 = Quadcell Amplifier
+
+Danielle Zumi Riekse <dzriekse@uchicago.edu>
+
+== Circuit Design
+The quadcell amplifier is a variation of a transimpedance amplifier meant to take the current output from the QPD and amplify it to readable signals and passed into a 24-bit ADC where digital signals can then be wired from there to the payload controller.
+
+There are four amplifiers, one for each channel of the quadcell, and there are two stages to each. The first is a traditional transimpedance amplifier with a large feedback resistor to achieve the necessary voltages, and the second is another traditional amplifier with an additional bandpass filter to filter out unwanted signals in the received uplink.
+
+The design for the circuit is based heavily by the circuit used by MIT's CLICK mission and adapted for our purposes.
+
+image::Long_TIA.png[]
+
+We expect to receive on the order of 10nA of current from the quadcell when hit by the laser. We needed to amplify this up to a scale of 0 to 3.3V, so we can precisely calculate from the voltages across the four sections and then acquire a beam position and correctly realign the FSM to be hitting the quadcell as close to the middle as possible.
+
+image::Our_TIA.png[]
+
+Simulation through LTspice gave us these results for a modulated (top) versus unmodulated (bottom) signal.
+
+image::AC_Simulation.png[]
+
+image::DC_Simulation.png[]
+
+== Component Selection
+
+For our purposes, we chose the link:https://www.ti.com/product/OPA1642?utm_source=google&utm_medium=cpc&utm_campaign=asc-null-null-GPN_EN-cpc-pf-google-ww_en_cons&utm_content=OPA1642&ds_k=OPA1642&DCM=yes&gclsrc=aw.ds&gad_source=1&gad_campaignid=14388345080&gbraid=0AAAAAC068F1mopt__4Av_YP_t3S-H3mPE&gclid=CjwKCAjwhuHEBhBHEiwAZrvdcjg6mWRUlgjYNZ17IVjNjUidvqPMscAVL-RN7_dI2HE4_FgJZZN8zxoCa5YQAvD_BwE#product-details[OPA1642] op amp due to its rail to rail voltage output and how it adds very little noise to the circuit, make or break when considering the precision the quadcells needs to operate at.
+
+Then, we calculated the resistance value from simulation with adjustments from in person testing to understand the amplification needed from the amplifier. Since we don't expect the trace voltages to be particularly high current/voltage, we don't have to worry about buying particulary high grade resistors or capacitors, however for the most part we do assemble our prototypes by hand using SMD soldering, so we choose SMD mounted resistors with a reasonable pad size of 0805. 24-bit ADCs are available COTS and provide high definition in our digital signals being fed to the payload computer.
