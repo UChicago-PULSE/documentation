@@ -3,13 +3,13 @@
 = Noise Modeling Guide
 
 
-Because we don't live in a perfect world, any time you send an optical signal, you will not receive 100% of the transmitted power at the receiver. This is because the signal doesn't travel in a vacuum; it is affected by its enviroment as it travels from point A to point B. Moreover, there are defects within the equipment itself which add interference. These interactions, known as *noise*, alter the strength of your signal. To deal with this, we create a *link budget*, which tracks how the strength of the signal changes during the transmission process, giving a measure of received power. This document will provide a guide on elementary noise analysis and link budget construction.
+Because we don't live in a perfect world, any time you send an optical signal, you will not receive 100% of the transmitted power at the receiver. This is because the signal doesn't travel in a vacuum; it is affected by its enviroment as it travels from point A to point B. Moreover, there are defects within the equipment itself and human error which add interference. These interactions, known as *noise*, alter the strength of your signal. To deal with this, we create a *link budget*, which tracks how the strength of the signal changes during the transmission process, giving a measure of received power. This document will provide a guide on elementary noise analysis and link budget construction.
 
 == Understanding Noise
 
 === Signal-to-noise ratio
 
-In signal processing, noise simply refers to any unwanted alteration or disturbance of a signal. Noise distorts your signal and makes the encoded data harder to decipher. There are multiple ways of measuring noise, which will be discussed below, but the most useful is in terms of power (watts/dBm) since this is also how the strength of the signal is measured. In general, we want to maximize the system's *signal-to-noise ratio (SNR)*, which is defined as 
+In signal processing, noise simply refers to any unwanted alteration or disturbance of a signal. Noise distorts your signal and makes the encoded data harder to decipher. In general, we want to maximize the system's *signal-to-noise ratio (SNR)*, which is defined as 
 [stem]
 ++++
 \mathrm{SNR}=\frac{P_s}{P_n},
@@ -21,9 +21,9 @@ where stem:[P_s] and stem:[P_n] are the signal and noise power in watts respecti
 ++++
 As one can see, the SNR quantifies how strong of a connection or *link* can be achieved between the transmitter and receiver. A standard minimum value for SNR is 5 dB, but it is best to aim for a higher value to allow some leeway.
 
-=== Path Loss
+=== Gains and losses
 
-There are three main alterations to signal strength as the laser travels from the transmitter to the receiver: space loss, atmospheric attenuation, and scintillation loss. *Space loss* results from the diverging wavefront of the optical energy as it traverses the link distance and is calculated as
+There are three main path losses as the laser travels from the transmitter to the receiver: space loss, atmospheric attenuation, and scintillation loss. *Space loss* results from the diverging wavefront of the optical energy as it traverses the link distance and is calculated as
 [stem]
 ++++
 L_s=\left(\frac{\lambda}{4\pi R}\right)^2,
@@ -34,10 +34,40 @@ where stem:[\lambda] is the wavelength of the optical transmission and stem:[R] 
 
 *Scintillation* is a fluctuation in the ampitude and phase of the signal due to variation in temperature, pressure, and refractive indices of Earth's atmosphere. A generous (over)estimate is around 2 dB.
 
-=== Path Gains
+To compensate for the losses that are incurred during transmission, we often apply *gains* to boost the signal. This occurs both at the transmitter and the reciever. Beginning with the transmit gain, the gain of a transmitting antenna is defined as the ratio of radiated solid angles between an isotropic antenna and the transmitter, i.e.
+[stem]
+++++
+G_t=\frac{4\pi}{\Omega},
+++++
+where stem:[\Omega] is the solid angle subtended by the source whose full angle divergence angle is stem:[\theta_{\mathrm{div}}], and we recall that the solid angle of a unit sphere is stem:[4\pi]. For small stem:[\theta_{\mathrm{div}}], stem:[\Omega] can be determined using a small angle approximation, yielding
+[stem]
+++++
+G_t\approx \frac{16}{\theta_{\mathrm{div}}^2},\text{ for } \theta_{\mathrm{div}}=\frac{4\lambda}{\pi a},
+++++
+where stem:[\lambda] is the wavelength of the signal and stem:[a] is the aperature diameter.
 
+Similarly, the effective collecting aperatre of the receiver constitutes the receiver antenna gain and is expressed as
+[stem]
+++++
+G_r=\left[\frac{\pi D}{\lambda}\right]^2,
+++++
+where stem:[D] is the collecting area of the antenna.
 
+Unfortunately, in addition to the path losses, the signal is subject to additional losses from the transmitter and receiver themselves. The optical transmission at the source wavelength needs to be estimated by the number and type of optical surfaces being traversed, as each optical surface contributes a multiplicative loss factor. Additionally, there are aberrations which result in imperfect optical wavefronts. A similar consideration must be taken for the receiver. We have estimated these errors using Zemax simulations. Lastly, an estimate of pointing error must be made. We have based our estimation off of CLICK-A, which measured an RMS pointing error of stem:[<0.2] mrad.
 
-
-
-
+Once all the gains and losses of the system have been considered, the resultant signal power at the receiver can be computed. First, the original power in W must be converted to *decibel milliwatts (dBm)* by the relation
+[stem]
+++++
+P_{\mathrm{dBm}}=10\log_{10}(P_{\mathrm{W}})+30.
+++++
+Second, the gains and losses must be converted to decibels by the relation
+[stem]
+++++
+x_{\mathrm{dB}}=10\log_{10}(x)
+++++
+where stem:[x] is any unitless quantity, in this case a gain or loss. Once this is done, the receiver signal power in dBm is simply the sum of all these quantities, i.e.
+[stem]
+++++
+P_{\mathrm{dBm}}^{\mathrm{out}}=P_{\mathrm{dBm}}^{\mathrm{in}}+\sum_{x\in X}x_{\mathrm{dBm}},
+++++
+where stem:[X] is the set of all gains and losses in the system. This is the essence of constructing a link budget.
