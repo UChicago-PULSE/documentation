@@ -1,11 +1,11 @@
 = Structural Design
 
-The polarization state preparation assembly will be mounted onto the telescope using an optical breadboard with a matte black anodized finish to reduce unwanted reflections. The breadboard will attach to the telescope using custom brackets compatible with the telescope’s pre-existing mounting holes. A section of the breadboard will be waterjetted to remove unnecessary weight and ensure that the Fast Steering Mirror (FSM) can receive the incident source from the telescope. The FSM will be positioned at a 45° angle to take the signal into the plane of the optical breadboard. All optics are positioned compactly to minimize the path length of the beam, ensuring that each polarizaiton element interacts with a well-defined beam profile. Most optic elements possess large diameters (1 inch) to accommodate the large beam waist of the incoming signal from the second plano-convex lens within the telescope. 
+The polarization state preparation assembly will be mounted onto the telescope using an optical breadboard with a matte black anodized finish to reduce unwanted reflections. The breadboard will attach to the telescope using custom brackets compatible with the telescope’s pre-existing mounting holes. A section of the breadboard will be waterjetted to remove unnecessary weight and ensure that the Fast Steering Mirror (FSM) can receive the incident source from the telescope. The FSM will be positioned at a 45° angle to take the signal into the plane of the optical breadboard. All optics are positioned compactly to minimize the path length of the beam, ensuring that each polarization element interacts with a well-defined beam profile. Most optic elements possess large diameters (1 inch) to accommodate the large beam waist of the incoming signal from the second plano-convex lens within the telescope. 
 
 [cols="a,a", frame=none, grid=none]
 |===
-| image::../../../images/ogs-cad-top.png[width=320]
-| image::../../../images/ogs-cad-isom.png[width=320]
+| image::ogs-cad-top.png[]
+| image::ogs-cad-isom.png[]
 |===
 
 
@@ -19,15 +19,15 @@ The polarizing beam splitter (PBS) will differentiate the transmitted signal int
 
 The enclosure serves to block all unnecessary light and environmental hazards, such as wind and dust particles, which could introduce noise or damage optical components, thereby obstructing the process of preparing the polarization state. To minimize costs, the enclosure will be custom 3D-printed. The encasement will feature rubber grommets and seals for fiber optic connections to the collimators and APDs, and likewise for connection to the FSM to ensure proper functionality. The design will be attachable to the breadboard on the optics bench. 
 
-image::../../../images/ogs-enclosure.png[width=400]
+image::ogs-enclosure.png[]
 
 
 Above: Isometric view of the optical bench with an opacity level of 60%.
 
 == Telescope Collimating Lenses
 
-A Keplerian beam expander will be mounted within the telescope using plano-convex lenses to ensure proper collimation of incoming light. The objective lens will be securely attached to the bottom of the bore, while the eyepiece lens will be fixed to the telescope’s visual back. The beam expander will be positioned directly in the telescope’s center. All components on the breadboard are hieghtened such that the planar side of the eyepiece is approximately 55mm away from the surface of the FSM, where the collimated beam is considered the most stabled and centered.
+A Keplerian beam expander will be mounted within the telescope using plano-convex lenses to ensure proper collimation of incoming light. The objective lens will be securely attached to the bottom of the bore, while the eyepiece lens will be fixed to the telescope’s visual back. The beam expander will be positioned directly in the telescope’s center. All components on the breadboard are heightened such that the planar side of the eyepiece is approximately 55mm away from the surface of the FSM, where the collimated beam is considered the most stable and centered.
 
-image::../../../images/ogs-kepl.png[width=400]
+image::images/ogs-kepl.png[]
 
 Above: Side view of the optical layout mounted on the telescope, displaying collimating lenses.
