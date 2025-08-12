@@ -11,6 +11,8 @@ Other literature describes alternative approaches, such as employing a single la
 
 Further details on the payload assemblies are provided here.
 
+image::litscheme1.png[Laser Set Up 1]
+
 
 
 
