@@ -28,6 +28,6 @@ Above: Isometric view of the optical bench with an opacity level of 60%.
 
 A Keplerian beam expander will be mounted within the telescope using plano-convex lenses to ensure proper collimation of incoming light. The objective lens will be securely attached to the bottom of the bore, while the eyepiece lens will be fixed to the telescope’s visual back. The beam expander will be positioned directly in the telescope’s center. All components on the breadboard are heightened such that the planar side of the eyepiece is approximately 55mm away from the surface of the FSM, where the collimated beam is considered the most stable and centered.
 
-image::images/ogs-kepl.png[]
+image::ogs-kepl.png[]
 
 Above: Side view of the optical layout mounted on the telescope, displaying collimating lenses.
