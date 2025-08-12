@@ -80,7 +80,7 @@
 * xref:systems/Systems_Engineering/Introduction.adoc[Systems Engineering]
 ** xref:systems/Systems_Engineering/SEMP.adoc[Management Plan]
 *** xref:systems/Systems_Engineering/Systems_Requirements.adoc[Systems Requirements]
-*** xref:systems/Systems_Engineering/V&V_Planning.adoc[Verification Plans]
+*** xref:systems/Systems_Engineering/VV_Planning.adoc[Verification Plans]
 *** xref:systems/Systems_Engineering/Mission_Assurance.adoc[Mission Assurance]
 *** xref:systems/Interfaces/Systems_Architecture.adoc[Systems Architecture]
 ** xref:systems/Testing/Environmental_Testing.adoc[Environmental Testing]
