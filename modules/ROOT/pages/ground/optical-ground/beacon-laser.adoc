@@ -7,7 +7,7 @@ project: https://ao.jpl.nasa.gov/Publications/published_troberts2016.pdf. 4 lase
 
 The rest of this segment is based on the MATLAB script that captures scintillation by normalized irradiance for an uplink laser. All formulas are based on the book "Laser Beam Scintillation with Applications" by Andrews, Phillips, and Hopen.
 
-image::../../../images/Scint_Scimulation.png[Scintillation Simulation Diagram, width=600, align="center"]
+image::Scint_Scimulation.png[Scintillation Simulation Diagram, width=600, align="center"]
 
 
 == Scintillation Index and Irradiance Fluctation Model
