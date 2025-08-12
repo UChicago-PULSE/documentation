@@ -1,1 +1,9 @@
-= laser driving
+= Laser Driving
+
+== Purpose
+- Generate orthogonally linearly polarized light at 1550nm
+- ON/OFF modulation at 1-10MHz
+
+= Overview of the requirement 
+The laser driving set up (found in the Transmission Assembly) was designed to prepare two beams in two orthogonal, highly pure linear polarization states. Each orthogonal linear polarized state is converted to right-handed circular polarized light (RCP) and left-handed circular polarized light (LCP) using a quarter wave plate in the Injection assembly at 1–10 MHz modulation speed using an FPGA. This implements Circular Polarization Shift Keying (CPolSK), in which binary data is encoded in the handedness of circular polarization—left for one bit value, right for the other.
+
