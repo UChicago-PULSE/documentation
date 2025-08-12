@@ -1,14 +1,14 @@
 * xref:index.adoc[Home]
 
 * xref:general/index.adoc[Mission]
-** xref:general/overview.adoc[General Overview]
+** xref:general/index.adoc[Overview]
 ** xref:general/reference_list.adoc[Reference List]
-** xref:general/PAT.adoc[PAT]
+** xref:general/PAT.adoc[Pointing, Acquisition, and Tracking]
 
-* xref:optical-overview.adoc[Optical System]
+* Optical System
 ** xref:payload/index.adoc[Optical Payload]
 *** xref:payload/quadcell.adoc[Quadcell]
-*** xref:payload/laser-driving.adoc[Laser driving]
+*** xref:payload/laser-driving.adoc[Laser Driving]
 ** xref:ground/optical-ground/index.adoc[Optical Ground Station]
 *** xref:ground/optical-ground/beacon-laser.adoc[Beacon Laser]
 *** xref:ground/optical-ground/error-correction.adoc[Error Correction]
@@ -16,11 +16,13 @@
 *** xref:ground/optical-ground/link-guide.adoc[Link Budget]
 *** xref:ground/optical-ground/optical-simulation.adoc[Optical Simulation]
 *** xref:ground/optical-ground/ogs-software.adoc[Software]
-*** xref:ground/optical-ground/structural-design.adoc[Structural Design]
+*** xref:ground/optical-ground/polarization-state-prep.adoc[Polarization State Preparation]
+**** xref:ground/optical-ground/psp-components.adoc[Component Choice]
+**** xref:ground/optical-ground/psp-structural-design.adoc[Structural Design]
 *** xref:ground/optical-ground/telescope-control.adoc[Telescope Control]
 *** xref:ground/optical-ground/tracking-camera.adoc[Tracking Camera]
 
-* xref:flight-overview.adoc[Non-Optical Systems]
+* Non-Optical Systems
 ** xref:avionics/cdh.adoc[Command and Data Handling]
 *** xref:avionics/hw/cdh/obc.adoc[On-Board Computer]
 *** xref:avionics/fsw/index.adoc#_general_software_information[General Software Information]

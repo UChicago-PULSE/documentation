@@ -1,1 +1,41 @@
-= PULSE-A Mission Documentation
+= PULSE-A Mission Overview
+
+The Polarization modUlated Laser Satellite Experiment (PULSE-A) is a 3U CubeSat developed by a team of over 50 undergraduates at the University of Chicago. PULSE-A’s primary mission is to demonstrate 10Mbps space-to-ground laser communications using circular polarization shift keying (CPolSK). CPolSK is a novel modulation method which encodes 1 and 0 bits in left and right-handed circular polarization states. PULSE-A comprises a <1.5U Optical Transmission Terminal, 3U CubeSat Bus, Optical Ground Station (OGS) employing an amateur telescope, and RF Ground Station (RFGS). With this the PULSE-A team is aiming to provide hands-on educational experiences for undergraduate students, make hardware for optical communication systems more accessible via open-source design, and explore the viability and potential advantages of using CPolSK for optical downlink.
+
+== Mission Timeline
+
+The PULSE-A project was founded in April 2023. We applied for NASA’s CSLI in November 2023, which we eventually got accepted to. The team then grew considerably from about 8 members to over 60. We went on to pass our SRR and our PDR in June and November 2024 respectively. During our detailed design phase we’ve been able to publish 4 technical papers for the smallsat conference, and are approaching our CDR in November 2025. 
+
+image::pulse-timeline.png[]
+
+PULSE-A’s CSLI contract with NASA was recently put on hold due to budget cuts to the program. Regardless, we still aim to conduct our CDR in November 2025 and then undergo approximately a year of AIT. We project that PULSE-A will launch Q1 2027, and will have a one-year mission lifespan.
+
+== Team Composition & Department Overview
+
+PULSE-A is composed of over 50 undergraduates. The team is made up of 11 departments: 8 engineering departments and 3 administrative ones. The team is led by 12 department leads and 6 program managers including the Project Director, Chief Engineer, Head of Administration, Lead Mission Manager, Optical Systems Manager and Flight Systems Manager. 
+
+image::orgchart.svg[]
+
+The following are descriptions of each department’s role and responsibilities in the team:
+
+Payload: In charge of designing and constructing the optical payload for PULSE-A as a Tx terminal for CPolSK based space-to-ground optical communications. 
+
+Optical Ground Station: In charge of designing and constructing the optical ground station for PULSE-A as an Rx terminal for CPolSK based space-to-ground optical communications. 
+
+Avionics Hardware: Developing avionics for the PULSE-A bus, including but not limited to the power distribution unit, battery board, on board computer, etc. Also in charge of attitude control. 
+
+Flight Software: In charge of the development of the command and data handling subsystem of the satellite. Responsible for writing and testing all flight software. 
+
+RF Communications: Responsible for developing and testing hardware and software for the satellite and ground RF communications. This includes development and construction of an RF ground station at the University of Chicago. 
+
+Structures: Develops supporting geometry for the satellite and supporting equipment. Is also responsible for the development and manufacturing of the Payload’s optomechanics. 
+
+Thermal: In charge of simulating the satellite’s thermal properties and designing thermal management systems.
+
+Funding: The team is responsible for acquiring the funds required for the development and operations of PULSE-A. This is done through grants, industry partners, university sponsorships and private donors. 
+
+Outreach: In charge of internal and external outreach projects. In particular responsible for educational outreach programs and advertising the team. 
+
+Finance: In charge of tracking finances for the team and purchasing components for development. 
+
+image::project-map.png[]
