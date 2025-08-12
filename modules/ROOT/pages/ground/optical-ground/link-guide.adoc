@@ -71,3 +71,5 @@ where stem:[x] is any unitless quantity, in this case a gain or loss. Once this 
 P_{\mathrm{dBm}}^{\mathrm{out}}=P_{\mathrm{dBm}}^{\mathrm{in}}+\sum_{x\in X}x_{\mathrm{dBm}},
 ++++
 where stem:[X] is the set of all gains and losses in the system. This is the essence of constructing a link budget.
+
+References: Lambert (1995) Laser Communications; Wikipedia.
