@@ -13,7 +13,11 @@ Other literature describes alternative approaches, such as employing a single la
 
 _Examples are shown below._
 
-image::litscheme1.png[Laser Driving Diagram]
+image::litscheme1.png[CPolsk 1]
+image::litscheme2.png[CPolsk 2]
+link:https://www.spiedigitallibrary.org/conference-proceedings-of-spie/8906/890619/Research-on-demodulation-technology-of-atmospheric-laser-communication-system-base/10.1117/12.2033163.full[Research on demodulation technology of atmospheric laser communication system base on CPolSK ]
+image::litscheme1.png[CPolsk 3]
+link:https://www.sciencedirect.com/science/article/pii/S0030401814006981[Employing circle polarization shift keying in free space optical communication with gamma–gamma atmospheric turbulence channel - ScienceDirect]
 
 == Background
 Free space optical (FSO) communications have often relied on phase and intensity modulation schemes to transmit data; on-off keying (OOK) is a low-complexity, cost effective modulation scheme that has been used in many such communications systems [1, 2]. However, due to atmospheric interference, phase noise and scintillation effects are introduced into the modulated beam, leading to poor data quality, and high bit error ratio (BER) [3]. On the other hand, the state of polarization (SOP) of light is relatively well preserved over long distances, making it an ideal data carrier for deep space FSO communication systems [4, 5, 12].
@@ -26,25 +30,30 @@ To test our design capabilities of ON/OFF modulations at 10MHz, we are working w
 
 == Components
 
+
 === 1550nm Lasers (Linearly Polarized)
 The 1550nm lasers output a maximum of 5mW. The signal is later amplified using the EDFA which requires a minimum of >5mW on the input.
 
-=== 2X1 Fiber Combiner
-link:https://www.thorlabs.com/thorproduct.cfm?partnumber=PFC1550A[Thorlabs PFC1550A]  
+
+=== link:https://www.thorlabs.com/thorproduct.cfm?partnumber=PFC1550A[2×1 Fiber Combiner] 
 The 2x1 Fiber Combiner from Thorlabs has two inputs and one output. The input patch cables from the laser have their keys aligned to the slow axis. At the combiner, the white port supports a slow-axis to slow-axis coupling, whereas the red port supports a slow-axis to fast-axis coupling. This creates two paths where the beams are linearly polarized and orthogonal. This is important because it will serve as a basis for switching between RCP and LCP.
+
+image::2to1combiner.png[Combiner]
+
 
 === Polarization-Maintaining (PM) Fiber
 The linearly polarized lasers are PM coupled so that SOP can be preserved. We expect there to be misalignments. You can read more about it on the characterization of our PM fibers here.
 
+
 === FPGA (Field Programmable Gate Array)
 Provides the encoding in binary data which allows us to communicate data via CPolsk, effectively functioning as our signal generator. It does it by sending the ON/OFF commands at the correct modulation speeds through the T-Bias. More on the FPGA selection and options we have considered here.
 
-=== Driver
-link:https://www.thorlabs.com/thorproduct.cfm?partnumber=LD1101[Thorlabs LD1101]  
+
+=== link:https://www.thorlabs.com/thorproduct.cfm?partnumber=LD1101[Driver Thorlabs LD1101]  
 Laser-diodes require particular current control to operate safely and properly. This is because once the laser receives a current that exceeds the threshold current, the power increases significantly. If the current is not properly introduced, it could even exceed the maximum rated drive current, which can cause irreversible damage through overheating or catastrophic optical damage (COD) at the laser facet. Thus, to control the laser's output power, a driver circuit is used to regulate the current flowing into the laser diode. This circuit typically uses the output from a built-in photodiode to monitor the emitted light in a feedback loop form and adjust the drive current. This will ensure stable operation.
 
-=== T-Bias
-link:https://www.thorlabs.com/thorproduct.cfm?partnumber=T1G[Thorlabs T1G]  
+
+=== link:https://www.thorlabs.com/thorproduct.cfm?partnumber=T1G[T-Bias Thorlabs T1G]  
 Many laser drivers are designed for precision only, not speed, and have bandwidths in the kHz range. For ON/OFF modulation in the MHz range, there needs to be a way to bypass the driver’s limited bandwidth and inject the high-frequency signal directly into the laser diode while still maintaining the correct DC bias. Thus, a bias tee is used to maintain a steady DC current going into the laser and a high-speed modulation from an RF source. The RF input is a high-frequency electrical signal from a source like a function generator. In our case, we have an FPGA.
 
 == Options Considered
