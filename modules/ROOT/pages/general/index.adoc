@@ -14,7 +14,7 @@ PULSE-A’s CSLI contract with NASA was recently put on hold due to budget cuts 
 
 PULSE-A is composed of over 50 undergraduates. The team is made up of 11 departments: 8 engineering departments and 3 administrative ones. The team is led by 12 department leads and 6 program managers including the Project Director, Chief Engineer, Head of Administration, Lead Mission Manager, Optical Systems Manager and Flight Systems Manager. 
 
-image::orgchart.svg[]
+image::orgchartPULSE.svg[]
 
 The following are descriptions of each department’s role and responsibilities in the team:
 
@@ -32,10 +32,10 @@ Structures: Develops supporting geometry for the satellite and supporting equipm
 
 Thermal: In charge of simulating the satellite’s thermal properties and designing thermal management systems.
 
+Systems: In charge of managing and integrating complext inter-departmental systems. Also responsible for "system-level" testing, such as environmental tests. 
+
 Funding: The team is responsible for acquiring the funds required for the development and operations of PULSE-A. This is done through grants, industry partners, university sponsorships and private donors. 
 
 Outreach: In charge of internal and external outreach projects. In particular responsible for educational outreach programs and advertising the team. 
 
 Finance: In charge of tracking finances for the team and purchasing components for development. 
-
-image::project-map.png[]
