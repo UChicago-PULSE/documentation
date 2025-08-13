@@ -9,6 +9,8 @@
 ** xref:payload/index.adoc[Optical Payload]
 *** xref:payload/quadcell.adoc[Quadcell]
 *** xref:payload/laser-driving.adoc[Laser Driving]
+*** xref:payload/FPGA.adoc[FPGA]
+*** xref:payload/Link-Budget.adoc[Link Budget]
 ** xref:ground/optical-ground/index.adoc[Optical Ground Station]
 *** xref:ground/optical-ground/beacon-laser.adoc[Beacon Laser]
 *** xref:ground/optical-ground/error-correction.adoc[Error Correction]
