@@ -1,6 +1,6 @@
 = Optical Components
 
-All of the optical components are 1 inch in size to accommodate the large beam waist. All of these components will be purchased through Thorlabs, with each component referenced by its item #.
+This section will go though the optical components only in the Polarization State Preparation Assembly described in operational order. All optical elements are 1 inch in diameter to accommodate the large beam waist. All of these components will be purchased through Thorlabs, with each component referenced by its part number.
 
 == Dichroic Mirror
 The DMLP9000 is a Ø1" longpass dichroic mirror that has a dichroic coating with a cut-on wavelength of 900 nm. This means that any wavelength below 900 nm is reflected, and any wavelength above 900 nm is transmitted. This dichroic mirror will be positioned such that any wavelength above 900 nm will be used in the polarization state preparation assembly, and any wavelength below will be used in the tracking assembly.
@@ -15,7 +15,7 @@ The WPQ10M-1550 is a Ø1" zero-order quarter-wave plate that changes the 1550 nm
 The PBSW-1550 is a Ø1" polarizing plate beamsplitter designed for 1550 nm wavelength. The polarizing beamsplitter reflects s-polarized light (perpendicular to the plane of incidence) and transmits p-polarized light (parallel to the plane of incidence) at a 45° angle of incidence. These polarization states are used to distinguish binary data, with s-polarized light indicating a 0 bit and a p-polarized light corresponding to a 1 bit.
 
 == Fiber Collimator
-The F810FC-1550 is a 1550 nm FC/PC collimation package that collimates either s-polarized or p-polarized light into an optimal parallel beam. There will be two fiber collimators to represent the beams respective binary bit information. A lens retainer mount (LRM1) will be mounted with the fiber collimator, offering a fine-tuned angular orientation of the fiber collimator. The collimated beam is then focused into a single-mode fiber.
+The F810FC-1550 is a 1550 nm FC/PC collimation package that collimates either s-polarized or p-polarized light into an optimal parallel beam. There will be two fiber collimators to represent the beams respective binary bit information. Each collimator is is mounted with a lens retainer mount (LRM1), offering a fine-tuned angular orientation to ensure precise alignment. The collimated beam is then focused into a single-mode fiber, which will connect to its corresponding APD in the Signal Decoding Assembly.
 
 == Optical Fiber
 The DCF4 is a non-zero dispersion-shifted fiber that offers low attenuation and near-zero dispersion from wavelengths 1530 nm to 1565 nm. Long fibers will be considered to reduce bend-induced issues and mechanical stress.
