@@ -18,10 +18,10 @@ Typically, circular polarization shift keying is achieved by:
 
 _Examples are shown below:_
 
-image::litscheme2.png[CPolSK 2]
+image::litscheme2.png[CPolSK 2, width=300, height=200]
 link=https://www.spiedigitallibrary.org/conference-proceedings-of-spie/8906/890619/Research-on-demodulation-technology-of-atmospheric-laser-communication-system-base/10.1117/12.2033163.full[Read more here]
 
-image::litscheme3.png[CPolSK 3]
+image::litscheme3.png[CPolSK 3, width=300, height=200]
 link=https://www.sciencedirect.com/science/article/pii/S0030401814006981[Read more here]
 
 
