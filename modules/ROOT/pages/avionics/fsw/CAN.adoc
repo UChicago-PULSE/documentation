@@ -1,5 +1,132 @@
 = CAN
 
+== What is CAN
+
+CAN is a multi-master, message-based serial bus defines the Physical and Data Link layers of the network stack and lets a number of embedded controllers share data over a simple two-wire differential pair (CAN_H/CAN_L). Any node can broadcast a frame and all nodes see it and locally decide whether to use it. This replaces heavy, point-to-point wiring with one shared network.
+
+Key benefits of CAN: less wiring and cost/weight, easy centralized access for diagnostics/logging, robust EMI protection, and deterministic, non-destructive priority arbitration (lowest ID wins without corrupting data).
+
+== Frames and arbitration (data link)
+
+Standard CAN data frame fields include:
+
+* SOF
+* Identifier (11-bit standard or 29-bit extended)
+* Control bits
+* DLC
+* Data (0-8 bytes)
+* CRC
+* ACK
+* EOF
+
+CAN frame construction (classic CAN):
+
+|===
+| Field | Size | Description
+
+| SOF | 1 bit | Start of Frame (dominant)
+| Identifier | 11 or 29 bits | Message ID used for arbitration and filtering (lower value = higher priority)
+| RTR | 1 bit | Remote frame flag (0 = data frame, 1 = remote frame)
+| IDE | 1 bit | Identifier Extension (0 = 11-bit, 1 = 29-bit)
+| r0/r1 | 1-2 bits | Reserved bits
+| DLC | 4 bits | Data Length Code (0-8 bytes for classic CAN)
+| Data | 0-8 bytes | Payload (classic CAN)
+| CRC + delim | 15 + 1 bits | CRC sequence plus delimiter for error detection
+| ACK + delim | 1 + 1 bits | ACK slot (dominant = acknowledged) plus delimiter
+| EOF | 7 bits | End of Frame (recessive)
+| IFS | 3 bits (typical) | Interframe Space (bus idle)
+|===
+
+Arbitration when messages collide is bit-wise and non-destructive: if two nodes start together, the one sending the lower numerical ID (dominant bits) keeps control while the other backs off and retries.
+
+== Reliability and fault confinement
+
+CAN detects errors (bit, stuff, CRC, form, ACK), requests retransmission automatically, and keeps per-node error counters. Misbehaving nodes degrade from error-active to error-passive, and can go bus-off to protect the network.
+
+== Wiring and termination (quick reference)
+
+Backbone bus with twisted pair; terminate only at the two physical ends.
+
+|===
+| Line | Connects | Notes
+
+| CAN_H | Node ↔ Node | Twisted pair with CAN_L
+| CAN_L | Node ↔ Node | Twisted pair with CAN_H
+| Termination | 120 Ω at each end | Use one resistor at each end of the bus
+|===
+
+Optional DB-9 (CiA 303-1) pinout reference:
+
+|===
+| Pin | Signal | Description
+
+| 2 | CAN_L | CAN low
+| 3 | GND | Signal ground
+| 7 | CAN_H | CAN high
+| 9 | V+ (optional) | Power (implementation specific)
+|===
+
+== Typical use cases
+
+Beyond powertrain and chassis, CAN networks show up across industries: rail, aerospace, medical devices, lifts and escalators, lab gear—anywhere you need many intelligent modules to coordinate reliably and cheaply.
+
+== CSP and CAN
+
+=== How CSP uses CAN (short)
+
+* Runs above CAN L1/L2: CSP treats CAN as a link layer. Classic CAN frames carry at most 8 data bytes, so CSP adds its own fragmentation to move bigger packets.
+* CAN Fragmentation Protocol (CFP): CSP’s CFP chops one CSP packet into many 8-byte CAN frames and reassembles them on the other side.
+* Header and addressing on top: Every CSP packet has a small header with source/destination node IDs, ports (services), priority, and flags giving service addressing, simple routing, and optional security that CAN on its own does not provide.
+* Mapping to the 29-bit CAN ID: On CAN, many CSP implementations use extended (29-bit) identifiers and map parts of the CSP header (for example, src/dst/ports/priority) into the CAN ID so you can leverage hardware filtering and arbitration.
+* Routing and services: Nodes get static routes and well-known service ports (ping, buffer status, subsystem services), so inter-subsystem communication looks closer to IP network sockets rather than raw CAN signal frames.
+* Reliability when needed: CAN already has a frame-level CRC and ACK, but CSP can add RDP (reliable datagram protocol) for end-to-end retransmissions and in-order delivery across multiple hops and links.
+
+=== Key takeaways for a CAN-based CubeSat bus
+
+* You still use standard CAN wiring, arbitration, CRC and ACK—CSP does not alter the electrical or base link behavior. It standardizes how you use CAN frames (IDs and payload) to carry an addressable, routable packet protocol with optional reliability and security.
+* Generally extended (29-bit) IDs are used and expect fragmentation to be the norm for CSP-over-CAN designs, plus a small CSP header and flags that unlock ports, and routing.
+
+== Lab tutorial: basic CAN test with BeagleBone + Comms Cape
+
+CAN is the primary communications protocol on our PC104 bus. The following is a compact, lab-ready setup for two BeagleBones using the official Comms cape.
+
+=== Hardware setup
+
+* Two BeagleBones with the official BeagleBone Comms cape
+* Connect CAN_H to CAN_H and CAN_L to CAN_L between the two nodes
+* Terminate the backbone with resistors at both ends: use 120 Ω (100 Ω used here as closest available) to reduce reflections
+
+=== Network access
+
+* Sign in to Tailscale with: pulseaucsp@gmail.com
+* Visit `https://192.168.8.1/` to access the lab router (password: `UCSPadmin`)
+* Connect each BeagleBone via Ethernet to the router, and via USB-A to USB Mini to the USB hub connected to the PC
+* Find both BeagleBones and their IPs on the router Clients page
+
+=== Send CAN
+
+[source,shell]
+----
+ssh debian@[ip] # where ip is the ip of the beaglebone you are connecting to
+sudo config-pin P9_24 can # not required when using the official cape and it will throw an error, but necessary when using the PULSE-A OBC
+sudo config-pin P9_26 can # not required when using the official cape and it will throw an error, but necessary when using the PULSE-A OBC
+sudo ip link set can1 up type can bitrate 500000
+cansend can1 123#DEADBEEF # 123 is device address, DEADBEEF is a basic test message in hex
+sudo ip link set can1 down
+----
+
+=== Receive CAN
+
+[source,sh]
+----
+ssh debian@[ip] # where ip is the ip of the beaglebone you are connecting to
+sudo config-pin P9_24 can # not required when using the official cape and it will throw an error, but necessary when using the PULSE-A OBC
+sudo config-pin P9_26 can # not required when using the official cape and it will throw an error, but necessary when using the PULSE-A OBC
+sudo ip link set can1 up type can bitrate 500000
+candump can1
+sudo ip link set can1 down
+----
+
 == Resources
 
 link:https://www.csselectronics.com/pages/can-bus-simple-intro-tutorial/[Intro tutorial]

@@ -1,1 +1,79 @@
 = Operating System
+
+== Linux and Debian for CubeSats
+
+Linux provides a stable, well-supported platform with mature tooling, strong networking, and excellent hardware support. Debian is a lightweight, long-term supported Linux distribution with reproducible package management, making it a good fit for embedded boards like the BeagleBone used in this mission. For PULSE-A, Debian enables:
+
+* Robust networking (SSH, SCP, SocketCAN) for development and operations
+* Package ecosystem (build tools, monitoring, scripting) for rapid iteration
+* Out of the box support for the BeagleBone Black and cFS
+* Automation via systemd, cron, and shell scripts
+* Familiar workflows for both lab work and on-orbit maintainability
+
+== Basic terminal commands
+
+[source,sh]
+----
+pwd                      # print current directory
+ls -la                   # list files (long, including hidden)
+cd /path/to-directory    # change directory
+mkdir name               # create directory
+cp src dst               # copy file
+mv src dst               # move/rename
+rm file                  # remove file
+rm -r directory          # remove directory recursively
+cat file                 # print file contents
+----
+
+Package management (Debian/Ubuntu):
+
+----
+sudo apt update
+sudo apt upgrade
+sudo apt install package-name
+----
+
+== SSH: remote shell access
+
+Connect to a BeagleBone or remote host:
+
+----
+ssh debian@[ip]
+----
+
+== SCP: file transfer
+
+Push a file to a remote host:
+
+----
+scp path/to-file debian@[ip]:~/path/to-file
+scp -r path/to-directory debian@[ip]:~/path/to-directory
+----
+
+Pull a file from a remote host:
+
+----
+scp debian@[ip]:path/to-file ./
+scp -r debian@[ip]:path/to-directory ./
+----
+
+== Real-time Linux and PREEMPT-RT
+
+Real-time means bounded, predictable response to events (low, consistent latency and jitter). The PREEMPT-RT patchset turns Linux into a fully preemptible kernel, reducing scheduling and interrupt latencies so time-sensitive tasks meet deadlines.
+
+Why it matters for CubeSats:
+
+* Improves determinism for control loops, timestamping, and communication windows
+* Helps ensure consistent I/O timing on shared embedded platforms
+* Most workloads are soft real-time; enable PREEMPT-RT for subsystems that need tighter bounds
+
+----
+
+== References
+
+* link:https://www.debian.org/doc/[Debian docs]
+* link:https://wiki.debian.org/DebianIntroduction/[Debian introduction]
+* link:https://ubuntu.com/tutorials/command-line-for-beginners/[Command line for beginners]
+* link:https://man.openbsd.org/ssh/[ssh manual]
+* link:https://man.openbsd.org/scp/[scp manual]
+* link:https://wiki.linuxfoundation.org/realtime/start[Linux Foundation Real-Time]

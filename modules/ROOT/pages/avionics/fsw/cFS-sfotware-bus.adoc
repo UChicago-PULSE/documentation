@@ -1,1 +1,68 @@
 = cFS Software Bus
+
+== What is the Software Bus?
+
+The Software Bus (SB) is an inter-application, message-based communication service in cFE. It decouples senders and receivers via publish/subscribe so applications can exchange packets without knowing each other’s location or implementation details.
+
+It supports one-to-one, one-to-many, and many-to-one routing. Multiple message types can be delivered to a single pipe (commonly for ground command processing).
+
+== Software Bus Terminology
+
+=== Messages
+
+Messages are self-contained data units identified by an abstract Message ID (MsgID). The Message API hides header details so applications remain portable across message-header implementations.
+
+=== Pipes
+
+Pipes are per-application queues that hold incoming messages until read. Each pipe has a single reader, but an application may own multiple pipes.
+
+Read modes:
+
+* Poll (non-blocking)
+* Pend (blocking)
+* Pend with timeout
+
+==== Message Limits and Flow Control
+
+Limits help isolate slow consumers and protect system throughput:
+
+* Pipe depth: maximum total messages allowed at a pipe (including in-process). If reached, further deliveries to that pipe are rejected (overflow).
+* Per-MsgID limit: maximum messages of a specific MsgID at a pipe. If reached, deliveries of that MsgID are rejected (overrun).
+
+Choose limits based on producer/consumer timing characteristics.
+
+=== Routing
+
+The SB looks up routes for a MsgID and delivers to all subscribed pipes.
+
+Routing implementations (SBR):
+
+* DIRECT: array indexed by MsgID (`CFE_PLATFORM_SB_HIGHEST_VALID_MSGID`) — simplest, larger memory footprint
+* HASH: hash map (`4 * CFE_PLATFORM_SB_MAX_MSG_IDS`) — smaller, manage collisions reported at subscribe
+
+Missions may replace SBR with a custom router where warranted.
+
+==== Sending Applications
+
+Any application can send messages. Do not send from interrupt/exception handlers (SB may invoke blocking OS calls).
+
+==== Receiving Applications
+
+Any application can receive (not from interrupt/exception handlers). Messages arrive FIFO per pipe and remain accessible until the next receive call.
+
+== The Software Bus (SB) and the Software Bus Network (SBN)
+
+* SB: intra-instance publish/subscribe between applications on one computer
+* SBN: bridges SB between separate cFS instances (partitions/processors/networks)
+
+What SBN does:
+
+* Mirrors subscriptions so selected MsgIDs are forwarded across network links
+* Transports messages over a network interface (e.g., Ethernet)
+* Preserves the SB model so apps remain unaware of remote origins
+
+
+== Resources
+
+* link:https://github.com/nasa/cFE/blob/main/docs/cFE%20Application%20Developers%20Guide.md#6-software-bus-interface[cFE Application Developers Guide – Software Bus Interface]
+

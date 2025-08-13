@@ -37,7 +37,7 @@ The Power Manager Application is an OBC default application that monitors the PD
 
 == Integration Points with Hardware
 
-* **Dedicated link:I2C.html[I^2^C] Interface**: Direct communication with PDU hardware
+* Dedicated link:I2C.html[I^2^C Interface]: Direct communication with PDU hardware
 * **PDU**: Monitors and controls power distribution unit
 
 == Integration Points with Other Software

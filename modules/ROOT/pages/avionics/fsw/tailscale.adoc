@@ -1,1 +1,20 @@
 = Tailscale
+
+== Overview
+
+Tailscale is a zero‑config mesh VPN built on WireGuard. It creates a private, encrypted network between your devices using your existing identity provider for authentication. Devices connect peer‑to‑peer when possible and traverse NAT automatically.
+
+== Whar does PULSE-A use Tailscale for
+
+* Secure remote access to lab devices connected to the tailscale enabled router in the PULSE-A lab (e.g., BeagleBones, routers) without port forwarding
+* Works over Wi‑Fi, Ethernet, or cellular across different networks
+
+== Basic usage
+
+Install Tailscale and sign in on each device and sign with the team google account. Then enable tailscale and connect to the lab router IP.
+
+== References
+
+* link:https://tailscale.com/learn/[Tailscale Learn]
+* link:https://tailscale.com/kb/[Tailscale Knowledge Base]
+* link:https://tailscale.com/download/[Tailscale Download]

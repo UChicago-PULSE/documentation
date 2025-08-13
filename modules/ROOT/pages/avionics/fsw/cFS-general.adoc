@@ -139,3 +139,4 @@ PULSE-A utilizes several NASA-provided cFS applications that provide essential s
 == Related Documentation
 
 * link:cFS-sfotware-bus.html[cFS Software Bus] - Software bus documentation
+* link:SBN-app.html[SBN Application] - Software Bus Network bridge between instances
