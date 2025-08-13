@@ -6,7 +6,7 @@ The Polarization-modUlated Laser Satellite Experiment (PULSE-A) at the Universit
 == CPolsk
 Circular Polarization Shift Keying (CPolSK) encodes binary data in the handedness of circularly polarized light—left for one bit state, right for the other. Compared to our design choices, other literature proposes methods such as using a single laser with a fast electro-optic modulator to switch polarization states.
 
-Our Optical terminal aims to:
+== Our Optical terminal aims to:
 
 1. Transmit a downlink beacon for tracking purposes through the Beacon assembly. 
 
