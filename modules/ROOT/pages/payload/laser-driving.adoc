@@ -92,7 +92,7 @@ We expect that turning the laser ON and OFF at 10 MHz means each modulation cycl
 1. https://ieeexplore.ieee.org/abstract/document/6555264
 2. https://engj.org/index.php/ej/article/view/439
 3. https://ieeexplore.ieee.org/abstract/document/4600240
-4. Modeling of atmospheric turbulence effect on terrestrial FSO link
+4. https://www.radioeng.cz/fulltexts/2009/09_01_042_047.pdf 
 5. https://www.spiedigitallibrary.org/journals/optical-engineering/volume-54/issue-3/036101/Free-space-optical-transmission-scheme-based-on-the-combination-of/10.1117/1.OE.54.3.036101.full#r2
 6. https://www.sciencedirect.com/science/article/pii/S0030401817310428#fig3
 7. https://www.spiedigitallibrary.org/conference-proceedings-of-spie/8906/890619/Research-on-demodulation-technology-of-atmospheric-laser-communication-system-base/10.1117/12.2033163.full
