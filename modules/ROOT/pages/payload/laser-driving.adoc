@@ -14,8 +14,10 @@ Other literature describes alternative approaches, such as employing a single la
 _Examples are shown below._
 
 image::litscheme1.png[CPolsk 1]
+
 image::litscheme2.png[CPolsk 2]
 link:https://www.spiedigitallibrary.org/conference-proceedings-of-spie/8906/890619/Research-on-demodulation-technology-of-atmospheric-laser-communication-system-base/10.1117/12.2033163.full[Research on demodulation technology of atmospheric laser communication system base on CPolSK ]
+
 image::litscheme1.png[CPolsk 3]
 link:https://www.sciencedirect.com/science/article/pii/S0030401814006981[Employing circle polarization shift keying in free space optical communication with gamma–gamma atmospheric turbulence channel - ScienceDirect]
 
