@@ -98,30 +98,34 @@ CAN is the primary communications protocol on our PC104 bus. The following is a 
 
 === Network access
 
-* Sign in to Tailscale with: pulseaucsp@gmail.com
-* Visit `https://192.168.8.1/` to access the lab router (password: `UCSPadmin`)
-* Connect each BeagleBone via Ethernet to the router, and via USB-A to USB Mini to the USB hub connected to the PC
-* Find both BeagleBones and their IPs on the router Clients page
-
-=== Send CAN
-
-----
-ssh debian@[ip] # where ip is the ip of the beaglebone you are connecting to
-sudo config-pin P9_24 can # not required when using the official cape and it will throw an error, but necessary when using the PULSE-A OBC
-sudo config-pin P9_26 can # not required when using the official cape and it will throw an error, but necessary when using the PULSE-A OBC
-sudo ip link set can1 up type can bitrate 500000
-cansend can1 123#DEADBEEF # 123 is device address, DEADBEEF is a basic test message in hex
-sudo ip link set can1 down
-----
+* Connect to Tailscale
+* Open lab router page
+* Connect each BeagleBone via Ethernet to the router, and via USB-A to USB Mini to the USB power hub
+* Find both BeagleBone IPs on the router Clients page
 
 === Receive CAN
 
+Open a terminal ans run these commands:
+
 ----
-ssh debian@[ip] # where ip is the ip of the beaglebone you are connecting to
+ssh debian@[ip bb1] # where ip is the ip of the beaglebone you are connecting to
 sudo config-pin P9_24 can # not required when using the official cape and it will throw an error, but necessary when using the PULSE-A OBC
 sudo config-pin P9_26 can # not required when using the official cape and it will throw an error, but necessary when using the PULSE-A OBC
 sudo ip link set can1 up type can bitrate 500000
 candump can1
+sudo ip link set can1 down
+----
+
+=== Send CAN
+
+Open anothet terminal and run these commands:
+
+----
+ssh debian@[ip bb2] # where ip is the ip of the beaglebone you are connecting to
+sudo config-pin P9_24 can # not required when using the official cape and it will throw an error, but necessary when using the PULSE-A OBC
+sudo config-pin P9_26 can # not required when using the official cape and it will throw an error, but necessary when using the PULSE-A OBC
+sudo ip link set can1 up type can bitrate 500000
+cansend can1 123#DEADBEEF # 123 is device address, DEADBEEF is a basic test message in hex
 sudo ip link set can1 down
 ----
 
