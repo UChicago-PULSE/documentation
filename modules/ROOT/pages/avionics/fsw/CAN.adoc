@@ -105,7 +105,7 @@ CAN is the primary communications protocol on our PC104 bus. The following is a 
 
 === Receive CAN
 
-Open a terminal ans run these commands:
+Open a terminal and run these commands:
 
 ----
 ssh debian@[ip bb1] # where ip is the ip of the beaglebone you are connecting to
@@ -118,7 +118,7 @@ sudo ip link set can1 down
 
 === Send CAN
 
-Open anothet terminal and run these commands:
+Open another terminal and run these commands:
 
 ----
 ssh debian@[ip bb2] # where ip is the ip of the beaglebone you are connecting to
