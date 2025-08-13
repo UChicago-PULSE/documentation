@@ -19,12 +19,12 @@ Typically, circular polarization shift keying is achieved by:
 _Examples are shown below:_
 
 [.text-center]
-image::litscheme2.png[CPolSK 2, width=400, height=267, link=https://www.spiedigitallibrary.org/conference-proceedings-of-spie/8906/890619/Research-on-demodulation-technology-of-atmospheric-laser-communication-system-base/10.1117/12.2033163.full]
+image::litscheme2.png[CPolSK 2, width=500, height=367, link=https://www.spiedigitallibrary.org/conference-proceedings-of-spie/8906/890619/Research-on-demodulation-technology-of-atmospheric-laser-communication-system-base/10.1117/12.2033163.full]
 [caption]
 link:https://www.spiedigitallibrary.org/conference-proceedings-of-spie/8906/890619/Research-on-demodulation-technology-of-atmospheric-laser-communication-system-base/10.1117/12.2033163.full[Research on demodulation technology of atmospheric laser communication system base on CPolSK]
 
 [.text-center]
-image::litscheme3.png[CPolSK 3, width=400, height=267, link=https://www.sciencedirect.com/science/article/pii/S0030401814006981]
+image::litscheme3.png[CPolSK 3, width=500, height=367, link=https://www.sciencedirect.com/science/article/pii/S0030401814006981]
 [caption]
 link:https://www.sciencedirect.com/science/article/pii/S0030401814006981[Employing circular polarization shift keying in free-space optical communication with gamma–gamma atmospheric turbulence channel]
 
@@ -49,7 +49,7 @@ The 1550nm lasers output a maximum of 5mW. The signal is later amplified using t
 === link:https://www.thorlabs.com/thorproduct.cfm?partnumber=PFC1550A[2×1 Fiber Combiner] 
 The 2x1 Fiber Combiner from Thorlabs has two inputs and one output. The input patch cables from the laser have their keys aligned to the slow axis. At the combiner, the white port supports a slow-axis to slow-axis coupling, whereas the red port supports a slow-axis to fast-axis coupling. This creates two paths where the beams are linearly polarized and orthogonal. This is important because it will serve as a basis for switching between RCP and LCP.
 
-image::2to1combiner.png[Combiner]
+image::2to1combiner.png[Combiner, width=500, height=367,]
 
 
 === Polarization-Maintaining (PM) Fiber
