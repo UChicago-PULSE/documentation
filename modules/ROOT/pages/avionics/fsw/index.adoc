@@ -2,12 +2,13 @@
 
 === General Software Information
 
-* link:operating-system.html[Operating System] - Linux/Debian basics, SSH/SCP
 * link:cFS-general.html[cFS] - Core Flight System general documentation
 * link:cFS-sfotware-bus.html[cFS Software Bus] - Software bus documentation
 * link:CSP.html[CSP] - Cubesat Space Protocol documentation
 * link:I2C.html[I^2^C] - I^2^C interface documentation
-* link:parsec.html[Parsec] - Parsec framework documentation
+* link:operating-system.html[Operating System] - Linux/Debian basics, SSH/SCP
+* link:tailscale.html[Tailscale] - Tailscale documentation
+* link:parsec.html[Parsec] - Parsec documentation
 * link:unused-software.html[Unused Software] - Documentation for unused software components
 
 === Communications Protocols
