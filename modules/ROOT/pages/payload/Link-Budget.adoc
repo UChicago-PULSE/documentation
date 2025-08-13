@@ -66,6 +66,7 @@ The uplink beacon link budget is still a work in progress. For that budget to cl
 
 == Power Received at OGS
 The power received from the downlink transmission beam must reach a crucial threshold for mission success. The link budget calculations, with full losses and gains, estimate that 2 nanowatts of power would be received at OGS from the downlink transmission beam. MIT STARLab Optical Link Budget software, with the same parameters, estimates a received power at the ground station of 3 nanowatts. Given the proximity of these two estimates, we are satisfied that the link budget calculations are accurate. Both estimates surpass the theoretical received power threshold of approximately 0.3 nanowatts, which is our expected noise power. The SNR, then, is approximately 8.91.
+
 image::linkb1.png[Graph1, width=300]
 
 == Optimal Downlink Transmission Divergence Angle Calculation
@@ -74,4 +75,5 @@ The divergence angle is utilized in both calculations of loss due to pointing er
 We first calculated the antenna gain with a hypothetical divergence angle of 0.92 milliradians, which was arbitrarily chosen based on the spec of a commercially available collimator, and then we set the total allowable loss “due to” divergence angle at 3.5 dB. This includes all loss due to pointing error, but also any loss to the antenna gain that was calculated with a 0.92 milliradian divergence angle.
 
 We can then graph the maximum angle of error (that stays within 3.5 dB of total loss, as outlined) as a function of divergence angle. The divergence angle that gives the largest maximum angle of error is the optimized divergence angle:
+
 image::linkb2.png[Graph1, width=300]
