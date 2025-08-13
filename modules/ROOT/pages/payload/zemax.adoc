@@ -58,13 +58,13 @@ The Transmission assembly encodes and modulates (at 1–10 MHz) the data into a 
 Irradiance Map of OGS-Beacon Power Distribution on QPD Detector_  
 
 
-image::qd1.png[QPD 1, width=300, height=300]
+image::qd1.png[QPD 1, width=400, height=400]
 
 
 Near-Center Gaussian QPD Irradiance Profile Plot_
 
 
-image::qd2.png[QPD 2, width=300, height=300]
+image::qd2.png[QPD 2, width=500, height=400]
 
 
 Note: the gaps between the gaussian distribution represent dead-zones of the QPD (between each quadrant). Darker (more irradiant) circumference & halo hypothesized to be caused by lens spherical aberrations.
@@ -116,10 +116,10 @@ The FSM corrects uplink beacon misalignments caused by body-pointing, thermal dr
 Assuming Uniform Expansion of CubeSat Aluminum Plating.  
 We expect there to be misalignments due to thermal expansion of the plates.
 
-Plots of Received Centroid & Power on QPD Over a Proportional Expansion Factor of Plating (from Zemax)_
+Plots of Received Centroid & Power on QPD Over a Proportional Expansion Factor of Plating (from Zemax)
 
 
-image::qd4.png[QPD 4, width=400, height=300]
+image::q4.png[QPD 4, width=500, height=400]
 
 Note: Inconsistent Centroid Behavior observed starting from expansion factor of 0.4. Power threshold is a more sensitive characterization than the centroid.
 
@@ -129,7 +129,7 @@ Optical components have imperfect transmission from ideal trajectory, and can re
 Plots of Received Centroid & Total Power on QPD Over Minimum Relative Ray Intensity (MRRI)_
 
 
-image::qd3.png[QPD 3, width=400, height=300]
+image::qd3.png[QPD 3, width=500, height=400]
 
 * Minimum Relative Ray Intensity: Input as a scaling factor with respect to the incoming intensity of a bundle through an optical component, “Minimum Relative Ray Intensity” is defined as the minimum intensity of a back-reflected bundle that will be considered in the Zemax ray-trace analysis (e.g.: 2-6 x incoming intensity)
 
@@ -156,7 +156,7 @@ image::qd3.png[QPD 3, width=400, height=300]
 
 Sample Rays Propagating through DS Filter Stack under different MRRI values (%)_
 
-image::zemax2.png[Zemax Back Reflections, width=400, height=500]
+image::zemax2.png[Zemax Back Reflections, width=500, height=400]
 
 Understanding power losses through optical system:
 * Concerning the Payload link budget, how much power is being received at the QPD, and what causes the power losses?
