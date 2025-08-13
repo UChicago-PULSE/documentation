@@ -47,7 +47,7 @@ This data is used to obtain thresholds for the PULSE-A laser-communications opti
 * Accurate, Non-trivial Model of Payload Optical Layout
 * Capable of Non-sequential 3D Layout
 
-_Fig. 1: Current Payload Optical Layout_  
+Current Payload Optical Layout_  
 Blue beams represent part of the OGS Uplink Beacon (1064nm); Green beams represent part of the Payload Downlink Transmission (1550nm).
 
 image::zemax1.png[Zemax Shared Path, width=300, height=300]
@@ -55,16 +55,16 @@ image::zemax1.png[Zemax Shared Path, width=300, height=300]
 The Transmission assembly encodes and modulates (at 1–10 MHz) the data into a circularly-polarized, amplified beam for the OGS to receive and decode. The transmission beam follows the same optical path as the uplink beacon, and requires a dichroic beam-splitter to multiplex the two signals.
 
 == Use of Irradiance Maps
-_Fig. 2: Irradiance Map of OGS-Beacon Power Distribution on QPD Detector_  
+Irradiance Map of OGS-Beacon Power Distribution on QPD Detector_  
 
 
 image::qd1.png[QPD 1, width=300, height=300]
 
 
-_Fig. 3: Near-Center Gaussian QPD Irradiance Profile Plot_
+Near-Center Gaussian QPD Irradiance Profile Plot_
 
 
-image::qpd2.png[QPD 2, width=300, height=300]
+image::qd2.png[QPD 2, width=300, height=300]
 
 
 Note: the gaps between the gaussian distribution represent dead-zones of the QPD (between each quadrant). Darker (more irradiant) circumference & halo hypothesized to be caused by lens spherical aberrations.
@@ -116,7 +116,7 @@ The FSM corrects uplink beacon misalignments caused by body-pointing, thermal dr
 Assuming Uniform Expansion of CubeSat Aluminum Plating.  
 We expect there to be misalignments due to thermal expansion of the plates.
 
-_Fig. 6: Plots of Received Centroid & Power on QPD Over a Proportional Expansion Factor of Plating (from Zemax)_
+Plots of Received Centroid & Power on QPD Over a Proportional Expansion Factor of Plating (from Zemax)_
 
 
 image::qd4.png[QPD 4, width=400, height=300]
@@ -126,7 +126,7 @@ Note: Inconsistent Centroid Behavior observed starting from expansion factor of 
 == Preliminary Validation of Back-Reflected Light
 Optical components have imperfect transmission from ideal trajectory, and can reflect light backward through the optical layout.
 
-_Fig. 7: Plots of Received Centroid & Total Power on QPD Over Minimum Relative Ray Intensity (MRRI)_
+Plots of Received Centroid & Total Power on QPD Over Minimum Relative Ray Intensity (MRRI)_
 
 
 image::qd3.png[QPD 3, width=400, height=300]
@@ -154,15 +154,13 @@ image::qd3.png[QPD 3, width=400, height=300]
 | 0.0 + 0.00071147
 |===
 
-_Fig. 8: Sample Rays Propagating through DS Filter Stack under different MRRI values (%)_
+Sample Rays Propagating through DS Filter Stack under different MRRI values (%)_
+
+image::zemax2.png[Zemax Back Reflections, width=400, height=500]
 
 Understanding power losses through optical system:
 * Concerning the Payload link budget, how much power is being received at the QPD, and what causes the power losses?
 * Power Losses are more relevant to calculate as percentages (applicable to any product)
-
-
-image::zemax2.png[Zemax Back Reflections, width=400, height=500]
-
 
 == Power Values through Optical Components (Transmission)
 
