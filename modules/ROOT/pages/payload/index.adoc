@@ -33,24 +33,24 @@ A TO-can laser diode operating at 638 nm with an output of 200 mW serves as a be
 
 == Validation of our design: 
 
-== Optical Simulations 
+=== Optical Simulations 
 Zemax OpticStudio (Zemax) is an optical simulation software that allows us to run a preliminary test & tolerance on the entire Payload. Zemax has been used to model the Payload optical layout and analyze sensitive components performance with ray-tracing data.
 We have collected key tolerancing data for the Steering and Detection assemblies, including the identification of vignetting and tilt limitations in the FSM mirror, leading to the selection of a 6.4 mm diameter with a 4.25° maximum tilt. Misalignment effects such as body-pointing, thermal expansion, and stray reflections are also being studied. 
 More on optical simulations here.
 
-== Link Budget
+=== Link Budget
 A key aspect of laser communication systems engineering is the link budget. By accounting for individual effects on optical power, we can help ensure that the designed payload closes the link with the necessary margin, especially in worst-case scenarios. PULSE-A’s transmission signal is designed to maintain >6 dB of margin at all times throughout a pass. More on link budget here.
 
-== Experimental Work
+=== Experimental Work
 
-=== Laser Drving 
+==== Laser Drving 
 Our setup uses two seed lasers, each driven by a Thorlabs LD1101 and T-Bias and modulated at 10 MHz by an FPGA, with only one laser active at a time to emit a specific linear polarization. The beams are combined using a 2×1 fiber combiner and passed through a quarter-wave plate to generate right- or left-handed circular polarization for CPolSK-based binary modulation. 
 
-=== Telescope Characterization
+==== Telescope Characterization
 Our set up creates circularly polarized beam and expands the beam up to 30cm. We scan across the area of the OGS telescope in search of polarization distortions introduced by its coatings.
 
-=== PM Fiber Test
+==== PM Fiber Test
 This setup simulates polarization misalignment from a fiber-in/fiber-out component using a half-wave plate (HWP) and rotating linear polarizer (LP) on a 1550 nm fiber-collimated U-bench, connected via PANDA PM fiber to a seed laser and a PAX1000VIS polarimeter. Mueller matrix formalism was used to model SOP transformations, as it accounts for partial polarization (DOP < 100%) and enables prediction of the output Stokes vector.
 
-=== QPD Characterization
+==== QPD Characterization
 This test characterizes the QPD’s spatial response by shifting a focused laser beam (1064nm)  across its surface using a translation stage while recording quadrant voltages with two synchronized oscilloscopes. 
