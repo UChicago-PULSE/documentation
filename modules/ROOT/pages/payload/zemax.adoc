@@ -156,7 +156,7 @@ image::qd3.png[QPD 3, width=500, height=400]
 
 Sample Rays Propagating through DS Filter Stack under different MRRI values (%)_
 
-image::zemax2.png[Zemax Back Reflections, width=500, height=400]
+image::zemax2.png[Zemax Back Reflections, width=500, height=500]
 
 Understanding power losses through optical system:
 * Concerning the Payload link budget, how much power is being received at the QPD, and what causes the power losses?
