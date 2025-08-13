@@ -18,9 +18,16 @@ Typically, circular polarization shift keying is achieved by:
 
 _Examples are shown below:_
 
-image::litscheme2.png[CPolSK 2, width=300, height=200, link=https://www.spiedigitallibrary.org/conference-proceedings-of-spie/8906/890619/Research-on-demodulation-technology-of-atmospheric-laser-communication-system-base/10.1117/12.2033163.full]
+[.text-center]
+image::litscheme2.png[CPolSK 2, width=400, height=267, link=https://www.spiedigitallibrary.org/conference-proceedings-of-spie/8906/890619/Research-on-demodulation-technology-of-atmospheric-laser-communication-system-base/10.1117/12.2033163.full]
+[caption]
+link:https://www.spiedigitallibrary.org/conference-proceedings-of-spie/8906/890619/Research-on-demodulation-technology-of-atmospheric-laser-communication-system-base/10.1117/12.2033163.full[Research on demodulation technology of atmospheric laser communication system base on CPolSK]
 
-image::litscheme3.png[CPolSK 3, width=300, height=200, link=https://www.sciencedirect.com/science/article/pii/S0030401814006981]
+[.text-center]
+image::litscheme3.png[CPolSK 3, width=400, height=267, link=https://www.sciencedirect.com/science/article/pii/S0030401814006981]
+[caption]
+link:https://www.sciencedirect.com/science/article/pii/S0030401814006981[Employing circular polarization shift keying in free-space optical communication with gamma–gamma atmospheric turbulence channel]
+
 
 
 == Background
