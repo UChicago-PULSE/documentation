@@ -6,7 +6,7 @@
 ** xref:general/PAT.adoc[Pointing, Acquisition, and Tracking]
 
 * Optical System
-** xref:payload/index.adoc[Optical Payload]
+** xref:payload/index.adoc[Payload]
 *** xref:payload/zemax.adoc[Zemax Simulations]
 *** xref:payload/Link-Budget.adoc[Link Budget]
 *** xref:payload/laser-driving.adoc[Laser Driving]
