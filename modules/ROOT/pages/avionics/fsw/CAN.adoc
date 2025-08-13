@@ -105,7 +105,6 @@ CAN is the primary communications protocol on our PC104 bus. The following is a 
 
 === Send CAN
 
-[source,shell]
 ----
 ssh debian@[ip] # where ip is the ip of the beaglebone you are connecting to
 sudo config-pin P9_24 can # not required when using the official cape and it will throw an error, but necessary when using the PULSE-A OBC
@@ -117,7 +116,6 @@ sudo ip link set can1 down
 
 === Receive CAN
 
-[source,sh]
 ----
 ssh debian@[ip] # where ip is the ip of the beaglebone you are connecting to
 sudo config-pin P9_24 can # not required when using the official cape and it will throw an error, but necessary when using the PULSE-A OBC

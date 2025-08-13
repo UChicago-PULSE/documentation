@@ -67,8 +67,6 @@ Why it matters for CubeSats:
 * Helps ensure consistent I/O timing on shared embedded platforms
 * Most workloads are soft real-time; enable PREEMPT-RT for subsystems that need tighter bounds
 
-----
-
 == References
 
 * link:https://www.debian.org/doc/[Debian docs]

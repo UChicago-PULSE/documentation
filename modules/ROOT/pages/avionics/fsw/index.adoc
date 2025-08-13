@@ -2,6 +2,7 @@
 
 === General Software Information
 
+* link:operating-system.html[Operating System] - Linux/Debian basics, SSH/SCP
 * link:cFS-general.html[cFS] - Core Flight System general documentation
 * link:cFS-sfotware-bus.html[cFS Software Bus] - Software bus documentation
 * link:CSP.html[CSP] - Cubesat Space Protocol documentation
