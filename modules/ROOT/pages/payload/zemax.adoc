@@ -87,19 +87,19 @@ The FSM corrects uplink beacon misalignments caused by body-pointing, thermal dr
 
 === Payload Body-Pointing Angular Misalignment Threshold for Fixed FSM Max Tilt Angle
 
-[cols="4,4,4", options="header"]
+[cols="3,3,6", options="header"]
 |===
-| Max Body-Pointing Tolerance (°, deg.)
-| FSM Max Tilt Angle (°, deg.)
-| Final Centroid pos. (+ overcorrection) (mm)
+| Specifications:
+| Requirement:
+| Justification:
 
-| 0%
-| 1.109
-| 0.0 + 0.00069201
+| Mechanical Angle (deg.)
+| ≥ ~4.1°
+| Capacity for overcorrecting from 1.00° Body-Pointing Error ensures that the optimal FSM Tilt angle is within the maximum mechanical FSM Tilt range.
 
-| 5%
-| 1.056
-| 0.0 + 0.00071147
+| Active Diameter (mm)
+| ≥ 5.00mm
+| Help to prevent vignetting along the edges of the FSM Mirror to collect the entire uplink beacon.
 |===
 
 == Preliminary Validation of Thermal Model: Plate Expansion
@@ -117,7 +117,26 @@ _Fig. 7: Plots of Received Centroid & Total Power on QPD Over Minimum Relative R
 
 == Power Values through Optical Components (Uplink Beacon)
 
-[cols="3,3,3", options="header"]
+[cols="5,5,10", options="header"]
+|===
+| Max Body-Pointing Tolerance (°, deg.):
+| FSM Max Tilt Angle (°, deg.):
+| Final Centroid pos. (+ overcorrection) (mm):
+
+| 0%
+| 1.109
+| 0.0 + 0.00069201
+
+| 5%
+| 1.056
+| 0.0 + 0.00071147
+|===
+
+
+
+== Power Values through Optical Components (Transmission)
+
+[cols="8,4,4", options="header"]
 |===
 | Component Name
 | Beacon Loss from Total (%)
@@ -127,63 +146,41 @@ _Fig. 7: Plots of Received Centroid & Total Power on QPD Over Minimum Relative R
 | 0.0
 | 0.0
 
-| Kepl. Telescope 30mm Lens (EO #45-241)
+a| Kepl. Telescope 30mm Lens
+(EO #45-241)
 | 0.49498
 | 0.49498
 
-| Kepl. Telescope 9mm Lens (EO #28-952)
+a| Kepl. Telescope 9mm Lens
+(EO #28-952)
 | 0.90462
 | 0.41168
 
-| FSM Mirror (Mirrorcle 6.4mm)
+a| FSM Mirror (Mirrorcle 6.4mm)
 | 2.2843
 | 1.3923
 
-| SWP Dichroic (Thorlabs DMSP 1180T)
+a| SWP Dichroic
+(Thorlabs DMSP 1180T)
 | 8.665
 | 6.5298
 
-| Bandpass Filter (Thorlabs FLH1064-8)
+a| Bandpass Filter
+(Thorlabs FLH1064-8)
 | 23.756
 | 16.523
 
-| Shortpass Filter (EO #89-671)
+a| Shortpass Filter
+(EO #89-671)
 | 36.862
 | 17.189
 
-| QPD Focus Lens (EO #49-876)
+a| QPD Focus Lens
+(EO #49-876)
 | 61.807
 | 39.509
 |===
 
-== Power Values through Optical Components (Transmission)
-
-[cols="3,3,3", options="header"]
-|===
-| Component Name
-| Transm. Loss from Total (%)
-| Transm. Loss from Previous Component (%)
-
-| QWP (Thorlabs WPQSM05-1550)
-| 0.0
-| 0.0
-
-| SWP Dichroic (Thorlabs DMSP 1180T)
-| 0.239
-| 0.239
-
-| FSM Mirror (Mirrorcle 6.4mm)
-| 3.245
-| 3.0132
-
-| Kepl. Telescope 9mm Lens (EO #28-952)
-| 3.616
-| 0.38344
-
-| Kepl. Telescope 30mm Lens (EO #45-241)
-| 4.388
-| 0.80096
-|===
 
 == Impact
 * Develop Preliminary Prototype for entire Payload Optical Layout (that is not currently feasible for physical lab validation)
