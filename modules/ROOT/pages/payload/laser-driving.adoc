@@ -13,6 +13,8 @@ Other literature describes alternative approaches, such as employing a single la
 
 _Examples are shown below._
 
+image::litscheme1.png[Laser Driving Diagram]
+
 == Background
 Free space optical (FSO) communications have often relied on phase and intensity modulation schemes to transmit data; on-off keying (OOK) is a low-complexity, cost effective modulation scheme that has been used in many such communications systems [1, 2]. However, due to atmospheric interference, phase noise and scintillation effects are introduced into the modulated beam, leading to poor data quality, and high bit error ratio (BER) [3]. On the other hand, the state of polarization (SOP) of light is relatively well preserved over long distances, making it an ideal data carrier for deep space FSO communication systems [4, 5, 12].
 
