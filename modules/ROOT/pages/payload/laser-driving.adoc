@@ -4,6 +4,8 @@
 * Generate orthogonally linearly polarized light at 1550nm
 * ON/OFF modulation at 1–10MHz
 
+image::ld.png[Laser Driving Set Up Scheme]
+
 == Overview of Requirement
 The laser driving setup generates two orthogonal, high-purity linear polarization states. In the Injection Assembly, each state passes through a quarter-wave plate, converting it to either right-handed (RCP) or left-handed (LCP) circular polarization. Using FPGA-controlled modulation at 1–10 MHz, this implements Circular Polarization Shift Keying (CPolSK), where binary data is encoded in the handedness of the light—left for one bit value, right for the other.
 
