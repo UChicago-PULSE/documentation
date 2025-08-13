@@ -14,7 +14,7 @@ PULSE-A’s CSLI contract with NASA was recently put on hold due to budget cuts 
 
 PULSE-A is composed of over 50 undergraduates. The team is made up of 11 departments: 8 engineering departments and 3 administrative ones. The team is led by 13 department leads and 6 program managers including the Project Director, Chief Engineer, Head of Administration, Lead Mission Manager, Optical Systems Manager and Flight Systems Manager. 
 
-image::orgchartPULSE.svg[]
+image::PULSE-A_Organizational_Chart_Rev-2.5_08_12_2025.drawio.svg[]
 
 The following are descriptions of each department’s role and responsibilities in the team:
 
