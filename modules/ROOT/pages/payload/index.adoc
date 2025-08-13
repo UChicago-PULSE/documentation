@@ -1,1 +1,56 @@
-= Optical Payload Documentation
+= Payload 
+
+== Mission Overview
+The Polarization-modUlated Laser Satellite Experiment (PULSE-A) at the University of Chicago aims to demonstrate the feasibility of circular polarization shift-keyed (CPolSK) satellite-to-ground laser-communication links. Here we present a design for an optical communications terminal capable of achieving output powers of up to 230 mW at modulation frequencies from 1 to 10 MHz with a maximum coupled pointing error of less than 1 mrad.
+
+== CPolsk
+Circular Polarization Shift Keying (CPolSK) encodes binary data in the handedness of circularly polarized light—left for one bit state, right for the other. Compared to our design choices, other literature proposes methods such as using a single laser with a fast electro-optic modulator to switch polarization states.
+
+Our Optical terminal aims to:
+
+1. Transmit a downlink beacon for tracking purposes through the Beacon assembly. 
+
+2. Detect an uplink beacon from the Optical Ground Station (OGS) at 1064nm, and use the centering information to establish a common optical axis and hence achieve precise optical alignment between the satellite and the OGS telescope before data transmission. The Steering and Detection assemblies are responsible for receiving and detecting the OGS beacon beam. 
+
+3. Transmit a downlink transmission beam to the OGS telescope subassembly. The Transmission assembly encodes and modulates (at 1-10 MHz) the data into a circularly-polarized, amplified beam for the OGS to receive and decode. The transmission beam follows the same optical path as the uplink beacon, and requires a dichroic beam-splitter to multiplex the two signals. The Telescope assembly is responsible for the condensing & expanding of the beacon and transmission beams respectively.
+
+A quick overview of each subassembly: 
+
+== Steering Assembly 
+At the steering assembly, a fine-steering mechanism (FSM) corrects uplink beacon misalignments caused by body-pointing, thermal drift, or vibrations. For angular errors up to 1.00°, the FSM adjusts the optical path to center the beam on the quadrant photodiode (QPD). A closed-loop control uses the QPD signal to compute the FSM mirror tilt via a voltage-transfer function. 
+
+== Detection Assembly 
+The detection assembly is the ultimate characterization of OGS 1064nm beacon reception performance. The Payload uses a 2x2 Quadrant Photodiode (QPD) with 1mm active diameter. The size constraints of such a detector require extremely precise pointing & focusing from other Payload assemblies. Slight misalignments throughout the system result in non-uniform voltage signals. 
+
+== Transmission Assembly 
+The Payload transmits data using CPolSK. After evaluating several modulation methods, the final design uses two 1550 nm seed lasers with orthogonal linear polarizations. An FPGA drives one laser at a time via a bias circuit, producing a modulated linearly polarized signal, which is amplified by an EDFA. Linear polarization is converted to circular through a QWP.
+
+== Telescope Assembly 
+The Payload Keplerian Telescope is designed to simultaneously focus the OGS uplink beacon along the path to the QPD, while expanding the Payload transmission beam on its way to the OGS. 
+
+== Beacon Assembly 
+A TO-can laser diode operating at 638 nm with an output of 200 mW serves as a beacon source to aid in coarse pointing alignment between the satellite and the ground station. 
+
+== Validation of our design: 
+
+=== Optical Simulations 
+Zemax OpticStudio (Zemax) is an optical simulation software that allows us to run a preliminary test & tolerance on the entire Payload. Zemax has been used to model the Payload optical layout and analyze sensitive components performance with ray-tracing data.
+We have collected key tolerancing data for the Steering and Detection assemblies, including the identification of vignetting and tilt limitations in the FSM mirror, leading to the selection of a 6.4 mm diameter with a 4.25° maximum tilt. Misalignment effects such as body-pointing, thermal expansion, and stray reflections are also being studied. 
+More on optical simulations here.
+
+=== Link Budget
+A key aspect of laser communication systems engineering is the link budget. By accounting for individual effects on optical power, we can help ensure that the designed payload closes the link with the necessary margin, especially in worst-case scenarios. PULSE-A’s transmission signal is designed to maintain >6 dB of margin at all times throughout a pass. More on link budget here.
+
+=== Experimental Work
+
+==== Laser Drving 
+Our setup uses two seed lasers, each driven by a Thorlabs LD1101 and T-Bias and modulated at 10 MHz by an FPGA, with only one laser active at a time to emit a specific linear polarization. The beams are combined using a 2×1 fiber combiner and passed through a quarter-wave plate to generate right- or left-handed circular polarization for CPolSK-based binary modulation. 
+
+==== Telescope Characterization
+Our set up creates circularly polarized beam and expands the beam up to 30cm. We scan across the area of the OGS telescope in search of polarization distortions introduced by its coatings.
+
+==== PM Fiber Test
+This setup simulates polarization misalignment from a fiber-in/fiber-out component using a half-wave plate (HWP) and rotating linear polarizer (LP) on a 1550 nm fiber-collimated U-bench, connected via PANDA PM fiber to a seed laser and a PAX1000VIS polarimeter. Mueller matrix formalism was used to model SOP transformations, as it accounts for partial polarization (DOP < 100%) and enables prediction of the output Stokes vector.
+
+==== QPD Characterization
+This test characterizes the QPD’s spatial response by shifting a focused laser beam (1064nm)  across its surface using a translation stage while recording quadrant voltages with two synchronized oscilloscopes. 

@@ -3,7 +3,7 @@
 == Purpose
 The FPGA will be used for laser modulation and formatting the data into an appropriate signal with respect to the transmission protocol. It will interface with the flash memory chip used by the payload controller over SPI, and output to the laser driver.
 
-image::fpga.png[FPGA]
+image::fpga2.png[FPGA, width=500, height = 400]
 
 == Technical requirements
 * Programmed in the Verilog HDL (Hardware Description Language)
