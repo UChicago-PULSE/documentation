@@ -31,7 +31,7 @@ The Payload Keplerian Telescope is designed to simultaneously focus the OGS upli
 == Beacon Assembly 
 A TO-can laser diode operating at 638 nm with an output of 200 mW serves as a beacon source to aid in coarse pointing alignment between the satellite and the ground station. 
 
-Validation of our design: 
+== Validation of our design: 
 
 == Optical Simulations 
 Zemax OpticStudio (Zemax) is an optical simulation software that allows us to run a preliminary test & tolerance on the entire Payload. Zemax has been used to model the Payload optical layout and analyze sensitive components performance with ray-tracing data.
