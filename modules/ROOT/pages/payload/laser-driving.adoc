@@ -50,7 +50,8 @@ The linearly polarized lasers are PM coupled so that SOP can be preserved. We ex
 
 
 === FPGA (Field Programmable Gate Array)
-Provides the encoding in binary data which allows us to communicate data via CPolsk, effectively functioning as our signal generator. It does it by sending the ON/OFF commands at the correct modulation speeds through the T-Bias. More on the FPGA selection and options we have considered here.
+Provides the encoding in binary data which allows us to communicate data via CPolsk, effectively functioning as our signal generator. It does it by sending the ON/OFF commands at the correct modulation speeds through the T-Bias. More on the FPGA selection and options we have considered xref:payload/fpga.adoc[here].
+.
 
 
 === link:https://www.thorlabs.com/thorproduct.cfm?partnumber=LD1101[Driver Thorlabs LD1101]  
