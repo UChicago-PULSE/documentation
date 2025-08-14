@@ -14,9 +14,9 @@ For example, we collaborated with both the Radio Frequency Ground Station (RFGS)
 Additionally, our SRD serves to create an organized framework for prioritizing the readiness of our systems by organizing them into parent requirement lists, where each requirement can be traced to a mission pre-requisite. 
 
 == Example Requirement: OGS-15 Optical Ground Station in SRD
-For requirement OGS-15 — The OGS shall be capable of detecting the downlink laser transmission at a link margin of 3 dB ≤ Margin ≤ 6 dB — we first ensured the statement was measurable — the numbers in dB give us a clear pass/fail criterion. 
+Requirement OGS-15 states that "The OGS shall be capable of detecting the downlink laser transmission at a link margin of 3 dB ≤ Margin ≤ 6 dB." We first ensured the statement was measurable by including margins in dB that give us a clear pass/fail criterion. 
 
-Then we determined the requirement Level as Performance because this isn’t about what the OGS does in a functional sense, but rather about how well it does it. The margin range comes directly from our Optical Tx Link Budget, which models the received power and losses under both nominal and degraded conditions. We chose 3–6 dB to ensure the link stays robust in the face of atmospheric attenuation, pointing errors, and optical losses, while also not over-specifying the system beyond practical limits.
+Then, we categorized the requirement level as Performance. The margin range comes directly from our Optical Tx Link Budget, which models the received power and losses under both nominal and degraded conditions. We chose 3–6 dB to ensure the link stays robust in the face of atmospheric attenuation, pointing errors, and optical losses, while also not over-specifying the system beyond practical limits.
 
 For the Parent Requirements, we linked to OGS-09 (functional) and OGS-12 (performance) because both have to be met for OGS-15 to even make sense. OGS-09 covers the actual ability to detect downlink wave packets by polarization state — without that, margin is meaningless. OGS-12 sets the bit error rate range, which directly depends on having enough link margin; if the margin is too low, BER will climb above our limit.
 
