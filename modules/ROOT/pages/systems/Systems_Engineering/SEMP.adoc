@@ -11,6 +11,6 @@ The initial version of the SEMP was produced on an accelerated timeline to suppo
 Generally, the SEMP outlines formal definitions, project phases, and the roles and responsibilities that ensure smooth coordination between departments. It establishes how subsystem interfaces are managed, how technical reviews (SRR, PDR, CDR, PPRR) are conducted, and how each department is accountable for its deliverables.
 
 
-Additionally, the SEMP connects systems engineering processes such as requirement allocation, interface definition, verification planning and risk tracking to supporting documents like the SRD, department dependent models, and analysis reports. This linkage ensures that every decision, from design changes to mitigation strategies, is grounded in a consistent, documented, and reviewable project-wide approach. The SEMP also designates the Systems Engineering department as responsible for this framework and ensuring process adherence across all mission phases.
+Additionally, the SEMP connects systems engineering processes such as requirement allocation, interface definition, verification planning and risk tracking to supporting documents like the SRD, department dependent models, and analysis reports. This linkage ensures that every decision, from design changes to mitigation strategies, is grounded in a consistent, documented, and reviewable project-wide approach. The SEMP also designates the Systems Engineering department as responsible for this framework and ensures process adherence across all mission phases.
 
 
