@@ -6,7 +6,7 @@ link:https://github.com/UChicago-PULSE/mission-documentation/blob/main/modules/R
 
 We maintain the Systems Engineering Management Plan (SEMP) as the central framework guiding PULSE-A from concept through launch. It is a live document, updated as requirements, schedules, and milestones evolve. 
 
-The initial version of the SEMP was produced on an accelerated timeline to support the Preliminary Design Review (PDR). While it met the immediate review requirements, it will undergo substantial refinement and expansion in preparation for the Critical Design Review (CDR) later this fall.
+The initial version of the SEMP was produced on an accelerated timeline to support the Preliminary Design Review (PDR). While it did meet the immediate review requirements, it will undergo substantial refinement and expansion in preparation for the Critical Design Review (CDR) later this fall.
 
 Generally, the SEMP outlines formal definitions, project phases, and the roles and responsibilities that ensure smooth coordination between departments. It establishes how subsystem interfaces are managed, how technical reviews (SRR, PDR, CDR, PPRR) are conducted, and how each department is accountable for its deliverables.
 
