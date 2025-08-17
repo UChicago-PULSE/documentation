@@ -8,4 +8,7 @@ complete unit is referred to as the OBC.
 The Payload Controller will be heavily based on the main On-Board Computer, with slight modifications to accommodate the unique requirements of the scientific Payload. A BBB will serve as the compute element, with an additional FPGA used for controlling the Payload's transmission lasers on the same board, an architecture based on the Massachusets Institute of Technology's CubeSat Laser Infrared CrosslinK (CLICK) mission. The Payload box is disconnected from the PC/104 connector stack; therefore, power and data connections will be
 made to form a custom wiring harness passed into the Payload box from the Payload Controller. For more information on this architecture, refer to the paper on PULSE-A's Payload design.
 
-== Design Motivation
+== Featutres
+
+MEMS Oscillators - The decision was made to use MEMS oscillators link:https://www.digikey.com/en/products/detail/sitime/SIT1533AI-H4-DCC-32-768E/4898150 with our real-time clock. MEMS devices are far more resillient to extreme pressures and temperatures, and would provide a far more robust time source for our RTC. We decided to go with the SiT1533, a 20 ppm crystal oscillator replacement - there are two on the flight computer board, one of which acts as a clock source for the RTC.
+
