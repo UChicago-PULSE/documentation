@@ -10,5 +10,10 @@ made to form a custom wiring harness passed into the Payload box from the Payloa
 
 == Featutres
 
-MEMS Oscillators - The decision was made to use MEMS oscillators link:https://www.digikey.com/en/products/detail/sitime/SIT1533AI-H4-DCC-32-768E/4898150 with our real-time clock. MEMS devices are far more resillient to extreme pressures and temperatures, and would provide a far more robust time source for our RTC. We decided to go with the SiT1533, a 20 ppm crystal oscillator replacement - there are two on the flight computer board, one of which acts as a clock source for the RTC.
+MEMS Oscillators - The decision was made to use MEMS oscillators (https://www.digikey.com/en/products/detail/sitime/SIT1533AI-H4-DCC-32-768E/4898150) with our real-time clock. MEMS devices are far more resillient to extreme pressures and temperatures, and would provide a far more robust time source for our RTC. We decided to go with the SiT1533, a 20 ppm crystal oscillator replacement - there are two on the flight computer board, one of which acts as a clock source for the RTC.
+
+Battery Powered Real Time Clock - A real-time clock was added such that in the event the BeagleBone Black needs to be reset, accurate time could be reistablished without the need for radio communication with the satellite. The RTC (https://ww1.microchip.com/downloads/aemDocuments/documents/MPD/ProductDocuments/DataSheets/MCP7940N-Battery-Backed-I2C-RTCC-with-SRAM-20005010J.pdf) connects to the BeagleBone over I2C, uses one of the MEMS oscillators as its clock source, and is powered by a CR2032 battery.
+
+
+
 
