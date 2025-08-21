@@ -37,3 +37,13 @@ The FSM chosen for our optical path is 1 inch in diameter because it is compact 
 == Numerical Aperture 
 
 Our ray tracing analysis conducted with various FSM parameters confirms that the numerical apertures of the fiber collimators are not a limitation for this system. The numerical aperture defines the range of incident angles at which light can be coupled efficiently into the fiber, making it an important factor for beam alignment. The precise collimation provided by the focal lenses ensures that, under proper beam propagation, the light will not enter at an angle approaching the aperture limit. This is significant because it indicates that the system can run with low sensitivity and minimal power loss at the collimators. As a result, the OGS design tolerates a significant margin of error for any skew in the optical setup.
+
+== Modeling Polarization
+
+Sequential Mode is used to simulate the change between circular to linear polarization when the data transmission beam propagates through the QWP. To create this effect, a Jones matrix with the appropriate phase shift is added to the surface of the QWP. The incoming beam must be initialized to the parameters that reflect circular polarization and then a ray trace will return the resulting graphs. 
+
+[cols="a,a", frame=none, grid=none]
+|===
+| image::circ_polarization.png[]
+| image::lin_polarization.png[]
+|===
