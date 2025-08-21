@@ -14,6 +14,7 @@ MEMS Oscillators - The decision was made to use MEMS oscillators (https://www.di
 
 Battery Powered Real Time Clock - A real-time clock was added such that in the event the BeagleBone Black needs to be reset, accurate time could be reistablished without the need for radio communication with the satellite. The RTC (https://ww1.microchip.com/downloads/aemDocuments/documents/MPD/ProductDocuments/DataSheets/MCP7940N-Battery-Backed-I2C-RTCC-with-SRAM-20005010J.pdf) connects to the BeagleBone over I2C, uses one of the MEMS oscillators as its clock source, and is powered by a CR2032 battery.
 
+Watchdog Processor - A watchdog processor was added to monitor a heartbeat signal from the BeagleBone Black and reset the computer if it were to experience a catastrophic software fault. We decided to go with the Texas Instruments MSP430, as it provided all of the necessary functionality while being able to withstand our desired temerature ranges. Link: https://www.ti.com/lit/ds/symlink/msp430fr2433.pdf?HQS=dis-dk-null-digikeymode-dsf-pf-null-wwe&ts=1755672532866&ref_url=https%253A%252F%252Fwww.ti.com%252Fgeneral%252Fdocs%252Fsuppproductinfo.tsp%253FdistId%253D10%2526gotoUrl%253Dhttps%253A%252F%252Fwww.ti.com%252Flit%252Fgpn%252Fmsp430fr2433
 
 
 
